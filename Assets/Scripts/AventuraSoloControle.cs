@@ -52,140 +52,140 @@ public class AventuraSoloControle : MonoBehaviour
         if (index == 15)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota08.DOAnchorPos(new Vector2(597, -339), 0.25f);
-            bttRota17.DOAnchorPos(new Vector2(-523, -331), 0.25f);
+            bttRota08.DOAnchorPos(new Vector2(-341, 207), 0.25f);
+            bttRota17.DOAnchorPos(new Vector2(385, 215), 0.25f);
 
         }
 
         if (index == 23)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota08.DOAnchorPos(new Vector2(597, -339), 0.25f);
-            bttRota17.DOAnchorPos(new Vector2(-523, -331), 0.25f);
+            bttRota08.DOAnchorPos(new Vector2(-341, 207), 0.25f);
+            bttRota17.DOAnchorPos(new Vector2(385, 215), 0.25f);
 
         }
         if (index == 31)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota08.DOAnchorPos(new Vector2(597, -339), 0.25f);
-            bttRota17.DOAnchorPos(new Vector2(-523, -331), 0.25f);
+            bttRota08.DOAnchorPos(new Vector2(-341, 207), 0.25f);
+            bttRota17.DOAnchorPos(new Vector2(385, 215), 0.25f);
 
         }
         if (index == 35)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota08.DOAnchorPos(new Vector2(597, -339), 0.25f);
-            bttRota11.DOAnchorPos(new Vector2(-523, -331), 0.25f);
+            bttRota08.DOAnchorPos(new Vector2(-341, 207), 0.25f);
+            bttRota11.DOAnchorPos(new Vector2(345, 207), 0.25f);
 
         }
         if (index == 39)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota05.DOAnchorPos(new Vector2(597, -339), 0.25f);
-            bttRota14.DOAnchorPos(new Vector2(-523, -331), 0.25f);
+            bttRota05.DOAnchorPos(new Vector2(372, 192), 0.25f);
+            bttRota14.DOAnchorPos(new Vector2(-320, 192), 0.25f);
 
         }
         if (index == 54)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota03.DOAnchorPos(new Vector2(597, -339), 0.25f);
-            bttRota11.DOAnchorPos(new Vector2(-523, -331), 0.25f);
+            bttRota03.DOAnchorPos(new Vector2(-278, 207), 0.25f);
+            bttRota11.DOAnchorPos(new Vector2(345, 207), 0.25f);
 
         }
         if (index == 59)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota10.DOAnchorPos(new Vector2(-661, -411), 0.25f);
-            bttRota15.DOAnchorPos(new Vector2(-87, -411), 0.25f);
-            bttRota18.DOAnchorPos(new Vector2(586, -411), 0.25f);
+            bttRota10.DOAnchorPos(new Vector2(299, 189), 0.25f);
+            bttRota15.DOAnchorPos(new Vector2(-87, 189), 0.25f);
+            bttRota18.DOAnchorPos(new Vector2(-374, 189), 0.25f);
 
         }
         if (index == 78)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota19.DOAnchorPos(new Vector2(-545, -363), 0.25f);
-            bttRota22.DOAnchorPos(new Vector2(586, -363), 0.25f);
+            bttRota19.DOAnchorPos(new Vector2(415, 164), 0.25f);
+            bttRota22.DOAnchorPos(new Vector2(586, 164), 0.25f);
             
 
         }
         if (index == 89)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota25.DOAnchorPos(new Vector2(-360, -253), 0.25f);
-            bttRota26.DOAnchorPos(new Vector2(385, -438), 0.25f);
+            bttRota25.DOAnchorPos(new Vector2(600, 122), 0.25f);
+            bttRota26.DOAnchorPos(new Vector2(-575, 334), 0.25f);
 
 
         }
         if (index == 104)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota13.DOAnchorPos(new Vector2(-594, -381), 0.25f);
-            bttRota20.DOAnchorPos(new Vector2(627, -381), 0.25f);
+            bttRota13.DOAnchorPos(new Vector2(366, 174), 0.25f);
+            bttRota20.DOAnchorPos(new Vector2(-333, 174), 0.25f);
 
 
         }
         if (index == 108)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota02.DOAnchorPos(new Vector2(-631, -386), 0.25f);
-            bttRota14.DOAnchorPos(new Vector2(660, -386), 0.25f);
+            bttRota02.DOAnchorPos(new Vector2(329, 192), 0.25f);
+            bttRota14.DOAnchorPos(new Vector2(-320, 192), 0.25f);
 
 
         }
         if (index == 112)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota02.DOAnchorPos(new Vector2(-631, -386), 0.25f);
-            bttRota14.DOAnchorPos(new Vector2(-523, -331), 0.25f);
+            bttRota02.DOAnchorPos(new Vector2(329, 192), 0.25f);
+            bttRota14.DOAnchorPos(new Vector2(-320, 192), 0.25f);
 
 
         }
         if (index == 117)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota07.DOAnchorPos(new Vector2(-660, -417), 0.25f);
-            bttRota16.DOAnchorPos(new Vector2(660, -417), 0.25f);
+            bttRota07.DOAnchorPos(new Vector2(300, 128), 0.25f);
+            bttRota16.DOAnchorPos(new Vector2(-300, 128), 0.25f);
 
 
         }
         if (index == 123)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota19.DOAnchorPos(new Vector2(-545, -363), 0.25f);
-            bttRota22.DOAnchorPos(new Vector2(586, -363), 0.25f);
+            bttRota19.DOAnchorPos(new Vector2(415, 164), 0.25f);
+            bttRota22.DOAnchorPos(new Vector2(586, 164), 0.25f);
 
 
         }
         if (index == 128)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota15.DOAnchorPos(new Vector2(-619, -411), 0.25f);
-            bttRota22.DOAnchorPos(new Vector2(614, -363), 0.25f);
-            bttRota24.DOAnchorPos(new Vector2(-10, -245), 0.25f);
+            bttRota15.DOAnchorPos(new Vector2(0, 164), 0.25f);
+            bttRota22.DOAnchorPos(new Vector2(-315, 164), 0.25f);
+            bttRota24.DOAnchorPos(new Vector2(315, 164), 0.25f);
 
 
         }
         if (index == 134)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota25.DOAnchorPos(new Vector2(-360, -253), 0.25f);
-            bttRota26.DOAnchorPos(new Vector2(385, -438), 0.25f);
+            bttRota25.DOAnchorPos(new Vector2(600, 122), 0.25f);
+            bttRota26.DOAnchorPos(new Vector2(-575, 334), 0.25f);
 
 
         }
         if (index == 138)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota02.DOAnchorPos(new Vector2(-631, -386), 0.25f);
-            bttRota06.DOAnchorPos(new Vector2(553, -386), 0.25f);
+            bttRota02.DOAnchorPos(new Vector2(329, 171), 0.25f);
+            bttRota06.DOAnchorPos(new Vector2(-384, 171), 0.25f);
 
 
         }
         if (index == 145)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota02.DOAnchorPos(new Vector2(-631, -386), 0.25f);
-            bttRota21.DOAnchorPos(new Vector2(596, -386), 0.25f);
+            bttRota02.DOAnchorPos(new Vector2(329, 171), 0.25f);
+            bttRota21.DOAnchorPos(new Vector2(-329, 171), 0.25f);
 
 
         }
@@ -246,7 +246,7 @@ public class AventuraSoloControle : MonoBehaviour
                 break;
             case 8:
                 index = 46;
-                bttNext.DOAnchorPos(new Vector2(814, -469), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
                 bttRota08.DOAnchorPos(new Vector2(1190, 2632), 0.25f);
                 bttRota11.DOAnchorPos(new Vector2(-1538, 2632), 0.25f);
                 bttRota17.DOAnchorPos(new Vector2(1960, 2632), 0.25f);
@@ -418,9 +418,9 @@ public class AventuraSoloControle : MonoBehaviour
     public void InicioGame()
     {
         
-        bttRota4.DOAnchorPos(new Vector2(-703, 309), 0.25f);
-        bttRota9.DOAnchorPos(new Vector2(624, 387), 0.25f);
-        bttRota12.DOAnchorPos(new Vector2(373, -140), 0.25f);
+        bttRota4.DOAnchorPos(new Vector2(272, 193), 0.25f);
+        bttRota9.DOAnchorPos(new Vector2(-316, -220), 0.25f);
+        bttRota12.DOAnchorPos(new Vector2(280, 194), 0.25f);
         bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
     }
 
