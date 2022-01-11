@@ -22,7 +22,7 @@ public class buttonBack : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().buildIndex == 0)
                 Application.Quit();
-            else if (SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 2 || SceneManager.GetActiveScene().buildIndex == 3 || SceneManager.GetActiveScene().buildIndex == 4 || SceneManager.GetActiveScene().buildIndex == 5)
+            else if (SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 2 || SceneManager.GetActiveScene().buildIndex == 3)
                 SceneManager.LoadScene(0);
             else
             {
