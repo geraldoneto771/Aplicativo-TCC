@@ -2,67 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIButton : MonoBehaviour
-{
+public class MenuControlador : MonoBehaviour{
     public GameObject PanelMenu;
     public GameObject PanelMenuSobre;
     public GameObject PanelMenuOpcoes;
 
-  
-
-    public void OpenPanelMenu()
-    {
+    public void OpenPanelMenu(){
         bool isActive = PanelMenu.activeSelf;
-        if (PanelMenu != null)
-        {
-            PanelMenu.SetActive(!isActive);
-            
+        if (PanelMenu != null){
+            PanelMenu.SetActive(!isActive);            
         }
-        else
-        {
+        else{
             PanelMenu.SetActive(isActive);
-
         }
-
-
     }
     
-    public void OpenPanelSobre()
-    {
+    public void OpenPanelSobre(){
         bool isActive = PanelMenuSobre.activeSelf;
-        if (PanelMenuSobre != null)
-        {
+        if (PanelMenuSobre != null){
             PanelMenuSobre.SetActive(!isActive);
             PanelMenu.SetActive(isActive);
-
-        } else
-        {
+        } else{
             PanelMenuSobre.SetActive(isActive);
-                PanelMenu.SetActive(!isActive);
-
+            PanelMenu.SetActive(!isActive);
         }
-
-
     }
 
-    public void OpenPanelOpcoes()
-    {
+    public void OpenPanelOpcoes(){
         bool isActive = PanelMenuOpcoes.activeSelf;
-        if (PanelMenuOpcoes != null)
-        {
+        if (PanelMenuOpcoes != null){
             PanelMenuOpcoes.SetActive(!isActive);
             PanelMenu.SetActive(isActive);
-
-        }
-        else
-        {
+        }else{
             PanelMenuOpcoes.SetActive(isActive);
             PanelMenu.SetActive(!isActive);
 
         }
-
-
     }
-
-
 }

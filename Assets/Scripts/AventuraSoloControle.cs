@@ -435,12 +435,12 @@ public class AventuraSoloControle : MonoBehaviour
             }
             else
             {
-                Debug.Log("Sua força não é o suficiente, escolha a outra opção ou verifique se consegue aumentar sua pontuação!");
+                Debug.Log("Sua forï¿½a nï¿½o ï¿½ o suficiente, escolha a outra opï¿½ï¿½o ou verifique se consegue aumentar sua pontuaï¿½ï¿½o!");
             }
         }
         catch (Exception e)
         {
-            Debug.Log("ERRO!");
+            Debug.Log("ERRO!" + e);
         }
 
 
@@ -458,12 +458,12 @@ public class AventuraSoloControle : MonoBehaviour
             }
             else
             {
-                Debug.Log("Você não tenho dinheiro suficiente, escolha a outra opção!");
+                Debug.Log("Vocï¿½ nï¿½o tenho dinheiro suficiente, escolha a outra opï¿½ï¿½o!");
             }
         }
         catch (Exception e)
         {
-            Debug.Log("ERRO!");
+            Debug.Log("ERRO!" + e);
         }
 
     }
@@ -480,12 +480,12 @@ public class AventuraSoloControle : MonoBehaviour
             }
             else
             {
-                Debug.Log("Você não tenho dinheiro suficiente, escolha a outra opção!");
+                Debug.Log("Vocï¿½ nï¿½o tenho dinheiro suficiente, escolha a outra opï¿½ï¿½o!");
             }
         }
         catch (Exception e)
         {
-            Debug.Log("ERRO!");
+            Debug.Log("ERRO!" + e);
         }
 
     }
@@ -500,12 +500,12 @@ public class AventuraSoloControle : MonoBehaviour
             }
             else
             {
-                Debug.Log("Sua força não é o suficiente, escolha a outra opção ou verifique se consegue aumentar sua pontuação!");
+                Debug.Log("Sua forï¿½a nï¿½o ï¿½ o suficiente, escolha a outra opï¿½ï¿½o ou verifique se consegue aumentar sua pontuaï¿½ï¿½o!");
             }
         }
         catch (Exception e)
         {
-            Debug.Log("ERRO!");
+            Debug.Log("ERRO!" + e);
         }
     }
     public void RotaSexta()
@@ -527,12 +527,12 @@ public class AventuraSoloControle : MonoBehaviour
             }
             else
             {
-                Debug.Log("Você não tenho dinheiro suficiente, escolha a outra opção!");
+                Debug.Log("Vocï¿½ nï¿½o tenho dinheiro suficiente, escolha a outra opï¿½ï¿½o!");
             }
         }
         catch (Exception e)
         {
-            Debug.Log("ERRO!");
+            Debug.Log("ERRO!" + e);
         }
 
     }
@@ -555,12 +555,12 @@ public class AventuraSoloControle : MonoBehaviour
             }
             else
             {
-                Debug.Log("Você não tenho dinheiro suficiente, escolha a outra opção!");
+                Debug.Log("Vocï¿½ nï¿½o tenho dinheiro suficiente, escolha a outra opï¿½ï¿½o!");
             }
         }
         catch (Exception e)
         {
-            Debug.Log("ERRO!");
+            Debug.Log("ERRO!" + e);
         }
 
     }
@@ -615,12 +615,12 @@ public class AventuraSoloControle : MonoBehaviour
             }
             else
             {
-                Debug.Log("A soma da força + agilidade não é o suficiente, escolha a outra opção ou verifique se consegue aumentar sua pontuação!");
+                Debug.Log("A soma da forï¿½a + agilidade nï¿½o ï¿½ o suficiente, escolha a outra opï¿½ï¿½o ou verifique se consegue aumentar sua pontuaï¿½ï¿½o!");
             }
         }
         catch (Exception e)
         {
-            Debug.Log("ERRO!");
+            Debug.Log("ERRO!" + e);
         }
     }
     public void RotaDezonove()
@@ -651,12 +651,12 @@ public class AventuraSoloControle : MonoBehaviour
             }
             else
             {
-                Debug.Log("Sua rapidez não é o suficiente, escolha a outra opção ou verifique se consegue aumentar sua pontuação!");
+                Debug.Log("Sua rapidez nï¿½o ï¿½ o suficiente, escolha a outra opï¿½ï¿½o ou verifique se consegue aumentar sua pontuaï¿½ï¿½o!");
             }
         }
         catch (Exception e)
         {
-            Debug.Log("ERRO!");
+            Debug.Log("ERRO!" + e);
         }
 
     }
@@ -676,12 +676,12 @@ public class AventuraSoloControle : MonoBehaviour
             }
             else
             {
-                Debug.Log("A soma da força + agilidade não é o suficiente, escolha a outra opção ou verifique se consegue aumentar sua pontuação!");
+                Debug.Log("A soma da forï¿½a + agilidade nï¿½o ï¿½ o suficiente, escolha a outra opï¿½ï¿½o ou verifique se consegue aumentar sua pontuaï¿½ï¿½o!");
             }
         }
         catch (Exception e)
         {
-            Debug.Log("ERRO!");
+            Debug.Log("ERRO!" + e);
         }
     }
     public void RotaVinteCinco()

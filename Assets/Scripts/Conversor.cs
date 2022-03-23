@@ -15,7 +15,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class Dropdown : MonoBehaviour
+public class Conversor : MonoBehaviour
 {
 
     
