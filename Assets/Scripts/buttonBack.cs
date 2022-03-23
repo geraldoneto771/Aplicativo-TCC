@@ -14,6 +14,8 @@ public class buttonBack : MonoBehaviour{
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
     */
+
+    
     // Update is called once per frame
     void Update(){
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
