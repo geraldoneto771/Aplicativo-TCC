@@ -29,12 +29,12 @@ public class AventuraSoloControle : MonoBehaviour
     }
     void Update()
     {
-        textOrcamento.GetComponent<Text>().text = "Orçamento: R$" + orcamento.ToString();
-        textSaude.GetComponent<Text>().text = "Saúde: " + saude.ToString();
-        textForca.GetComponent<Text>().text = "Força: " + forca.ToString();
-        textAgilidade.GetComponent<Text>().text = "Agilidade: " + agilidade.ToString();
-        textRapidez.GetComponent<Text>().text = "Rapidez: " + rapidez.ToString();
-        textBonus.GetComponent<Text>().text = "Ponto de Bônus: " + pontoBonus.ToString();
+        textOrcamento.GetComponent<Text>().text = "R$" + orcamento.ToString();
+        textSaude.GetComponent<Text>().text = saude.ToString();
+        textForca.GetComponent<Text>().text = forca.ToString();
+        textAgilidade.GetComponent<Text>().text = agilidade.ToString();
+        textRapidez.GetComponent<Text>().text = rapidez.ToString();
+        textBonus.GetComponent<Text>().text = pontoBonus.ToString();
     }
 
     public void NextChangeImage()
