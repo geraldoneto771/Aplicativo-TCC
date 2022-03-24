@@ -1183,15 +1183,15 @@ RectTransform:
   m_GameObject: {fileID: 398651821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.2481, y: 3.2481, z: 3.2481}
+  m_LocalScale: {x: 3.2481, y: 3.2481, z: 1}
   m_Children: []
   m_Father: {fileID: 1904381643}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 85, y: 116}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 90.2358, y: 82.361}
+  m_SizeDelta: {x: 163.2239, y: 50.713}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &398651823
 MonoBehaviour:
@@ -3982,6 +3982,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd50db14c81ad04fb8f91cd4e8f98a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneIndex: 0
 --- !u!4 &1739369211
 Transform:
   m_ObjectHideFlags: 0
@@ -4013,7 +4014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1904381643
 RectTransform:
   m_ObjectHideFlags: 0
