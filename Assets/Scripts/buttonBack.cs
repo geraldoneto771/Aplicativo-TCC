@@ -1,3 +1,5 @@
+// Verificar se esse arquivo ou o buttonControllNavigation está sendo usado para retornar telas
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
