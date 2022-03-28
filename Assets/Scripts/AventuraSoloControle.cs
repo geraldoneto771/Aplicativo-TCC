@@ -13,16 +13,20 @@ public class AventuraSoloControle : MonoBehaviour
     SpriteRenderer spriteRender;
     int rotas;
     int index;
-    public RectTransform bttNext, bttRota02, bttRota03, bttRota4, bttRota05, bttRota06, bttRota07, bttRota08, bttRota9, bttRota10, bttRota11, bttRota12, bttRota13, bttRota14, bttRota15, bttRota16, bttRota17, bttRota18, bttRota19, bttRota20, bttRota21, bttRota22, bttRota23, bttRota24, bttRota25, bttRota26;
+    public RectTransform bttNext, bttOption01, bttOption02, bttOption03;
     public GameObject textOrcamento, textSaude, textForca, textAgilidade, textRapidez, textBonus;
     int forca = 3, agilidade = 2, rapidez = 3, saude = 5, pontoBonus = 3;
     float orcamento = 25;
-
+    int bttIndex;
     // Start is called before the first frame update
     void Start()
     {
+        // bttOption02 = Button;
+       
+
         index = 0;
         rotas = 0;
+        bttIndex = 0;
         bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
         spriteRender = GetComponent<SpriteRenderer>();
         spriteRender.sprite = sprites[0];
@@ -40,9 +44,9 @@ public class AventuraSoloControle : MonoBehaviour
     public void NextChangeImage()
     {
         index++;
-   
 
-        
+
+
 
         if (index == 7)
         {
@@ -52,140 +56,141 @@ public class AventuraSoloControle : MonoBehaviour
         if (index == 15)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota08.DOAnchorPos(new Vector2(-341, 207), 0.25f);
-            bttRota17.DOAnchorPos(new Vector2(385, 215), 0.25f);
+            //bttRota08.DOAnchorPos(new Vector2(-341, 207), 0.25f);
+            // bttRota17.DOAnchorPos(new Vector2(385, 215), 0.25f);
 
         }
 
         if (index == 23)
         {
+            bttOption01.DOAnchorPos(new Vector2(1611, 841), 0.25f);
+
+            bttOption03.DOAnchorPos(new Vector2(298, 146), 0.25f);
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota08.DOAnchorPos(new Vector2(-341, 207), 0.25f);
-            bttRota17.DOAnchorPos(new Vector2(385, 215), 0.25f);
 
         }
         if (index == 31)
         {
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota08.DOAnchorPos(new Vector2(-341, 207), 0.25f);
-            bttRota17.DOAnchorPos(new Vector2(385, 215), 0.25f);
+            // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            // bttRota08.DOAnchorPos(new Vector2(-341, 207), 0.25f);
+            // bttRota17.DOAnchorPos(new Vector2(385, 215), 0.25f);
 
         }
         if (index == 35)
         {
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota08.DOAnchorPos(new Vector2(-341, 207), 0.25f);
-            bttRota11.DOAnchorPos(new Vector2(345, 207), 0.25f);
+            // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            // bttRota08.DOAnchorPos(new Vector2(-341, 207), 0.25f);
+            // bttRota11.DOAnchorPos(new Vector2(345, 207), 0.25f);
 
         }
         if (index == 39)
         {
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota05.DOAnchorPos(new Vector2(372, 192), 0.25f);
-            bttRota14.DOAnchorPos(new Vector2(-320, 192), 0.25f);
+            // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            // bttRota05.DOAnchorPos(new Vector2(372, 192), 0.25f);
+            // bttRota14.DOAnchorPos(new Vector2(-320, 192), 0.25f);
 
         }
         if (index == 54)
         {
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota03.DOAnchorPos(new Vector2(-278, 207), 0.25f);
-            bttRota11.DOAnchorPos(new Vector2(345, 207), 0.25f);
+            // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            // bttRota03.DOAnchorPos(new Vector2(-278, 207), 0.25f);
+            // bttRota11.DOAnchorPos(new Vector2(345, 207), 0.25f);
 
         }
         if (index == 59)
         {
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota10.DOAnchorPos(new Vector2(299, 189), 0.25f);
-            bttRota15.DOAnchorPos(new Vector2(-87, 189), 0.25f);
-            bttRota18.DOAnchorPos(new Vector2(-374, 189), 0.25f);
+            // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            // bttRota10.DOAnchorPos(new Vector2(299, 189), 0.25f);
+            // bttRota15.DOAnchorPos(new Vector2(-87, 189), 0.25f);
+            // bttRota18.DOAnchorPos(new Vector2(-374, 189), 0.25f);
 
         }
         if (index == 78)
         {
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota19.DOAnchorPos(new Vector2(415, 164), 0.25f);
-            bttRota22.DOAnchorPos(new Vector2(586, 164), 0.25f);
-            
+            // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            // bttRota19.DOAnchorPos(new Vector2(415, 164), 0.25f);
+            // bttRota22.DOAnchorPos(new Vector2(586, 164), 0.25f);
+
 
         }
         if (index == 89)
         {
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota25.DOAnchorPos(new Vector2(600, 122), 0.25f);
-            bttRota26.DOAnchorPos(new Vector2(-575, 334), 0.25f);
+            // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            //bttRota25.DOAnchorPos(new Vector2(600, 122), 0.25f);
+            //bttRota26.DOAnchorPos(new Vector2(-575, 334), 0.25f);
 
 
         }
         if (index == 104)
         {
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota13.DOAnchorPos(new Vector2(366, 174), 0.25f);
-            bttRota20.DOAnchorPos(new Vector2(-333, 174), 0.25f);
+            // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            // bttRota13.DOAnchorPos(new Vector2(366, 174), 0.25f);
+            // bttRota20.DOAnchorPos(new Vector2(-333, 174), 0.25f);
 
 
         }
         if (index == 108)
         {
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota02.DOAnchorPos(new Vector2(329, 192), 0.25f);
-            bttRota14.DOAnchorPos(new Vector2(-320, 192), 0.25f);
+            // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            // bttRota02.DOAnchorPos(new Vector2(329, 192), 0.25f);
+            // bttRota14.DOAnchorPos(new Vector2(-320, 192), 0.25f);
 
 
         }
         if (index == 112)
         {
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota02.DOAnchorPos(new Vector2(329, 192), 0.25f);
-            bttRota14.DOAnchorPos(new Vector2(-320, 192), 0.25f);
+            //  bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            // bttRota02.DOAnchorPos(new Vector2(329, 192), 0.25f);
+            // bttRota14.DOAnchorPos(new Vector2(-320, 192), 0.25f);
 
 
         }
         if (index == 117)
         {
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota07.DOAnchorPos(new Vector2(300, 128), 0.25f);
-            bttRota16.DOAnchorPos(new Vector2(-300, 128), 0.25f);
+            // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            //  bttRota07.DOAnchorPos(new Vector2(300, 128), 0.25f);
+            //  bttRota16.DOAnchorPos(new Vector2(-300, 128), 0.25f);
 
 
         }
         if (index == 123)
         {
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota19.DOAnchorPos(new Vector2(415, 164), 0.25f);
-            bttRota22.DOAnchorPos(new Vector2(586, 164), 0.25f);
+            //  bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            //  bttRota19.DOAnchorPos(new Vector2(415, 164), 0.25f);
+            //  bttRota22.DOAnchorPos(new Vector2(586, 164), 0.25f);
 
 
         }
         if (index == 128)
         {
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota15.DOAnchorPos(new Vector2(0, 164), 0.25f);
-            bttRota22.DOAnchorPos(new Vector2(-315, 164), 0.25f);
-            bttRota24.DOAnchorPos(new Vector2(315, 164), 0.25f);
+            //  bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            //  bttRota15.DOAnchorPos(new Vector2(0, 164), 0.25f);
+            //  bttRota22.DOAnchorPos(new Vector2(-315, 164), 0.25f);
+            //  bttRota24.DOAnchorPos(new Vector2(315, 164), 0.25f);
 
 
         }
         if (index == 134)
         {
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota25.DOAnchorPos(new Vector2(600, 122), 0.25f);
-            bttRota26.DOAnchorPos(new Vector2(-575, 334), 0.25f);
+            //  bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            //  bttRota25.DOAnchorPos(new Vector2(600, 122), 0.25f);
+            //  bttRota26.DOAnchorPos(new Vector2(-575, 334), 0.25f);
 
 
         }
         if (index == 138)
         {
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota02.DOAnchorPos(new Vector2(329, 171), 0.25f);
-            bttRota06.DOAnchorPos(new Vector2(-384, 171), 0.25f);
+            //  bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            //  bttRota02.DOAnchorPos(new Vector2(329, 171), 0.25f);
+            //  bttRota06.DOAnchorPos(new Vector2(-384, 171), 0.25f);
 
 
         }
         if (index == 145)
         {
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            bttRota02.DOAnchorPos(new Vector2(329, 171), 0.25f);
-            bttRota21.DOAnchorPos(new Vector2(-329, 171), 0.25f);
+            //  bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            // bttRota02.DOAnchorPos(new Vector2(329, 171), 0.25f);
+            // bttRota21.DOAnchorPos(new Vector2(-329, 171), 0.25f);
 
 
         }
@@ -193,9 +198,12 @@ public class AventuraSoloControle : MonoBehaviour
         switch (rotas)
         {
             case 1:
-                    InicioGame();
-                    break;
-            case 2:
+                GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Acompanhar os colegas";
+                GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Verificar o quiosque";
+                GameObject.Find("BttOption03").GetComponentInChildren<Text>().text = "Comer lanche que seus pais prepararam";
+                InicioGame();
+                break;
+            /*case 2:
                 index = 113;
                 bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
                 bttRota02.DOAnchorPos(new Vector2(-631, 4083), 0.25f);
@@ -213,15 +221,16 @@ public class AventuraSoloControle : MonoBehaviour
                 bttRota03.DOAnchorPos(new Vector2(-1366, 2632), 0.25f);
                 rotas = 0;
                 break;
+                */
             case 4:
                 index = 8;
                 bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota4.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
-                bttRota9.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
-                bttRota12.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
+                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
                 rotas = 0;
                 break;
-            case 5:
+            /*case 5:
                 index = 55;
                 bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
                 bttRota05.DOAnchorPos(new Vector2(2656, 2632), 0.25f);
@@ -244,89 +253,97 @@ public class AventuraSoloControle : MonoBehaviour
                 rotas = 0;
                 
                 break;
+             */
             case 8:
                 index = 46;
                 bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota08.DOAnchorPos(new Vector2(1190, 2632), 0.25f);
-                bttRota11.DOAnchorPos(new Vector2(-1538, 2632), 0.25f);
-                bttRota17.DOAnchorPos(new Vector2(1960, 2632), 0.25f);
+                bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
+
+                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
                 rotas = 0;
                 break;
+
             case 9:
                 index = 16;
                 bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota4.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
-                bttRota9.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
-                bttRota12.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
+                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                bttIndex = 1;
                 rotas = 0;
                 break;
-           
-            case 10:
-                index = 60;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota10.DOAnchorPos(new Vector2(-661, 2934), 0.25f);
-                bttRota15.DOAnchorPos(new Vector2(-87, 2934), 0.25f);
-                bttRota18.DOAnchorPos(new Vector2(586, 2934), 0.25f);
-                rotas = 0;
-                break;
-            case 11:
-                index = 36;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota08.DOAnchorPos(new Vector2(1190, 2632), 0.25f);
-                bttRota11.DOAnchorPos(new Vector2(-1538, 2632), 0.25f);
-                bttRota03.DOAnchorPos(new Vector2(-1366, 2632), 0.25f);
-                rotas = 0;
-                break;
+            /*
+             case 10:
+                 index = 60;
+                 bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+                 bttRota10.DOAnchorPos(new Vector2(-661, 2934), 0.25f);
+                 bttRota15.DOAnchorPos(new Vector2(-87, 2934), 0.25f);
+                 bttRota18.DOAnchorPos(new Vector2(586, 2934), 0.25f);
+                 rotas = 0;
+                 break;
+             case 11:
+                 index = 36;
+                 bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+                 bttRota08.DOAnchorPos(new Vector2(1190, 2632), 0.25f);
+                 bttRota11.DOAnchorPos(new Vector2(-1538, 2632), 0.25f);
+                 bttRota03.DOAnchorPos(new Vector2(-1366, 2632), 0.25f);
+                 rotas = 0;
+                 break;
+            */
             case 12:
                 index = 24;
                 bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota4.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
-                bttRota9.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
-                bttRota12.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
+                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
                 rotas = 0;
                 break;
-            case 13:
-                index = 135;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota13.DOAnchorPos(new Vector2(-594, 4338), 0.25f);
-                bttRota20.DOAnchorPos(new Vector2(627, 4338), 0.25f);
-                rotas = 0;
-                break;
-            case 14:
-                index = 40;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota02.DOAnchorPos(new Vector2(-631, 4083), 0.25f);
-                bttRota05.DOAnchorPos(new Vector2(2656, 2632), 0.25f);
-                bttRota14.DOAnchorPos(new Vector2(3458, 2632), 0.25f);
-                saude -= 1;
-                rotas = 0;
-                break;
-            case 15:
-                index = 65;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota10.DOAnchorPos(new Vector2(-661, 2934), 0.25f);
-                bttRota15.DOAnchorPos(new Vector2(-87, 2934), 0.25f);
-                bttRota18.DOAnchorPos(new Vector2(586, 2934), 0.25f);
-                bttRota22.DOAnchorPos(new Vector2(586, 3355), 0.25f);
-                bttRota24.DOAnchorPos(new Vector2(-24, 4891), 0.25f);
-                saude -= 3;
-                rotas = 0;
-                break;
-            case 16:
-                index = 124;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota07.DOAnchorPos(new Vector2(-660, 4556), 0.25f);
-                bttRota16.DOAnchorPos(new Vector2(660, 4697), 0.25f);
-                rotas = 0;
-                break;
+            /*
+        case 13:
+            index = 135;
+            bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+            bttRota13.DOAnchorPos(new Vector2(-594, 4338), 0.25f);
+            bttRota20.DOAnchorPos(new Vector2(627, 4338), 0.25f);
+            rotas = 0;
+            break;
+        case 14:
+            index = 40;
+            bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+            bttRota02.DOAnchorPos(new Vector2(-631, 4083), 0.25f);
+            bttRota05.DOAnchorPos(new Vector2(2656, 2632), 0.25f);
+            bttRota14.DOAnchorPos(new Vector2(3458, 2632), 0.25f);
+            saude -= 1;
+            rotas = 0;
+            break;
+        case 15:
+            index = 65;
+            bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+            bttRota10.DOAnchorPos(new Vector2(-661, 2934), 0.25f);
+            bttRota15.DOAnchorPos(new Vector2(-87, 2934), 0.25f);
+            bttRota18.DOAnchorPos(new Vector2(586, 2934), 0.25f);
+            bttRota22.DOAnchorPos(new Vector2(586, 3355), 0.25f);
+            bttRota24.DOAnchorPos(new Vector2(-24, 4891), 0.25f);
+            saude -= 3;
+            rotas = 0;
+            break;
+        case 16:
+            index = 124;
+            bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+            bttRota07.DOAnchorPos(new Vector2(-660, 4556), 0.25f);
+            bttRota16.DOAnchorPos(new Vector2(660, 4697), 0.25f);
+            rotas = 0;
+            break;
+            */
             case 17:
                 index = 32;
                 bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota08.DOAnchorPos(new Vector2(1190, 2632), 0.25f);
-                bttRota17.DOAnchorPos(new Vector2(1960, 2632), 0.25f);
-                
+                bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
+                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                bttIndex = 1;
                 rotas = 0;
                 break;
+                /*
             case 18:
                 index = 73;
                 bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
@@ -398,10 +415,11 @@ public class AventuraSoloControle : MonoBehaviour
                 
                 rotas = 0;
                 break;
+                */
         }
         spriteRender.sprite = sprites[index];
-        
-        
+
+
     }
 
     public void LoadScene(string name)
@@ -417,13 +435,13 @@ public class AventuraSoloControle : MonoBehaviour
 
     public void InicioGame()
     {
-        
-        bttRota4.DOAnchorPos(new Vector2(272, 193), 0.25f);
-        bttRota9.DOAnchorPos(new Vector2(-316, -220), 0.25f);
-        bttRota12.DOAnchorPos(new Vector2(280, 194), 0.25f);
+
+        bttOption01.DOAnchorPos(new Vector2(-707, 104), 0.25f);
+        bttOption02.DOAnchorPos(new Vector2(707, 296), 0.25f);
+        bttOption03.DOAnchorPos(new Vector2(349, -152), 0.25f);
         bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
     }
-
+    /*
     public void RotaDois()
     {
         try
@@ -467,21 +485,39 @@ public class AventuraSoloControle : MonoBehaviour
         }
 
     }
-    public void RotaQuarta()
+    */
+    public void RotaOption01()
     {
 
         try
         {
-            if (orcamento >= 10)
+            if (bttIndex == 0)
             {
-                rotas = 4;
-                orcamento -= 10;
+                if (orcamento >= 10)
+                {
+                    rotas = 4;
+                    orcamento -= 10;
+
+                    NextChangeImage();
+
+                }
+                else
+                {
+                    Debug.Log("Voc� n�o tenho dinheiro suficiente, escolha a outra op��o!");
+                }
+
+            }
+            else if (bttIndex == 1)
+            {
+                rotas = 17;
                 NextChangeImage();
             }
-            else
-            {
-                Debug.Log("Voc� n�o tenho dinheiro suficiente, escolha a outra op��o!");
-            }
+
+
+
+
+
+
         }
         catch (Exception e)
         {
@@ -489,6 +525,8 @@ public class AventuraSoloControle : MonoBehaviour
         }
 
     }
+    /*
+   
     public void RotaQuinta()
     {
         try
@@ -541,22 +579,34 @@ public class AventuraSoloControle : MonoBehaviour
         rotas = 8;
         NextChangeImage();
     }
-    public void RotaNove()
+    */
+    public void RotaOption02()
     {
         try
         {
-            if (orcamento >= 16)
+            if (bttIndex == 0)
             {
-                rotas = 9;
-                orcamento -= 16;
+                if (orcamento >= 16)
+                {
+                    rotas = 9;
+                    orcamento -= 16;
+                    NextChangeImage();
+
+
+                }
+                else
+                {
+                    Debug.Log("Voc� n�o tenho dinheiro suficiente, escolha a outra op��o!");
+                }
+
+            }
+
+            else if (bttIndex == 1)
+            {
+                rotas = 8;
                 NextChangeImage();
-                
-               
             }
-            else
-            {
-                Debug.Log("Voc� n�o tenho dinheiro suficiente, escolha a outra op��o!");
-            }
+
         }
         catch (Exception e)
         {
@@ -564,6 +614,7 @@ public class AventuraSoloControle : MonoBehaviour
         }
 
     }
+    /*
     public void RotaDez()
     {
         rotas = 10;
@@ -574,12 +625,20 @@ public class AventuraSoloControle : MonoBehaviour
         rotas = 11;
         NextChangeImage();
     }
-    public void RotaDoze()
+    */
+    public void RotaOption03()
     {
-        rotas = 12;
-        NextChangeImage();
+        if (bttIndex == 0)
+        {
+            rotas = 12;
+            NextChangeImage();
+            bttIndex = 1;
+        }
+
+
+
     }
-    public void RotaTreze()
+    /* public void RotaTreze()
     {
         rotas = 13;
         NextChangeImage();
@@ -694,11 +753,11 @@ public class AventuraSoloControle : MonoBehaviour
         rotas = 26;
         NextChangeImage();
     }
-
+    */
 
     public void AddPontosForca()
     {
-        if(pontoBonus >= 1 && pontoBonus < 4)
+        if (pontoBonus >= 1 && pontoBonus < 4)
         {
             forca += 1;
             pontoBonus -= 1;
@@ -706,7 +765,7 @@ public class AventuraSoloControle : MonoBehaviour
     }
     public void AddPontosAgilidade()
     {
-        if (pontoBonus >= 1 && pontoBonus  < 4)
+        if (pontoBonus >= 1 && pontoBonus < 4)
         {
             agilidade += 1;
             pontoBonus -= 1;
@@ -714,7 +773,7 @@ public class AventuraSoloControle : MonoBehaviour
     }
     public void AddPontosRapidez()
     {
-        if (pontoBonus >= 1 && pontoBonus  < 4)
+        if (pontoBonus >= 1 && pontoBonus < 4)
         {
             rapidez += 1;
             pontoBonus -= 1;
@@ -722,7 +781,7 @@ public class AventuraSoloControle : MonoBehaviour
     }
     public void AddPontosSaude()
     {
-        if (pontoBonus >= 1 && pontoBonus  < 4)
+        if (pontoBonus >= 1 && pontoBonus < 4)
         {
             saude += 1;
             pontoBonus -= 1;
