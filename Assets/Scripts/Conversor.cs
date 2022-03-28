@@ -121,7 +121,7 @@ public class Conversor : MonoBehaviour
                         }
                         catch (Exception e)
                         {
-                            Debug.Log("Entre com um valor!");
+                            Debug.Log("Entre com um valor!" + e);
                         }
 
 
@@ -187,7 +187,7 @@ public class Conversor : MonoBehaviour
                         }
                         catch (Exception e)
                         {
-                            Debug.Log("Entre com um valor!");
+                            Debug.Log("Entre com um valor!" +  e);
                         }
 
 
@@ -254,7 +254,7 @@ public class Conversor : MonoBehaviour
                         }
                         catch (Exception e)
                         {
-                            Debug.Log("Entre com um valor!");
+                            Debug.Log("Entre com um valor!" + e);
                         }
 
 
@@ -321,7 +321,7 @@ public class Conversor : MonoBehaviour
                         }
                         catch (Exception e)
                         {
-                            Debug.Log("Entre com um valor!");
+                            Debug.Log("Entre com um valor!" + e);
                         }
 
 
@@ -388,7 +388,7 @@ public class Conversor : MonoBehaviour
                         }
                         catch (Exception e)
                         {
-                            Debug.Log("Entre com um valor!");
+                            Debug.Log("Entre com um valor!" + e);
                         }
 
 

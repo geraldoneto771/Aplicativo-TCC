@@ -82,7 +82,7 @@ public class Cofrinho : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.Log("Entre com um valor!");
+            Debug.Log("Entre com um valor!"+e);
         }
     }
 
