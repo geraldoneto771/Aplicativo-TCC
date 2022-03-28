@@ -588,7 +588,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1579950552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02ba17d0e28a9b74e825bab2cddd5293, type: 3}
+  m_Script: {fileID: 11500000, guid: 83d28cd5d78b784468a685018636b6fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
@@ -853,6 +853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd50db14c81ad04fb8f91cd4e8f98a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneIndex: 0
 --- !u!4 &2126861033
 Transform:
   m_ObjectHideFlags: 0
