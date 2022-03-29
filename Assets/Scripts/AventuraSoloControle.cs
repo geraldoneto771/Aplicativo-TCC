@@ -8,31 +8,40 @@ using System;
 
 public class AventuraSoloControle : MonoBehaviour
 {
-
+    //Vetor de imagens contendo as cenas da aventura
     public Sprite[] sprites;
     SpriteRenderer spriteRender;
+    //Verificador de rota
     int rotas;
+    //Verificador da posição do vetor de sprites
     int index;
+    //botoões
     public RectTransform bttNext, bttOption01, bttOption02, bttOption03;
+    //textos
     public GameObject textOrcamento, textSaude, textForca, textAgilidade, textRapidez, textBonus;
+    //Pontuação
     int forca = 3, agilidade = 2, rapidez = 3, saude = 5, pontoBonus = 3;
     float orcamento = 25;
+    //Verificador de grupo de botões
     int bttIndex;
+
     // Start is called before the first frame update
     void Start()
     {
-        // bttOption02 = Button;
-       
-
+        //Inicializando as variaveis de verifição
         index = 0;
         rotas = 0;
         bttIndex = 0;
+        //Posicionando o botão de continuar na tela
         bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+        //Habilitando o acesso ao componente SpriteRenderer do sprite
         spriteRender = GetComponent<SpriteRenderer>();
+        //Inicializando o sprite na posição zero do vetor.
         spriteRender.sprite = sprites[0];
     }
     void Update()
     {
+        //Atualizando as informações do personagem no menu a todo momento.
         textOrcamento.GetComponent<Text>().text = "R$" + orcamento.ToString();
         textSaude.GetComponent<Text>().text = saude.ToString();
         textForca.GetComponent<Text>().text = forca.ToString();
@@ -41,18 +50,21 @@ public class AventuraSoloControle : MonoBehaviour
         textBonus.GetComponent<Text>().text = pontoBonus.ToString();
     }
 
+    //Função para trocar as imagens da cena.
     public void NextChangeImage()
     {
+        //Sempre ao clicar em continuar, adicionar +1 no index
         index++;
 
-
-
-
+        //Quando a imagem na tela for a numero 7, chamar o primeiro grupo de botões
+        //para selecionar uma decisão;
         if (index == 7)
         {
             rotas = 1;
         }
 
+        //Quando a imagem na tela for a numero 15, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 15)
         {
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
@@ -61,14 +73,26 @@ public class AventuraSoloControle : MonoBehaviour
 
         }
 
+        //Quando a imagem na tela for a numero 23, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 23)
         {
-            bttOption01.DOAnchorPos(new Vector2(1611, 841), 0.25f);
 
-            bttOption03.DOAnchorPos(new Vector2(298, 146), 0.25f);
+            //Alterando o texto dos botões
+            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Comprar o livro sobre o museu e a casa";
+            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Seguir o Homem";
+
+            //Setando os botões de escolha na tela
+            bttOption01.DOAnchorPos(new Vector2(495, -281), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-501, -281), 0.25f);
+
+            //setando o botão de continuar fora da tela
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
 
         }
+
+        //Quando a imagem na tela for a numero 31, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 31)
         {
             // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
@@ -76,6 +100,9 @@ public class AventuraSoloControle : MonoBehaviour
             // bttRota17.DOAnchorPos(new Vector2(385, 215), 0.25f);
 
         }
+
+        //Quando a imagem na tela for a numero 35, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 35)
         {
             // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
@@ -83,20 +110,43 @@ public class AventuraSoloControle : MonoBehaviour
             // bttRota11.DOAnchorPos(new Vector2(345, 207), 0.25f);
 
         }
+
+        //Quando a imagem na tela for a numero 39, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 39)
         {
-            // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            // bttRota05.DOAnchorPos(new Vector2(372, 192), 0.25f);
-            // bttRota14.DOAnchorPos(new Vector2(-320, 192), 0.25f);
+            //Alterando o texto dos botões
+            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Se a sua agilidade é 3 ou mais";
+            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Se a sua agilidade é 2 ou menos";
+
+            //Setando os botões de escolha na tela
+            bttOption01.DOAnchorPos(new Vector2(495, -330), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-501, -330), 0.25f);
+
+            //setando o botão de continuar fora da tela
+            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
 
         }
+
+        //Quando a imagem na tela for a numero 54, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 54)
         {
-            // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
-            // bttRota03.DOAnchorPos(new Vector2(-278, 207), 0.25f);
-            // bttRota11.DOAnchorPos(new Vector2(345, 207), 0.25f);
+            //Alterando o texto dos botões
+            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Se você tem dinheiro, comprar livro";
+            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Se não tem dinheiro, ir para casa mesmo assim";
+
+            //Setando os botões de escolha na tela
+            bttOption01.DOAnchorPos(new Vector2(495, -281), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-501, -281), 0.25f);
+
+            //setando o botão de continuar fora da tela
+            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
 
         }
+
+        //Quando a imagem na tela for a numero 59, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 59)
         {
             // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
@@ -105,6 +155,9 @@ public class AventuraSoloControle : MonoBehaviour
             // bttRota18.DOAnchorPos(new Vector2(-374, 189), 0.25f);
 
         }
+
+        //Quando a imagem na tela for a numero 78, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 78)
         {
             // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
@@ -113,6 +166,9 @@ public class AventuraSoloControle : MonoBehaviour
 
 
         }
+
+        //Quando a imagem na tela for a numero 89, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 89)
         {
             // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
@@ -121,6 +177,9 @@ public class AventuraSoloControle : MonoBehaviour
 
 
         }
+
+        //Quando a imagem na tela for a numero 104, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 104)
         {
             // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
@@ -129,6 +188,9 @@ public class AventuraSoloControle : MonoBehaviour
 
 
         }
+
+        //Quando a imagem na tela for a numero 108, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 108)
         {
             // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
@@ -137,6 +199,9 @@ public class AventuraSoloControle : MonoBehaviour
 
 
         }
+
+        //Quando a imagem na tela for a numero 112, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 112)
         {
             //  bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
@@ -145,6 +210,9 @@ public class AventuraSoloControle : MonoBehaviour
 
 
         }
+
+        //Quando a imagem na tela for a numero 117, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 117)
         {
             // bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
@@ -153,6 +221,9 @@ public class AventuraSoloControle : MonoBehaviour
 
 
         }
+
+        //Quando a imagem na tela for a numero 123, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 123)
         {
             //  bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
@@ -161,6 +232,9 @@ public class AventuraSoloControle : MonoBehaviour
 
 
         }
+
+        //Quando a imagem na tela for a numero128, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 128)
         {
             //  bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
@@ -170,6 +244,9 @@ public class AventuraSoloControle : MonoBehaviour
 
 
         }
+
+        //Quando a imagem na tela for a numero 134, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 134)
         {
             //  bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
@@ -178,6 +255,9 @@ public class AventuraSoloControle : MonoBehaviour
 
 
         }
+
+        //Quando a imagem na tela for a numero 138, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 138)
         {
             //  bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
@@ -186,6 +266,9 @@ public class AventuraSoloControle : MonoBehaviour
 
 
         }
+
+        //Quando a imagem na tela for a numero 145, chamar o proximo grupo de botões
+        //para selecionar uma decisão;
         if (index == 145)
         {
             //  bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
@@ -195,6 +278,7 @@ public class AventuraSoloControle : MonoBehaviour
 
         }
 
+        //Método que diz o que acontece em cada rota que o usuário escolher
         switch (rotas)
         {
             case 1:
@@ -213,15 +297,18 @@ public class AventuraSoloControle : MonoBehaviour
                 bttRota14.DOAnchorPos(new Vector2(3458, 2632), 0.25f);
                 rotas = 0;
                 break;
+            */
             case 3:
                 
                 index = 100;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota11.DOAnchorPos(new Vector2(-1538, 2632), 0.25f);
-                bttRota03.DOAnchorPos(new Vector2(-1366, 2632), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
+                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                bttIndex = 3;
                 rotas = 0;
                 break;
-                */
+
             case 4:
                 index = 8;
                 bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
@@ -230,13 +317,16 @@ public class AventuraSoloControle : MonoBehaviour
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
                 rotas = 0;
                 break;
-            /*case 5:
+            case 5:
                 index = 55;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota05.DOAnchorPos(new Vector2(2656, 2632), 0.25f);
-                bttRota14.DOAnchorPos(new Vector2(3458, 2632), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
+                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                bttIndex = 4;
                 rotas = 0;
                 break;
+                /*
             case 6:
                 index = 139;
                 bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
@@ -256,15 +346,18 @@ public class AventuraSoloControle : MonoBehaviour
              */
             case 8:
                 index = 46;
+
                 bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
-
-                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                bttIndex = 2;
                 rotas = 0;
                 break;
 
             case 9:
                 index = 16;
+                
+
                 bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
@@ -281,15 +374,17 @@ public class AventuraSoloControle : MonoBehaviour
                  bttRota18.DOAnchorPos(new Vector2(586, 2934), 0.25f);
                  rotas = 0;
                  break;
-             case 11:
-                 index = 36;
-                 bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                 bttRota08.DOAnchorPos(new Vector2(1190, 2632), 0.25f);
-                 bttRota11.DOAnchorPos(new Vector2(-1538, 2632), 0.25f);
-                 bttRota03.DOAnchorPos(new Vector2(-1366, 2632), 0.25f);
-                 rotas = 0;
-                 break;
             */
+             case 11:
+                index = 36;
+                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
+                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                bttIndex = 3;
+                rotas = 0;
+                break;
+
             case 12:
                 index = 24;
                 bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
@@ -307,41 +402,43 @@ public class AventuraSoloControle : MonoBehaviour
             bttRota20.DOAnchorPos(new Vector2(627, 4338), 0.25f);
             rotas = 0;
             break;
+            */
         case 14:
             index = 40;
-            bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-            bttRota02.DOAnchorPos(new Vector2(-631, 4083), 0.25f);
-            bttRota05.DOAnchorPos(new Vector2(2656, 2632), 0.25f);
-            bttRota14.DOAnchorPos(new Vector2(3458, 2632), 0.25f);
-            saude -= 1;
-            rotas = 0;
-            break;
-        case 15:
-            index = 65;
-            bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-            bttRota10.DOAnchorPos(new Vector2(-661, 2934), 0.25f);
-            bttRota15.DOAnchorPos(new Vector2(-87, 2934), 0.25f);
-            bttRota18.DOAnchorPos(new Vector2(586, 2934), 0.25f);
-            bttRota22.DOAnchorPos(new Vector2(586, 3355), 0.25f);
-            bttRota24.DOAnchorPos(new Vector2(-24, 4891), 0.25f);
-            saude -= 3;
-            rotas = 0;
-            break;
-        case 16:
-            index = 124;
-            bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-            bttRota07.DOAnchorPos(new Vector2(-660, 4556), 0.25f);
-            bttRota16.DOAnchorPos(new Vector2(660, 4697), 0.25f);
-            rotas = 0;
-            break;
-            */
+                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
+                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                bttIndex = 4;
+                rotas = 0;
+                break;
+            /*
+    case 15:
+        index = 65;
+        bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+        bttRota10.DOAnchorPos(new Vector2(-661, 2934), 0.25f);
+        bttRota15.DOAnchorPos(new Vector2(-87, 2934), 0.25f);
+        bttRota18.DOAnchorPos(new Vector2(586, 2934), 0.25f);
+        bttRota22.DOAnchorPos(new Vector2(586, 3355), 0.25f);
+        bttRota24.DOAnchorPos(new Vector2(-24, 4891), 0.25f);
+        saude -= 3;
+        rotas = 0;
+        break;
+    case 16:
+        index = 124;
+        bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+        bttRota07.DOAnchorPos(new Vector2(-660, 4556), 0.25f);
+        bttRota16.DOAnchorPos(new Vector2(660, 4697), 0.25f);
+        rotas = 0;
+        break;
+        */
             case 17:
                 index = 32;
                 bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
-                bttIndex = 1;
+                bttIndex = 2;
                 rotas = 0;
                 break;
                 /*
@@ -488,7 +585,7 @@ public class AventuraSoloControle : MonoBehaviour
     }
     */
 
-    //Rota 04, 17...
+    //Rota 04, 17, 03...
     public void RotaOption01()
     {
 
@@ -511,9 +608,22 @@ public class AventuraSoloControle : MonoBehaviour
                 }
 
             }
+
             else if (bttIndex == 1)
             {
-                rotas = 17;
+                rotas = 8;
+                NextChangeImage();
+            }
+
+            else if (bttIndex == 2)
+            {
+                rotas = 3;
+                NextChangeImage();
+            }
+
+            else if (bttIndex == 3)
+            {
+                rotas = 5;
                 NextChangeImage();
             }
 
@@ -569,7 +679,7 @@ public class AventuraSoloControle : MonoBehaviour
 
     }
     */
-    //Rota 09, 08...
+    //Rota 09, 08, 11...
     public void RotaOption02()
     {
         try
@@ -589,10 +699,22 @@ public class AventuraSoloControle : MonoBehaviour
                 }
 
             }
-
+         
             else if (bttIndex == 1)
             {
-                rotas = 8;
+                rotas = 17;
+                NextChangeImage();
+            }
+
+            else if (bttIndex == 2)
+            {
+                rotas = 11;
+                NextChangeImage();
+            }
+
+            else if (bttIndex == 3)
+            {
+                rotas = 14;
                 NextChangeImage();
             }
 
