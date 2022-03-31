@@ -12,12 +12,8 @@ public class AventuraSoloControle : MonoBehaviour
     //Vetor de imagens contendo as cenas da aventura
     public Sprite[] sprites;
     SpriteRenderer spriteRender;
-
-    int verificadorDeRota;
-
-    //public Sprite cena;
-    
     //Verificador de rota
+    int verificadorDeRota;
     int rotas;
     //Verificador da posição do vetor de sprites
     int index;
@@ -30,18 +26,14 @@ public class AventuraSoloControle : MonoBehaviour
     float orcamento = 25;
     //Verificador de grupo de botões
     int bttIndex;
-    //public GameObject cenas;
+
     // Start is called before the first frame update
     void Start()
     {
+        //Renderizando os sprites no vetor
         sprites = Resources.LoadAll("Cenas Decisão 01 - Inicio", typeof(Sprite)).Cast<Sprite>().ToArray();
-        // cenas = GameObject.CreatePrimitive(PrimitiveType.Plane);
-        //spriteRender = GetComponent<SpriteRenderer>();
-        //sprites = Resources.LoadAll("AventuraSolo/Cenas Decisão 01 - Inicio/Img001_Rota01_Cena01", typeof(Sprite)).Cast<Sprite>().ToArray();
         spriteRender = GetComponent<SpriteRenderer>();
         spriteRender.sprite = sprites[1];
-        //SetupSprites();
-        //cena = Resources.Load<Sprite>("AventuraSolo/Cenas Decisão 01 - Inicio/Img001_Rota01_Cena01");
         //Inicializando as variaveis de verifição
         verificadorDeRota = 0;
         index = 0;
@@ -49,12 +41,6 @@ public class AventuraSoloControle : MonoBehaviour
         bttIndex = 0;
         //Posicionando o botão de continuar na tela
         bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
-        //Habilitando o acesso ao componente SpriteRenderer do sprite
-        //spriteRender = GetComponent<SpriteRenderer>();
-        //Inicializando o sprite na posição zero do vetor.
-        
-        
-        //spriteRender.cenas = GameObject.CreatePrimitive(PrimitiveType.Plane);
     }
     void Update()
     {
@@ -67,13 +53,6 @@ public class AventuraSoloControle : MonoBehaviour
         textBonus.GetComponent<Text>().text = pontoBonus.ToString();
 
     }
-
-    void SetupSprites()
-    {
-        //sprites = Resources.LoadAll("AventuraSolo/Cenas Decisão 01 - Inicio", typeof(Sprite)).Cast<Sprite>().ToArray();
-       // sprites = Resources.LoadAll("Images", typeof(Sprite));
-    }
-    
 
     //Função para trocar as imagens da cena.
     public void NextChangeImage()
