@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
 using System;
+using System.Linq;
 
 public class AventuraSoloControle : MonoBehaviour
 {
     //Vetor de imagens contendo as cenas da aventura
     public Sprite[] sprites;
     SpriteRenderer spriteRender;
+
+    int verificadorDeRota;
+
+    //public Sprite cena;
+    
     //Verificador de rota
     int rotas;
     //Verificador da posição do vetor de sprites
@@ -24,20 +30,31 @@ public class AventuraSoloControle : MonoBehaviour
     float orcamento = 25;
     //Verificador de grupo de botões
     int bttIndex;
-
+    //public GameObject cenas;
     // Start is called before the first frame update
     void Start()
     {
+        sprites = Resources.LoadAll("Cenas Decisão 01 - Inicio", typeof(Sprite)).Cast<Sprite>().ToArray();
+        // cenas = GameObject.CreatePrimitive(PrimitiveType.Plane);
+        //spriteRender = GetComponent<SpriteRenderer>();
+        //sprites = Resources.LoadAll("AventuraSolo/Cenas Decisão 01 - Inicio/Img001_Rota01_Cena01", typeof(Sprite)).Cast<Sprite>().ToArray();
+        spriteRender = GetComponent<SpriteRenderer>();
+        spriteRender.sprite = sprites[1];
+        //SetupSprites();
+        //cena = Resources.Load<Sprite>("AventuraSolo/Cenas Decisão 01 - Inicio/Img001_Rota01_Cena01");
         //Inicializando as variaveis de verifição
+        verificadorDeRota = 0;
         index = 0;
         rotas = 0;
         bttIndex = 0;
         //Posicionando o botão de continuar na tela
         bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
         //Habilitando o acesso ao componente SpriteRenderer do sprite
-        spriteRender = GetComponent<SpriteRenderer>();
+        //spriteRender = GetComponent<SpriteRenderer>();
         //Inicializando o sprite na posição zero do vetor.
-        spriteRender.sprite = sprites[0];
+        
+        
+        //spriteRender.cenas = GameObject.CreatePrimitive(PrimitiveType.Plane);
     }
     void Update()
     {
@@ -48,7 +65,15 @@ public class AventuraSoloControle : MonoBehaviour
         textAgilidade.GetComponent<Text>().text = agilidade.ToString();
         textRapidez.GetComponent<Text>().text = rapidez.ToString();
         textBonus.GetComponent<Text>().text = pontoBonus.ToString();
+
     }
+
+    void SetupSprites()
+    {
+        //sprites = Resources.LoadAll("AventuraSolo/Cenas Decisão 01 - Inicio", typeof(Sprite)).Cast<Sprite>().ToArray();
+       // sprites = Resources.LoadAll("Images", typeof(Sprite));
+    }
+    
 
     //Função para trocar as imagens da cena.
     public void NextChangeImage()
@@ -58,7 +83,7 @@ public class AventuraSoloControle : MonoBehaviour
 
         //Quando a imagem na tela for a numero 7, chamar o primeiro grupo de botões
         //para selecionar uma decisão;
-        if (index == 7)
+        if (index == 8)
         {
             rotas = 1;
         }
@@ -285,6 +310,7 @@ public class AventuraSoloControle : MonoBehaviour
                 GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Acompanhar os colegas";
                 GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Verificar o quiosque";
                 GameObject.Find("BttOption03").GetComponentInChildren<Text>().text = "Comer lanche que seus pais prepararam";
+                
                 InicioGame();
                 break;
             /*case 2:
@@ -355,15 +381,20 @@ public class AventuraSoloControle : MonoBehaviour
                 break;
 
             case 9:
-                index = 16;
+               
                 
+                index = 0;
 
+                sprites = Resources.LoadAll("Cenas Decisão 09", typeof(Sprite)).Cast<Sprite>().ToArray();
+                spriteRender.sprite = sprites[0];
                 bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
                 bttIndex = 1;
+                
                 rotas = 0;
+
                 break;
             /*
              case 10:
@@ -538,6 +569,7 @@ public class AventuraSoloControle : MonoBehaviour
         bttOption02.DOAnchorPos(new Vector2(601, 270), 0.25f);
         bttOption03.DOAnchorPos(new Vector2(379, -299), 0.25f);
         bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+        verificadorDeRota = 1;
     }
     /*
     public void RotaDois()
@@ -691,6 +723,7 @@ public class AventuraSoloControle : MonoBehaviour
                 {
                     rotas = 9;
                     orcamento -= 16;
+                    sprites = null;
                     NextChangeImage();
                 }
                 else
