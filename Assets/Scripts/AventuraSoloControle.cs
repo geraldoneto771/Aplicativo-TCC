@@ -36,7 +36,7 @@ public class AventuraSoloControle : MonoBehaviour
         spriteRender.sprite = sprites[1];
         //Inicializando as variaveis de verifição
         verificadorDeRota = 0;
-        index = 0;
+        index = 1;
         rotas = 0;
         bttIndex = 0;
         //Posicionando o botão de continuar na tela
