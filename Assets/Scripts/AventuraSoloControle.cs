@@ -8,6 +8,8 @@ using System;
 
 public class AventuraSoloControle : MonoBehaviour
 {
+    // Dados do personagem
+    public Jogador jogador;
     //Vetor de imagens contendo as cenas da aventura
     public Sprite[] sprites;
     SpriteRenderer spriteRender;
@@ -19,15 +21,23 @@ public class AventuraSoloControle : MonoBehaviour
     public RectTransform bttNext, bttOption01, bttOption02, bttOption03;
     //textos
     public GameObject textOrcamento, textSaude, textForca, textAgilidade, textRapidez, textBonus;
+    
+    
     //Pontuação
-    int forca = 3, agilidade = 2, rapidez = 3, saude = 5, pontoBonus = 3;
-    float orcamento = 25;
+    //int forca = 3, agilidade = 2, rapidez = 3, saude = 5, pontoBonus = 3;
+    
+    //float orcamento = 25;
+    
+    
     //Verificador de grupo de botões
     int bttIndex;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        atualizarDadosNoMenuDeAtributos();
+        
         //Inicializando as variaveis de verifição
         index = 0;
         rotas = 0;
@@ -39,27 +49,26 @@ public class AventuraSoloControle : MonoBehaviour
         //Inicializando o sprite na posição zero do vetor.
         spriteRender.sprite = sprites[0];
     }
+
     void Update()
-    {
-        //Atualizando as informações do personagem no menu a todo momento.
-        textOrcamento.GetComponent<Text>().text = "R$" + orcamento.ToString();
-        textSaude.GetComponent<Text>().text = saude.ToString();
-        textForca.GetComponent<Text>().text = forca.ToString();
-        textAgilidade.GetComponent<Text>().text = agilidade.ToString();
-        textRapidez.GetComponent<Text>().text = rapidez.ToString();
-        textBonus.GetComponent<Text>().text = pontoBonus.ToString();
+    {        
+        // //Atualizando as informações do personagem no menu a todo momento.
+        // textOrcamento.GetComponent<Text>().text = "R$" + orcamento.ToString();
+        // textSaude.GetComponent<Text>().text = saude.ToString();
+        // textForca.GetComponent<Text>().text = forca.ToString();
+        // textAgilidade.GetComponent<Text>().text = agilidade.ToString();
+        // textRapidez.GetComponent<Text>().text = rapidez.ToString();
+        // textBonus.GetComponent<Text>().text = pontoBonus.ToString();
     }
 
     //Função para trocar as imagens da cena.
-    public void NextChangeImage()
-    {
+    public void NextChangeImage(){
         //Sempre ao clicar em continuar, adicionar +1 no index
         index++;
 
         //Quando a imagem na tela for a numero 7, chamar o primeiro grupo de botões
         //para selecionar uma decisão;
-        if (index == 7)
-        {
+        if (index == 7){
             rotas = 1;
         }
 
@@ -594,6 +603,17 @@ public class AventuraSoloControle : MonoBehaviour
             //rota 04
             if (bttIndex == 0)
             {
+                /** Pág. 13: O menino compra o lanche mais barato em outra lanchonete
+                  * custando R$10,00
+                */
+                if (jogador.usarOrcamento(10)){
+                    rotas = 4;
+                    NextChangeImage();
+                }else{
+                    Debug.LogError("Você não tenho dinheiro suficiente, escolha a outra opção!");
+                }
+
+                /**
                 if (orcamento >= 10)
                 {
                     rotas = 4;
@@ -606,7 +626,7 @@ public class AventuraSoloControle : MonoBehaviour
                 {
                     Debug.Log("Voc� n�o tenho dinheiro suficiente, escolha a outra op��o!");
                 }
-
+                */
             }
 
             else if (bttIndex == 1)
@@ -687,16 +707,29 @@ public class AventuraSoloControle : MonoBehaviour
             //rota 09
             if (bttIndex == 0)
             {
-                if (orcamento >= 16)
+                /** Pág. 19: O personagem compra um lanche que custa o olho da cara (R$16,00)
+                  * com correção monetária e a crise deve custar uns R$40,00 a R$50,00 
+                */
+                if (jogador.usarOrcamento(16))
                 {
                     rotas = 9;
-                    orcamento -= 16;
                     NextChangeImage();
                 }
-                else
-                {
-                    Debug.Log("Voc� n�o tenho dinheiro suficiente, escolha a outra op��o!");
+                else{
+                    // Definir o comportamento do jogo
+                    Debug.LogError("Voc� n�o tenho dinheiro suficiente, escolha a outra op��o!");
                 }
+
+                // if (orcamento >- 16)
+                // {
+                //     rotas = 9;
+                //     orcamento -= 16;
+                //     NextChangeImage();
+                // }
+                // else{
+                //     // Definir o comportamento do jogo
+                //     Debug.LogError("Voc� n�o tenho dinheiro suficiente, escolha a outra op��o!");
+                // }
 
             }
          
@@ -734,7 +767,6 @@ public class AventuraSoloControle : MonoBehaviour
         {
             rotas = 12;
             NextChangeImage();
-            
         }
     }
     /* 
@@ -801,34 +833,71 @@ public class AventuraSoloControle : MonoBehaviour
     */
     public void AddPontosForca()
     {
-        if (pontoBonus >= 1 && pontoBonus < 4)
-        {
-            forca += 1;
-            pontoBonus -= 1;
+        // if (pontoBonus >= 1 && pontoBonus < 4)
+        // {
+        //     forca += 1;
+        //     pontoBonus -= 1;
+        // }
+        if(jogador.usarBonus(1, "FORCA")){
+            Debug.Log($"Bonus: {jogador.bonus}");
+        }else{
+            Debug.LogError($"Erro: bonus: {jogador.bonus}");
         }
+
+        atualizarDadosNoMenuDeAtributos();
     }
     public void AddPontosAgilidade()
     {
-        if (pontoBonus >= 1 && pontoBonus < 4)
-        {
-            agilidade += 1;
-            pontoBonus -= 1;
+        // if (pontoBonus >= 1 && pontoBonus < 4)
+        // {
+        //     agilidade += 1;
+        //     pontoBonus -= 1;
+        // }
+        if(jogador.usarBonus(1, "AGILIDADE")){
+            Debug.Log($"Bonus: {jogador.bonus}");
+        }else{
+            Debug.LogError($"Erro: bonus: {jogador.bonus}");
         }
+
+        atualizarDadosNoMenuDeAtributos();
     }
     public void AddPontosRapidez()
     {
-        if (pontoBonus >= 1 && pontoBonus < 4)
-        {
-            rapidez += 1;
-            pontoBonus -= 1;
+        // if (pontoBonus >= 1 && pontoBonus < 4)
+        // {
+        //     rapidez += 1;
+        //     pontoBonus -= 1;
+        // }
+        if(jogador.usarBonus(1, "RAPIDEZ")){
+            Debug.Log($"Bonus: {jogador.bonus}");
+        }else{
+            Debug.LogError($"Erro: bonus: {jogador.bonus}");
         }
+        atualizarDadosNoMenuDeAtributos();
     }
     public void AddPontosSaude()
     {
-        if (pontoBonus >= 1 && pontoBonus < 4)
-        {
-            saude += 1;
-            pontoBonus -= 1;
+        // if (pontoBonus >= 1 && pontoBonus < 4){
+        //     saude += 1;
+        //     pontoBonus -= 1;
+        // }
+
+        if(jogador.usarBonus(1, "SAUDE")){
+            Debug.Log($"Bonus: {jogador.bonus}");
+        }else{
+            Debug.LogError($"Erro: bonus: {jogador.bonus}");
         }
+
+        atualizarDadosNoMenuDeAtributos();
+    }
+
+    public void atualizarDadosNoMenuDeAtributos(){
+        // Joga o dado do usuário dentro dos textos.
+        textOrcamento.GetComponent<Text>().text = "R$" + jogador.orcamento.ToString();
+        textSaude.GetComponent<Text>().text = jogador.saude.ToString();
+        textForca.GetComponent<Text>().text = jogador.forca.ToString();
+        textAgilidade.GetComponent<Text>().text = jogador.agilidade.ToString();
+        textRapidez.GetComponent<Text>().text = jogador.rapidez.ToString();
+        textBonus.GetComponent<Text>().text = jogador.bonus.ToString();
     }
 }

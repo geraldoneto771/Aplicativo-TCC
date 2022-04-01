@@ -6,17 +6,21 @@ using UnityEngine.Events;
 using TMPro;
 using System;
 
-public class Cofrinho : MonoBehaviour
-{
+public class Cofrinho : MonoBehaviour{
+    
+    public Jogador jogador;
     private double valor;
     public InputField inputMoney;
     public GameObject textTotalCofre;
     public GameObject PanelTemCerteza;
     public GameObject PanelTemCertezaCofre;
 
-
+    private void Start() {
+        textTotalCofre.GetComponent<Text>().text = jogador.getSaldoCofre().ToString();
+    }
     public void OpenPanelTemCerteza()
     {
+        Debug.Log(jogador.nome);
         bool isActive = PanelTemCerteza.activeSelf;
         if (PanelTemCerteza != null)
         {
@@ -34,11 +38,11 @@ public class Cofrinho : MonoBehaviour
 
     public void OpenPanelTemCertezaCofre()
     {
+        textTotalCofre.GetComponent<Text>().text = "R$" + jogador.getSaldoCofre().ToString();
         bool isActive = PanelTemCertezaCofre.activeSelf;
         if (PanelTemCertezaCofre != null)
         {
             PanelTemCertezaCofre.SetActive(!isActive);
-
         }
         else
         {
@@ -53,16 +57,17 @@ public class Cofrinho : MonoBehaviour
     {
         bool isActive = PanelTemCerteza.activeSelf;
 
-        try
-        {
+        try{
             if ((double.Parse(inputMoney.text)) <= 0)
             {
                 Debug.Log("Entre com um valor maior que zero!");
             }
             else if ((double.Parse(inputMoney.text)) > 0)
             {
-                valor += double.Parse(inputMoney.text);
-                textTotalCofre.GetComponent<Text>().text = "R$" + valor.ToString();
+                // jogador.addDinheiroCofre(valor);
+                // valor += double.Parse(inputMoney.text);
+                
+                textTotalCofre.GetComponent<Text>().text = "R$" + jogador.addDinheiroCofre(double.Parse(inputMoney.text));
 
                 
                 if (PanelTemCerteza != null)
@@ -73,8 +78,6 @@ public class Cofrinho : MonoBehaviour
                 else
                 {
                     PanelTemCerteza.SetActive(isActive);
-                    
-
                 }
 
                 
@@ -82,7 +85,7 @@ public class Cofrinho : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.Log("Entre com um valor!"+e);
+            Debug.Log("Entre com um valor! "+e);
         }
     }
 
@@ -93,6 +96,7 @@ public class Cofrinho : MonoBehaviour
         textTotalCofre.GetComponent<Text>().text = "R$" + valor.ToString();
         if (PanelTemCertezaCofre != null)
         {
+            jogador.quebraCofre();
             PanelTemCertezaCofre.SetActive(!isActive);
             inputMoney.text = "";
         }

@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class buttonBack : MonoBehaviour{
     public int sceneIndex = 0;
-    
+        
     /*int sceneIndex;
     // Start is called before the first frame update
     void Start()
@@ -23,13 +23,11 @@ public class buttonBack : MonoBehaviour{
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         // print(SceneManager.GetActiveScene().buildIndex is int);
         // print(typeOf(SceneManager.GetActiveScene().buildIndex));
-        
+
         if (Input.GetKeyDown(KeyCode.Escape)){
-            if (sceneIndex == 0){
-                Application.Quit();
-            }else if (sceneIndex > 3)
+            if (sceneIndex > 3){
                 SceneManager.LoadScene(1);
-            else{
+            }else if(sceneIndex > 0){
                 SceneManager.LoadScene(0);
             }
         }

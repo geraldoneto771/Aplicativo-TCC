@@ -15,10 +15,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class Conversor : MonoBehaviour
-{
-
-    
+public class Conversor : MonoBehaviour{
     int verificador;
     // Start is called before the first frame update
 
@@ -28,41 +25,28 @@ public class Conversor : MonoBehaviour
     public InputField inputMoney;
     public GameObject textTotalCofre;
 
-    public void HandleInputData(int val)
-    {
-        if (val == 0)
-        {
-           
+    public void HandleInputData(int val){
+        if (val == 0){
             verificador = 0;
             print(verificador);
         }
-        if (val == 1)
-        {
-           
+        if (val == 1){
             verificador = 1;
             print(verificador);
         }
-        if (val == 2)
-        {
-            
+        if (val == 2){
             verificador = 2;
             print(verificador);
         }
-        if (val == 3)
-        {
-
+        if (val == 3){
             verificador = 3;
             print(verificador);
         }
-        if (val == 4)
-        {
-
+        if (val == 4){
             verificador = 4;
             print(verificador);
         }
-        if (val == 5)
-        {
-
+        if (val == 5){
             verificador = 5;
             print(verificador);
         }
