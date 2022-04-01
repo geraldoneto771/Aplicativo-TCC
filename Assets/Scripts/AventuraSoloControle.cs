@@ -52,7 +52,7 @@ public class AventuraSoloControle : MonoBehaviour
         //Posicionando o botão de continuar na tela
         bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
     }
-
+    //
     void Update()
     {
         //Atualizando as informações do personagem no menu a todo momento.

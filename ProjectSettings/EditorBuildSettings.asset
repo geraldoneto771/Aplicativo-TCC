@@ -17,22 +17,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tela_Conversor.unity
     guid: c3bd59e16dc2a7a4db64668bf859497c
-<<<<<<< HEAD
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-=======
->>>>>>> main
   - enabled: 1
     path: Assets/Scenes/Tela_Aventura_1_m1.unity
     guid: cc88aca6d41cfab449c8ba061f97437d
   - enabled: 1
     path: Assets/Scenes/Tela_Introducao_1_m1.unity
     guid: 78eb89b4aff2cb24f882b0bb0a7335f8
-<<<<<<< HEAD
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-=======
->>>>>>> main
+
   m_configObjects: {}
