@@ -160,6 +160,19 @@ public class AventuraSoloControle : MonoBehaviour
             //setando o botão de continuar fora da tela
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
         }
+        else if (index == 3 && verificadorDeRota == 17)
+        {
+            //Alterando o texto dos botões
+            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Ir para a loja comprar o livro sobre o museu e a casa";
+            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Não perder tempo com isso e correr direto para a casa";
+
+            //Setando os botões de escolha na tela
+            bttOption01.DOAnchorPos(new Vector2(-654, -306), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(654, -306), 0.25f);
+
+            //setando o botão de continuar fora da tela
+            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+        }
 
         //Quando a imagem na tela for a numero 15, chamar o proximo grupo de botões
         //para selecionar uma decisão;
@@ -567,15 +580,19 @@ public class AventuraSoloControle : MonoBehaviour
             break;
     */
             case 17:
-                index = 32;
+                index = 0;
+
+                sprites = Resources.LoadAll("Cenas Decisão 17", typeof(Sprite)).Cast<Sprite>().ToArray();
+                //spriteRender.sprite = sprites[0];
+
                 bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
-                bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
-                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                verificadorDeRota = 17;
                 bttIndex = 2;
                 rotas = 0;
                 break;
-                
+
             case 18:
                 index = 0;
 
@@ -821,7 +838,7 @@ public class AventuraSoloControle : MonoBehaviour
                 */
             }
 
-            else if (bttIndex == 1 && verificadorDeRota == 9)
+            else if ((bttIndex == 1 && verificadorDeRota == 9) || (bttIndex == 2 && verificadorDeRota == 17))
             {
                 rotas = 8;
                 NextChangeImage();
@@ -947,7 +964,7 @@ public class AventuraSoloControle : MonoBehaviour
                 NextChangeImage();
             }
 
-            else if (bttIndex == 2 && verificadorDeRota == 8)
+            else if ((bttIndex == 2 && verificadorDeRota == 8) || (bttIndex == 2 && verificadorDeRota == 17))
             {
                 rotas = 11;
                 NextChangeImage();
@@ -956,6 +973,11 @@ public class AventuraSoloControle : MonoBehaviour
             else if (bttIndex == 3 && verificadorDeRota == 11)
             {
                 rotas = 14;
+                NextChangeImage();
+            }
+            else if (bttIndex == 1 && verificadorDeRota == 9)
+            {
+                rotas = 17;
                 NextChangeImage();
             }
             else if (bttIndex == 4 && verificadorDeRota == 5)
