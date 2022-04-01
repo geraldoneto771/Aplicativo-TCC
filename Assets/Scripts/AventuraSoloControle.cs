@@ -118,6 +118,36 @@ public class AventuraSoloControle : MonoBehaviour
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
         }
 
+        else if (index == 4 && verificadorDeRota == 5)
+        {
+            //Alterando o texto dos botões
+            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Decidir fugir";
+            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Enfrentar! Se a soma da sua Força com sua Agilidade for 6 ou mais";
+            GameObject.Find("BttOption03").GetComponentInChildren<Text>().text = "Enfrentar! Se a soma da sua Força com a sua Agilidade for 5 ou menos";
+
+            //Setando os botões de escolha na tela
+            bttOption01.DOAnchorPos(new Vector2(-667, -417), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(0, -296), 0.25f);
+            bttOption03.DOAnchorPos(new Vector2(667, -417), 0.25f);
+
+            //setando o botão de continuar fora da tela
+            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+        }
+        else if (index == 5 && verificadorDeRota == 18)
+        {
+            //Alterando o texto dos botões
+            //Alterando o texto dos botões
+            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Se a sua rapidez é 4 ou mais";
+            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Se a sua rapidez é 3 ou menos";
+
+            //Setando os botões de escolha na tela
+            bttOption01.DOAnchorPos(new Vector2(495, -330), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-501, -330), 0.25f);
+
+            //setando o botão de continuar fora da tela
+            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+        }
+
         //Quando a imagem na tela for a numero 15, chamar o proximo grupo de botões
         //para selecionar uma decisão;
 
@@ -380,32 +410,36 @@ public class AventuraSoloControle : MonoBehaviour
                 rotas = 0;
                 break;
             case 5:
-                index = 55;
+                index = 0;
+
+                sprites = Resources.LoadAll("Cenas Decisão 05", typeof(Sprite)).Cast<Sprite>().ToArray();
+
                 bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                verificadorDeRota = 5;
                 bttIndex = 4;
                 rotas = 0;
                 break;
-                /*
-            case 6:
-                index = 139;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota06.DOAnchorPos(new Vector2(1286, 3171), 0.25f);
-                bttRota02.DOAnchorPos(new Vector2(-631, 4083), 0.25f);
-                saude -= 1;
-                rotas = 0;
-                break;
-            case 7:
-                index = 118;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota07.DOAnchorPos(new Vector2(-660, 4556), 0.25f);
-                bttRota16.DOAnchorPos(new Vector2(660, 4697), 0.25f);
-                rotas = 0;
-                
-                break;
-             */
+            /*
+        case 6:
+            index = 139;
+            bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+            bttRota06.DOAnchorPos(new Vector2(1286, 3171), 0.25f);
+            bttRota02.DOAnchorPos(new Vector2(-631, 4083), 0.25f);
+            saude -= 1;
+            rotas = 0;
+            break;
+        case 7:
+            index = 118;
+            bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+            bttRota07.DOAnchorPos(new Vector2(-660, 4556), 0.25f);
+            bttRota16.DOAnchorPos(new Vector2(660, 4697), 0.25f);
+            rotas = 0;
+
+            break;
+         */
             case 8:
                 index = 0;
 
@@ -435,17 +469,22 @@ public class AventuraSoloControle : MonoBehaviour
                 bttIndex = 1;
                 rotas = 0;
                 break;
-            /*
+            
              case 10:
-                 index = 60;
-                 bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                 bttRota10.DOAnchorPos(new Vector2(-661, 2934), 0.25f);
-                 bttRota15.DOAnchorPos(new Vector2(-87, 2934), 0.25f);
-                 bttRota18.DOAnchorPos(new Vector2(586, 2934), 0.25f);
-                 rotas = 0;
-                 break;
-            */
-             case 11:
+                index = 0;
+
+                sprites = Resources.LoadAll("Cenas Decisão 10", typeof(Sprite)).Cast<Sprite>().ToArray();
+
+                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
+                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                verificadorDeRota = 10;
+                bttIndex = 5;
+                rotas = 0;
+                break;
+            
+            case 11:
                 index = 0;
 
                 sprites = Resources.LoadAll("Cenas Decisão 11", typeof(Sprite)).Cast<Sprite>().ToArray();
@@ -491,26 +530,29 @@ public class AventuraSoloControle : MonoBehaviour
                 bttIndex = 4;
                 rotas = 0;
                 break;
-            /*
+            
             case 15:
-                index = 65;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota10.DOAnchorPos(new Vector2(-661, 2934), 0.25f);
-                bttRota15.DOAnchorPos(new Vector2(-87, 2934), 0.25f);
-                bttRota18.DOAnchorPos(new Vector2(586, 2934), 0.25f);
-                bttRota22.DOAnchorPos(new Vector2(586, 3355), 0.25f);
-                bttRota24.DOAnchorPos(new Vector2(-24, 4891), 0.25f);
-                saude -= 3;
+                index = 0;
+
+                sprites = Resources.LoadAll("Cenas Decisão 15", typeof(Sprite)).Cast<Sprite>().ToArray();
+
+                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
+                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                verificadorDeRota = 15;
+                bttIndex = 5;
                 rotas = 0;
                 break;
-            case 16:
-                index = 124;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota07.DOAnchorPos(new Vector2(-660, 4556), 0.25f);
-                bttRota16.DOAnchorPos(new Vector2(660, 4697), 0.25f);
-                rotas = 0;
-                break;
-        */
+            /*
+        case 16:
+            index = 124;
+            bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+            bttRota07.DOAnchorPos(new Vector2(-660, 4556), 0.25f);
+            bttRota16.DOAnchorPos(new Vector2(660, 4697), 0.25f);
+            rotas = 0;
+            break;
+    */
             case 17:
                 index = 32;
                 bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
@@ -520,79 +562,91 @@ public class AventuraSoloControle : MonoBehaviour
                 bttIndex = 2;
                 rotas = 0;
                 break;
-                /*
-            case 18:
-                index = 73;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota10.DOAnchorPos(new Vector2(-661, 2934), 0.25f);
-                bttRota15.DOAnchorPos(new Vector2(-87, 2934), 0.25f);
-                bttRota18.DOAnchorPos(new Vector2(586, 2934), 0.25f);
-                saude -= 1;
-                rotas = 0;
-                break;
-            case 19:
-                index = 79;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota19.DOAnchorPos(new Vector2(-545, 3355), 0.25f);
-                bttRota22.DOAnchorPos(new Vector2(586, 3355), 0.25f);
-                rotas = 0;
-                break;
-            case 20:
-                index = 105;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota13.DOAnchorPos(new Vector2(-594, 4338), 0.25f);
-                bttRota20.DOAnchorPos(new Vector2(627, 4338), 0.25f);
-                rotas = 0;
-                break;
-            case 21:
-                index = 146;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota21.DOAnchorPos(new Vector2(596, 3565), 0.25f);
-                bttRota02.DOAnchorPos(new Vector2(-631, 4083), 0.25f);
-                rotas = 0;
-                break;
-            case 22:
-                index = 85;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota19.DOAnchorPos(new Vector2(-545, 3355), 0.25f);
-                bttRota22.DOAnchorPos(new Vector2(586, 3355), 0.25f);
-                bttRota15.DOAnchorPos(new Vector2(-87, 2934), 0.25f);
-                bttRota24.DOAnchorPos(new Vector2(-24, 4891), 0.25f);
-                rotas = 0;
-                break;
-            case 23:
-                index = 109;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota02.DOAnchorPos(new Vector2(-631, 4083), 0.25f);
-                bttRota23.DOAnchorPos(new Vector2(660, 4083), 0.25f);
-                rotas = 0;
-                break;
-            case 24:
-                index = 129;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota22.DOAnchorPos(new Vector2(586, 3355), 0.25f);
-                bttRota15.DOAnchorPos(new Vector2(-87, 2934), 0.25f);
-                bttRota24.DOAnchorPos(new Vector2(-24, 4891), 0.25f);
-                saude -= 1;
-                rotas = 0;
-                break;
-            case 25:
-                index = 90;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota25.DOAnchorPos(new Vector2(-360, 3678), 0.25f);
-                bttRota26.DOAnchorPos(new Vector2(385, 3890), 0.25f);
-               
-                rotas = 0;
-                break;
-            case 26:
-                index = 94;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota25.DOAnchorPos(new Vector2(-360, 3678), 0.25f);
-                bttRota26.DOAnchorPos(new Vector2(385, 3890), 0.25f);
                 
+            case 18:
+                index = 0;
+
+                sprites = Resources.LoadAll("Cenas Decisão 18", typeof(Sprite)).Cast<Sprite>().ToArray();
+
+                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
+                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                verificadorDeRota = 18;
+                bttIndex = 5;
                 rotas = 0;
                 break;
-                */
+               
+            case 19:
+                index = 0;
+
+                sprites = Resources.LoadAll("Cenas Decisão 19", typeof(Sprite)).Cast<Sprite>().ToArray();
+
+                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
+                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                verificadorDeRota = 19;
+                bttIndex = 6;
+                rotas = 0;
+                break;
+                /*
+           case 20:
+               index = 105;
+               bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+               bttRota13.DOAnchorPos(new Vector2(-594, 4338), 0.25f);
+               bttRota20.DOAnchorPos(new Vector2(627, 4338), 0.25f);
+               rotas = 0;
+               break;
+           case 21:
+               index = 146;
+               bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+               bttRota21.DOAnchorPos(new Vector2(596, 3565), 0.25f);
+               bttRota02.DOAnchorPos(new Vector2(-631, 4083), 0.25f);
+               rotas = 0;
+               break;
+           case 22:
+               index = 85;
+               bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+               bttRota19.DOAnchorPos(new Vector2(-545, 3355), 0.25f);
+               bttRota22.DOAnchorPos(new Vector2(586, 3355), 0.25f);
+               bttRota15.DOAnchorPos(new Vector2(-87, 2934), 0.25f);
+               bttRota24.DOAnchorPos(new Vector2(-24, 4891), 0.25f);
+               rotas = 0;
+               break;
+           case 23:
+               index = 109;
+               bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+               bttRota02.DOAnchorPos(new Vector2(-631, 4083), 0.25f);
+               bttRota23.DOAnchorPos(new Vector2(660, 4083), 0.25f);
+               rotas = 0;
+               break;
+           case 24:
+               index = 129;
+               bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+               bttRota22.DOAnchorPos(new Vector2(586, 3355), 0.25f);
+               bttRota15.DOAnchorPos(new Vector2(-87, 2934), 0.25f);
+               bttRota24.DOAnchorPos(new Vector2(-24, 4891), 0.25f);
+               saude -= 1;
+               rotas = 0;
+               break;
+           case 25:
+               index = 90;
+               bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+               bttRota25.DOAnchorPos(new Vector2(-360, 3678), 0.25f);
+               bttRota26.DOAnchorPos(new Vector2(385, 3890), 0.25f);
+
+               rotas = 0;
+               break;
+           case 26:
+               index = 94;
+               bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+               bttRota25.DOAnchorPos(new Vector2(-360, 3678), 0.25f);
+               bttRota26.DOAnchorPos(new Vector2(385, 3890), 0.25f);
+
+               rotas = 0;
+               break;
+               */
         }
         spriteRender.sprite = sprites[index];
 
@@ -613,9 +667,29 @@ public class AventuraSoloControle : MonoBehaviour
             //Carregar cena de acordo com seu nome
             SceneManager.LoadScene(name);
         }
+        else if (index == 4 && verificadorDeRota == 10)
+        {
+            //Carregar cena de acordo com seu nome
+            SceneManager.LoadScene(name);
+        }
+        else if (index == 7 && verificadorDeRota == 15)
+        {
+            //Carregar cena de acordo com seu nome
+            SceneManager.LoadScene(name);
+        }
+        else if (index == 5 && verificadorDeRota == 19)
+        {
+            //Carregar cena de acordo com seu nome
+            SceneManager.LoadScene(name);
+        }
 
 
     }
+
+    //IMPORTANTE******************
+    //Realizar as verificações de ponto só no final. 
+    //Rotas que precisam de verificação: Rota 02, Rota 03, Rota 04
+    //Rota 05, Rota 07, Rota 09, Rota 18, Rota 22, Rota 24.
 
     public void InicioGame()
     {
@@ -724,6 +798,11 @@ public class AventuraSoloControle : MonoBehaviour
                 rotas = 5;
                 NextChangeImage();
             }
+            else if (bttIndex == 4 && verificadorDeRota == 5)
+            {
+                rotas = 10;
+                NextChangeImage();
+            }
 
         }
         catch (Exception e)
@@ -829,6 +908,16 @@ public class AventuraSoloControle : MonoBehaviour
                 rotas = 14;
                 NextChangeImage();
             }
+            else if (bttIndex == 4 && verificadorDeRota == 5)
+            {
+                rotas = 18;
+                NextChangeImage();
+            }
+            else if (bttIndex == 5 && verificadorDeRota == 18)
+            {
+                rotas = 19;
+                NextChangeImage();
+            }
 
         }
         catch (Exception e)
@@ -845,6 +934,12 @@ public class AventuraSoloControle : MonoBehaviour
         if (bttIndex == 0)
         {
             rotas = 12;
+            NextChangeImage();
+        }
+        //Rota 15
+        else if (bttIndex == 4 && verificadorDeRota == 5)
+        {
+            rotas = 15;
             NextChangeImage();
         }
     }
