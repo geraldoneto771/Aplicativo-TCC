@@ -790,8 +790,9 @@ public class AventuraSoloControle : MonoBehaviour
                 */
                 if (jogador.usarOrcamento(16)){
                     rotas = 9;
-                    sprites = null;
-                    
+                    //sprites = null;
+                    atualizarDadosNoMenuDeAtributos();
+
                     NextChangeImage();
                 }else{
                     // Definir o comportamento do jogo

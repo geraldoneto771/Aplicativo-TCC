@@ -40,7 +40,7 @@ public class Jogador : ScriptableObject {
                 this.saude += qtdBonus;
                 break;
             case "FORCA":
-                this.rapidez += qtdBonus;
+                this.forca += qtdBonus;
                 break;
             case "AGILIDADE":
                 this.agilidade += qtdBonus;
