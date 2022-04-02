@@ -200,6 +200,45 @@ public class AventuraSoloControle : MonoBehaviour
             //setando o botão de continuar fora da tela
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
         }
+        else if (index == 4 && verificadorDeRota == 3)
+        {
+            //Alterando o texto dos botões
+            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Tentar escalar a goiabeira para entrar no pomar";
+            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Seguir para o portãozinho";
+
+            //Setando os botões de escolha na tela
+            bttOption01.DOAnchorPos(new Vector2(495, -281), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-501, -281), 0.25f);
+
+            //setando o botão de continuar fora da tela
+            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+        }
+        else if (index == 3 && verificadorDeRota == 13)
+        {
+            //Alterando o texto dos botões
+            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Se a sua agilidade é 3 ou mais";
+            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Se a sua agilidade é 2 ou menos";
+
+            //Setando os botões de escolha na tela
+            bttOption01.DOAnchorPos(new Vector2(495, -330), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-501, -330), 0.25f);
+
+            //setando o botão de continuar fora da tela
+            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+        }
+        else if (index == 6 && verificadorDeRota == 6)
+        {
+            //Alterando o texto dos botões
+            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Se a sua força é 3 ou mais";
+            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Se a sua força é 2 ou menos";
+
+            //Setando os botões de escolha na tela
+            bttOption01.DOAnchorPos(new Vector2(495, -330), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-501, -330), 0.25f);
+
+            //setando o botão de continuar fora da tela
+            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+        }
 
         //Quando a imagem na tela for a numero 15, chamar o proximo grupo de botões
         //para selecionar uma decisão;
@@ -441,12 +480,17 @@ public class AventuraSoloControle : MonoBehaviour
                 break;
             */
             case 3:
-                
-                index = 100;
+
+                index = 0;
+
+                sprites = Resources.LoadAll("Cenas Decisão 03", typeof(Sprite)).Cast<Sprite>().ToArray();
+
                 bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+
+                verificadorDeRota = 3;
                 bttIndex = 3;
                 rotas = 0;
                 break;
@@ -479,24 +523,30 @@ public class AventuraSoloControle : MonoBehaviour
                 bttIndex = 4;
                 rotas = 0;
                 break;
-            /*
+            
         case 6:
-            index = 139;
-            bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-            bttRota06.DOAnchorPos(new Vector2(1286, 3171), 0.25f);
-            bttRota02.DOAnchorPos(new Vector2(-631, 4083), 0.25f);
-            saude -= 1;
-            rotas = 0;
-            break;
-        case 7:
-            index = 118;
-            bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-            bttRota07.DOAnchorPos(new Vector2(-660, 4556), 0.25f);
-            bttRota16.DOAnchorPos(new Vector2(660, 4697), 0.25f);
-            rotas = 0;
+                index = 0;
 
-            break;
-         */
+                sprites = Resources.LoadAll("Cenas Decisão 06", typeof(Sprite)).Cast<Sprite>().ToArray();
+
+                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
+                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                verificadorDeRota = 6;
+                bttIndex = 5;
+                rotas = 0;
+                break;
+            /*
+            case 7:
+                index = 118;
+                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
+                bttRota07.DOAnchorPos(new Vector2(-660, 4556), 0.25f);
+                bttRota16.DOAnchorPos(new Vector2(660, 4697), 0.25f);
+                rotas = 0;
+
+                break;
+             */
             case 8:
                 index = 0;
 
@@ -571,15 +621,23 @@ public class AventuraSoloControle : MonoBehaviour
                 bttIndex = 1;
                 rotas = 0;
                 break;
-            /*
+            
             case 13:
-                index = 135;
-                bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-                bttRota13.DOAnchorPos(new Vector2(-594, 4338), 0.25f);
-                bttRota20.DOAnchorPos(new Vector2(627, 4338), 0.25f);
+                index = 0;
+
+                sprites = Resources.LoadAll("Cenas Decisão 13", typeof(Sprite)).Cast<Sprite>().ToArray();
+                //spriteRender.sprite = sprites[index];
+
+                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
+                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+
+                verificadorDeRota = 13;
+                bttIndex = 4;
                 rotas = 0;
                 break;
-            */
+
             case 14:
                 index = 0;
 
@@ -665,15 +723,21 @@ public class AventuraSoloControle : MonoBehaviour
                bttRota20.DOAnchorPos(new Vector2(627, 4338), 0.25f);
                rotas = 0;
                break;
-           case 21:
-               index = 146;
-               bttNext.DOAnchorPos(new Vector2(-149, 61), 0.25f);
-               bttRota21.DOAnchorPos(new Vector2(596, 3565), 0.25f);
-               bttRota02.DOAnchorPos(new Vector2(-631, 4083), 0.25f);
-               rotas = 0;
-               break;
                 */
-           case 22:
+           case 21:
+                index = 0;
+
+                sprites = Resources.LoadAll("Cenas Decisão 21", typeof(Sprite)).Cast<Sprite>().ToArray();
+
+                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
+                bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
+                bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
+                verificadorDeRota = 21;
+                bttIndex = 6;
+                rotas = 0;
+                break;
+            case 22:
                 index = 0;
 
                 sprites = Resources.LoadAll("Cenas Decisão 22", typeof(Sprite)).Cast<Sprite>().ToArray();
@@ -737,15 +801,11 @@ public class AventuraSoloControle : MonoBehaviour
 
     }
 
+    //IMPORTANTE********************************************************
+    //Verificar se não possui uma forma de aperfeiçoar essa verificação.
     public void LoadScene(string name)
     {
-        /*
-        if (index == 45 || index == 64 || index == 72 || index == 84 || index == 93 || index == 99 || index == 150)
-        {
-            //Carregar cena de acordo com seu nome
-            SceneManager.LoadScene(name);
-        }
-        */
+        
         if (index == 5 && verificadorDeRota == 14)
         {
             //Carregar cena de acordo com seu nome
@@ -776,14 +836,20 @@ public class AventuraSoloControle : MonoBehaviour
             //Carregar cena de acordo com seu nome
             SceneManager.LoadScene(name);
         }
+        else if (index == 4 && verificadorDeRota == 21)
+        {
+            //Carregar cena de acordo com seu nome
+            SceneManager.LoadScene(name);
+        }
 
 
     }
 
-    //IMPORTANTE******************
+    //IMPORTANTE*****************************************************
     //Realizar as verificações de ponto só no final. 
     //Rotas que precisam de verificação: Rota 02, Rota 03, Rota 04
     //Rota 05, Rota 07, Rota 09, Rota 18, Rota 22, Rota 24.
+    //Decrementar ponto de saude ou orçamento nas rotas que precisar.
 
     public void InicioGame()
     {
@@ -887,7 +953,7 @@ public class AventuraSoloControle : MonoBehaviour
                 NextChangeImage();
             }
 
-            else if (bttIndex == 3)
+            else if (bttIndex == 3 && verificadorDeRota == 11)
             {
                 rotas = 5;
                 NextChangeImage();
@@ -905,6 +971,18 @@ public class AventuraSoloControle : MonoBehaviour
             else if (bttIndex == 6 && verificadorDeRota == 22)
             {
                 rotas = 25;
+                NextChangeImage();
+            }
+            //Rota 03
+            else if ((bttIndex == 2 && verificadorDeRota == 8) )
+            {
+                rotas = 3;
+                NextChangeImage();
+            }
+            //Rota 03
+            else if ((bttIndex == 3 && verificadorDeRota == 3))
+            {
+                rotas = 13;
                 NextChangeImage();
             }
 
@@ -1030,6 +1108,16 @@ public class AventuraSoloControle : MonoBehaviour
             else if (bttIndex == 6 && verificadorDeRota == 22)
             {
                 rotas = 26;
+                NextChangeImage();
+            }
+            else if (bttIndex == 4 && verificadorDeRota == 13)
+            {
+                rotas = 6;
+                NextChangeImage();
+            }
+            else if (bttIndex == 5 && verificadorDeRota == 6)
+            {
+                rotas = 21;
                 NextChangeImage();
             }
 
