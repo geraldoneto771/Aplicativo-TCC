@@ -321,6 +321,24 @@ public class AventuraSoloControle : MonoBehaviour
             bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
         }
 
+        if (index == 3 && verificadorDeRota == 6)
+        {
+            jogador.saude -= 1;
+        }
+        if (index == 2 && verificadorDeRota == 14)
+        {
+            jogador.saude -= 1;
+        }
+        if (index == 3 && verificadorDeRota == 15)
+        {
+            jogador.saude -= 3;
+        }
+        if (index == 1 && verificadorDeRota == 18)
+        {
+            jogador.saude -= 1;
+        }
+        
+
         //Método que diz o que acontece em cada rota que o usuário escolher
         switch (rotas)
         {
@@ -660,6 +678,7 @@ public class AventuraSoloControle : MonoBehaviour
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
                 verificadorDeRota = 24;
+                jogador.saude -= 1;
                 bttIndex = 8;
                 rotas = 0;
                 break;
