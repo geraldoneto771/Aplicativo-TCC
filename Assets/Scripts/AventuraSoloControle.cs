@@ -816,10 +816,10 @@ public class AventuraSoloControle : MonoBehaviour
                 /** Pág. 13: O menino compra o lanche mais barato em outra lanchonete
                   * custando R$10,00
                 */
-                if (jogador.usarOrcamento(10)){
+                if (jogador.usarOrcamento(10)) {
                     rotas = 4;
                     NextChangeImage();
-                }else{
+                } else {
                     Debug.LogError("Você não tenho dinheiro suficiente, escolha a outra opção!");
                 }
 
@@ -845,13 +845,13 @@ public class AventuraSoloControle : MonoBehaviour
                 NextChangeImage();
             }
 
-            else if (bttIndex == 2)
+            else if (bttIndex == 2 && verificadorDeRota == 8 && jogador.usarOrcamento(10))
             {
                 rotas = 3;
                 NextChangeImage();
             }
 
-            else if (bttIndex == 3 && verificadorDeRota == 11)
+            else if (bttIndex == 3 && verificadorDeRota == 11 && jogador.agilidade >= 3)
             {
                 rotas = 5;
                 NextChangeImage();
@@ -861,7 +861,7 @@ public class AventuraSoloControle : MonoBehaviour
                 rotas = 10;
                 NextChangeImage();
             }
-            else if ((bttIndex == 5 && verificadorDeRota == 18) || (bttIndex == 7 && verificadorDeRota == 7) || (bttIndex == 7 && verificadorDeRota == 16))
+            else if ((bttIndex == 5 && verificadorDeRota == 18 && jogador.rapidez >= 4) || (bttIndex == 7 && verificadorDeRota == 7 && jogador.rapidez >= 4) || (bttIndex == 7 && verificadorDeRota == 16))
             {
                 rotas = 22;
                 NextChangeImage();
@@ -872,7 +872,7 @@ public class AventuraSoloControle : MonoBehaviour
                 NextChangeImage();
             }
             //Rota 03
-            else if ((bttIndex == 2 && verificadorDeRota == 8) )
+            else if ((bttIndex == 2 && verificadorDeRota == 8 && jogador.usarOrcamento(10)))
             {
                 rotas = 3;
                 NextChangeImage();
@@ -883,12 +883,13 @@ public class AventuraSoloControle : MonoBehaviour
                 rotas = 13;
                 NextChangeImage();
             }
-            else if ((bttIndex == 4 && verificadorDeRota == 20) || (bttIndex == 5 && verificadorDeRota == 23) || (bttIndex == 5 && verificadorDeRota == 6))
+
+            else if ((bttIndex == 4 && verificadorDeRota == 20 && jogador.forca >= 3) || (bttIndex == 5 && verificadorDeRota == 23 && jogador.agilidade >= 3) || (bttIndex == 5 && verificadorDeRota == 6 && jogador.forca >= 3))
             {
                 rotas = 2;
                 NextChangeImage();
             }
-            else if (bttIndex == 6 && verificadorDeRota == 2)
+            else if (bttIndex == 6 && verificadorDeRota == 2 && jogador.usarOrcamento(15))
             {
                 rotas = 7;
                 NextChangeImage();
@@ -1003,7 +1004,7 @@ public class AventuraSoloControle : MonoBehaviour
                 rotas = 17;
                 NextChangeImage();
             }
-            else if (bttIndex == 4 && verificadorDeRota == 5)
+            else if (bttIndex == 4 && verificadorDeRota == 5 && ((jogador.forca+jogador.agilidade) >= 6))
             {
                 rotas = 18;
                 NextChangeImage();
@@ -1048,7 +1049,7 @@ public class AventuraSoloControle : MonoBehaviour
                 rotas = 16;
                 NextChangeImage();
             }
-            else if (bttIndex == 7 && verificadorDeRota == 16)
+            else if (bttIndex == 7 && verificadorDeRota == 16 && ((jogador.forca + jogador.agilidade) >= 6))
             {
                 rotas = 24;
                 NextChangeImage();
