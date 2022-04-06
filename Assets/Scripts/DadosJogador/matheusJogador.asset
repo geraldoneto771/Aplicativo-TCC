@@ -15,10 +15,10 @@ MonoBehaviour:
   nome: Gabriel
   bonus: 3
   saude: 5
-  forca: 4
-  agilidade: 7
+  forca: 3
+  agilidade: 2
   rapidez: 3
-  orcamento: 9
+  orcamento: 25
   personalidade: Loren Ipsum blaldksmlsdk
   conhecimento: sdfsldkfnsldkfnl
   nivel: 0
