@@ -26,6 +26,7 @@ public class AventuraSoloControle : MonoBehaviour
 
     public GameObject PanelErro;
     public GameObject textErro;
+    public GameObject bttOk;
     //Pontuação
     //int forca = 3, agilidade = 2, rapidez = 3, saude = 5, pontoBonus = 3;
 
@@ -778,51 +779,6 @@ public class AventuraSoloControle : MonoBehaviour
         bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
         verificadorDeRota = 0;
     }
-    /*
-    public void RotaDois()
-    {
-        try
-        {
-            if (forca >= 3 && agilidade >= 3)
-            {
-                rotas = 2;
-                NextChangeImage();
-            }
-            else
-            {
-                Debug.Log("Sua for�a n�o � o suficiente, escolha a outra op��o ou verifique se consegue aumentar sua pontua��o!");
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.Log("ERRO!" + e);
-        }
-
-
-    }
-    public void RotaTres()
-    {
-
-        try
-        {
-            if (orcamento >= 10)
-            {
-                rotas = 3;
-                orcamento -= 10;
-                NextChangeImage();
-            }
-            else
-            {
-                Debug.Log("Voc� n�o tenho dinheiro suficiente, escolha a outra op��o!");
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.Log("ERRO!" + e);
-        }
-
-    }
-    */
 
     //Rota 04, 17, 03...
     public void RotaOption01()
@@ -833,30 +789,18 @@ public class AventuraSoloControle : MonoBehaviour
             //rota 04
             if (bttIndex == 0)
             {
-                /** Pág. 13: O menino compra o lanche mais barato em outra lanchonete
-                  * custando R$10,00
-                */
-                if (jogador.usarOrcamento(10)) {
-                    rotas = 4;
-                    NextChangeImage();
-                } else {
-                    Debug.LogError("Você não tenho dinheiro suficiente, escolha a outra opção!");
-                }
-
-                /**
-                if (orcamento >= 10)
+                
+                if (jogador.usarOrcamento(10))
                 {
                     rotas = 4;
-                    orcamento -= 10;
-
                     NextChangeImage();
-
                 }
                 else
                 {
-                    Debug.Log("Voc� n�o tenho dinheiro suficiente, escolha a outra op��o!");
+                    textErro.GetComponent<Text>().text = "Você não tem dinheiro o suficiente!";
+                    OpenPanelErro();
                 }
-                */
+
             }
 
             else if ((bttIndex == 1 && verificadorDeRota == 9) || (bttIndex == 2 && verificadorDeRota == 17) || (bttIndex == 1 && verificadorDeRota == 12) || (bttIndex == 1 && verificadorDeRota == 4))
@@ -880,20 +824,52 @@ public class AventuraSoloControle : MonoBehaviour
                 
             }
 
-            else if (bttIndex == 3 && verificadorDeRota == 11 && jogador.agilidade >= 3)
+            else if (bttIndex == 3 && verificadorDeRota == 11)
             {
-                rotas = 5;
-                NextChangeImage();
+                
+                if (jogador.agilidade >= 3)
+                {
+                    rotas = 5;
+                    NextChangeImage();
+
+
+                }
+                else
+                {
+                    textErro.GetComponent<Text>().text = "Você não tem agilidade suficiente!";
+                    OpenPanelErro();
+
+                }
             }
             else if (bttIndex == 4 && verificadorDeRota == 5)
             {
                 rotas = 10;
                 NextChangeImage();
             }
-            else if ((bttIndex == 5 && verificadorDeRota == 18 && jogador.rapidez >= 4) || (bttIndex == 7 && verificadorDeRota == 7 && jogador.rapidez >= 4) || (bttIndex == 7 && verificadorDeRota == 16))
+            else if ((bttIndex == 5 && verificadorDeRota == 18 && jogador.rapidez >= 4) || (bttIndex == 7 && verificadorDeRota == 7 && jogador.rapidez >= 4))
             {
                 rotas = 22;
                 NextChangeImage();
+
+                if (jogador.rapidez >= 4)
+                {
+                    rotas = 2;
+                    NextChangeImage();
+
+
+
+                }
+                else if ((bttIndex == 7 && verificadorDeRota == 16))
+                {
+                    rotas = 22;
+                    NextChangeImage();
+                }
+                else
+                {
+                    textErro.GetComponent<Text>().text = "Você não tem força ou agilidade suficiente!";
+                    OpenPanelErro();
+
+                } 
             }
             else if ((bttIndex == 6 && verificadorDeRota == 22) || (bttIndex == 8 && verificadorDeRota == 24))
             {
@@ -914,22 +890,45 @@ public class AventuraSoloControle : MonoBehaviour
                     OpenPanelErro();
                 }
             }
-            //Rota 03
+            //Rota 02
             else if ((bttIndex == 3 && verificadorDeRota == 3))
             {
                 rotas = 13;
                 NextChangeImage();
             }
 
-            else if ((bttIndex == 4 && verificadorDeRota == 20 && jogador.forca >= 3) || (bttIndex == 5 && verificadorDeRota == 23 && jogador.agilidade >= 3) || (bttIndex == 5 && verificadorDeRota == 6 && jogador.forca >= 3))
+            else if ((bttIndex == 4 && verificadorDeRota == 20) || (bttIndex == 5 && verificadorDeRota == 23) || (bttIndex == 5 && verificadorDeRota == 6))
             {
-                rotas = 2;
-                NextChangeImage();
+                
+
+               if (jogador.forca >= 3 || jogador.agilidade >=3){
+                        rotas = 2;
+                        NextChangeImage();
+                  
+                    
+                }
+                else
+                {
+                    textErro.GetComponent<Text>().text = "Você não tem força ou agilidade suficiente!";
+                    OpenPanelErro();
+                
+                }
             }
-            else if (bttIndex == 6 && verificadorDeRota == 2 && jogador.usarOrcamento(15))
+            else if (bttIndex == 6 && verificadorDeRota == 2)
             {
-                rotas = 7;
-                NextChangeImage();
+                
+
+                if (jogador.usarOrcamento(15))
+                {
+                    rotas = 7;
+                    atualizarDadosNoMenuDeAtributos();
+                    NextChangeImage();
+                }
+                else
+                {
+                    textErro.GetComponent<Text>().text = "Você não tem dinheiro o suficiente!";
+                    OpenPanelErro();
+                }
             }
 
         }
@@ -939,51 +938,7 @@ public class AventuraSoloControle : MonoBehaviour
         }
 
     }
-    /*
-   
-    public void RotaQuinta()
-    {
-        try
-        {
-            if (agilidade >= 3)
-            {
-                rotas = 5;
-                NextChangeImage();
-            }
-            else
-            {
-                Debug.Log("Sua for�a n�o � o suficiente, escolha a outra op��o ou verifique se consegue aumentar sua pontua��o!");
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.Log("ERRO!" + e);
-        }
-    }
 
-    public void RotaSete()
-    {     
-
-        try
-        {
-            if (orcamento >= 15)
-            {
-                rotas = 7;
-                orcamento -= 15;
-                NextChangeImage();
-            }
-            else
-            {
-                Debug.Log("Voc� n�o tenho dinheiro suficiente, escolha a outra op��o!");
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.Log("ERRO!" + e);
-        }
-
-    }
-    */
     //Rota 09, 08, 11...
     public void RotaOption02()
     {
@@ -992,30 +947,21 @@ public class AventuraSoloControle : MonoBehaviour
             //rota 09
             if (bttIndex == 0)
             {
-                /** Pág. 19: O personagem compra um lanche que custa o olho da cara (R$16,00)
-                  * com correção monetária e a crise deve custar uns R$40,00 a R$50,00 
-                */
-                if (jogador.usarOrcamento(16)){
-                    rotas = 9;
-                    //sprites = null;
-                    atualizarDadosNoMenuDeAtributos();
+                
 
+                if (jogador.usarOrcamento(16))
+                {
+                    rotas = 9;
+                    atualizarDadosNoMenuDeAtributos();
                     NextChangeImage();
-                }else{
-                    // Definir o comportamento do jogo
-                    Debug.LogError("Voc� n�o tenho dinheiro suficiente, escolha a outra op��o!");
+                }
+                else
+                {
+                    textErro.GetComponent<Text>().text = "Você não tem dinheiro o suficiente!";
+                    OpenPanelErro();
                 }
 
-                // if (orcamento >- 16)
-                // {
-                //     rotas = 9;
-                //     orcamento -= 16;
-                //     NextChangeImage();
-                // }
-                // else{
-                //     // Definir o comportamento do jogo
-                //     Debug.LogError("Voc� n�o tenho dinheiro suficiente, escolha a outra op��o!");
-                // }
+
 
             }
          
@@ -1041,10 +987,23 @@ public class AventuraSoloControle : MonoBehaviour
                 rotas = 17;
                 NextChangeImage();
             }
-            else if (bttIndex == 4 && verificadorDeRota == 5 && ((jogador.forca+jogador.agilidade) >= 6))
+            else if (bttIndex == 4 && verificadorDeRota == 5)
             {
-                rotas = 18;
-                NextChangeImage();
+                
+
+                if ((jogador.forca + jogador.agilidade) >= 6)
+                {
+                    rotas = 18;
+                    NextChangeImage();
+
+
+                }
+                else
+                {
+                    textErro.GetComponent<Text>().text = "A soma da força + agilidade não é o suficiente!";
+                    OpenPanelErro();
+
+                }
             }
             else if ((bttIndex == 5 && verificadorDeRota == 18) || (bttIndex == 7 && verificadorDeRota == 7))
             {
@@ -1086,10 +1045,23 @@ public class AventuraSoloControle : MonoBehaviour
                 rotas = 16;
                 NextChangeImage();
             }
-            else if (bttIndex == 7 && verificadorDeRota == 16 && ((jogador.forca + jogador.agilidade) >= 6))
+            else if (bttIndex == 7 && verificadorDeRota == 16)
             {
-                rotas = 24;
-                NextChangeImage();
+                
+
+                if ((jogador.forca + jogador.agilidade) >= 6)
+                {
+                    rotas = 24;
+                    NextChangeImage();
+
+
+                }
+                else
+                {
+                    textErro.GetComponent<Text>().text = "A soma da força + agilidade não é o suficiente!";
+                    OpenPanelErro();
+
+                }
             }
 
 
@@ -1118,68 +1090,7 @@ public class AventuraSoloControle : MonoBehaviour
         }
         
     }
-    /* 
-    public void RotaDezoito()
-    {
-        try
-        {
-            if ((forca + agilidade ) >= 6)
-            {
-                rotas = 18;
-                NextChangeImage();
-            }
-            else
-            {
-                Debug.Log("A soma da for�a + agilidade n�o � o suficiente, escolha a outra op��o ou verifique se consegue aumentar sua pontua��o!");
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.Log("ERRO!" + e);
-        }
-    }
-
-    public void RotaVinteDois()
-    {
-        try
-        {
-            if (rapidez >= 4)
-            {
-                rotas = 22;
-                NextChangeImage();
-            }
-            else
-            {
-                Debug.Log("Sua rapidez n�o � o suficiente, escolha a outra op��o ou verifique se consegue aumentar sua pontua��o!");
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.Log("ERRO!" + e);
-        }
-
-    }
-
-    public void RotaVinteQuatro()
-    {
-        try
-        {
-            if ((forca + agilidade) >= 6)
-            {
-                rotas = 24;
-                NextChangeImage();
-            }
-            else
-            {
-                Debug.Log("A soma da for�a + agilidade n�o � o suficiente, escolha a outra op��o ou verifique se consegue aumentar sua pontua��o!");
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.Log("ERRO!" + e);
-        }
-    }
-    */
+  
     public void AddPontosForca()
     {
         // if (pontoBonus >= 1 && pontoBonus < 4)
