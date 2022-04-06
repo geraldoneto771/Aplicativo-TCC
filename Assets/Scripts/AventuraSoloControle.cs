@@ -23,14 +23,15 @@ public class AventuraSoloControle : MonoBehaviour
     public RectTransform bttNext, bttOption01, bttOption02, bttOption03;
     //textos
     public GameObject textOrcamento, textSaude, textForca, textAgilidade, textRapidez, textBonus;
-    
-    
+
+    public GameObject PanelErro;
+    public GameObject textErro;
     //Pontuação
     //int forca = 3, agilidade = 2, rapidez = 3, saude = 5, pontoBonus = 3;
-    
+
     //float orcamento = 25;
-    
-    
+
+
     //Verificador de grupo de botões
     int bttIndex;
 
@@ -864,10 +865,19 @@ public class AventuraSoloControle : MonoBehaviour
                 NextChangeImage();
             }
 
-            else if (bttIndex == 2 && verificadorDeRota == 8 && jogador.usarOrcamento(10))
+            else if (bttIndex == 2 && verificadorDeRota == 8)
             {
-                rotas = 3;
-                NextChangeImage();
+                if (jogador.usarOrcamento(10))
+                {
+                    rotas = 3;
+                    NextChangeImage();
+                }
+                else
+                {
+                    textErro.GetComponent<Text>().text = "Você não tem dinheiro o suficiente!";
+                    OpenPanelErro();
+                }
+                
             }
 
             else if (bttIndex == 3 && verificadorDeRota == 11 && jogador.agilidade >= 3)
@@ -891,10 +901,18 @@ public class AventuraSoloControle : MonoBehaviour
                 NextChangeImage();
             }
             //Rota 03
-            else if ((bttIndex == 2 && verificadorDeRota == 8 && jogador.usarOrcamento(10)))
+            else if ((bttIndex == 2 && verificadorDeRota == 8 ))
             {
-                rotas = 3;
-                NextChangeImage();
+                if (jogador.usarOrcamento(10))
+                {
+                    rotas = 3;
+                    NextChangeImage();
+                }
+                else
+                {
+                    textErro.GetComponent<Text>().text = "Você não tem dinheiro o suficiente!";
+                    OpenPanelErro();
+                }
             }
             //Rota 03
             else if ((bttIndex == 3 && verificadorDeRota == 3))
@@ -1230,5 +1248,23 @@ public class AventuraSoloControle : MonoBehaviour
         textAgilidade.GetComponent<Text>().text = jogador.agilidade.ToString();
         textRapidez.GetComponent<Text>().text = jogador.rapidez.ToString();
         textBonus.GetComponent<Text>().text = jogador.bonus.ToString();
+    }
+
+    public void OpenPanelErro()
+    {
+        Debug.Log(jogador.nome);
+        bool isActive = PanelErro.activeSelf;
+        if (PanelErro != null)
+        {
+            PanelErro.SetActive(!isActive);
+
+        }
+        else
+        {
+            PanelErro.SetActive(isActive);
+
+        }
+
+
     }
 }
