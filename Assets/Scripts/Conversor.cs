@@ -24,6 +24,8 @@ public class Conversor : MonoBehaviour{
     private double valor, resultado;
     public InputField inputMoney;
     public GameObject textTotalCofre;
+    public GameObject textMensagemErro;
+
 
     public void HandleInputData(int val){
         if (val == 0){
@@ -60,6 +62,7 @@ public class Conversor : MonoBehaviour{
         if(verificador == 0)
         {
             print("Selecione uma moeda");
+            textMensagemErro.GetComponent<Text>().text = "Selecione uma moeda!";
         }
 
         if(verificador == 1)
@@ -91,6 +94,7 @@ public class Conversor : MonoBehaviour{
                             if ((double.Parse(inputMoney.text)) <= 0)
                             {
                                 Debug.Log("Entre com um valor maior que zero!");
+                                textMensagemErro.GetComponent<Text>().text = "Entre com um valor maior que zero!";
                             }
                             else if ((double.Parse(inputMoney.text)) > 0)
                             {
@@ -99,13 +103,14 @@ public class Conversor : MonoBehaviour{
 
                                 resultado = valor / dolar;
                                 textTotalCofre.GetComponent<Text>().text = string.Format(CultureInfo.GetCultureInfo("en-US"), "{0:C}", resultado);
-
+                                textMensagemErro.GetComponent<Text>().text = "";
 
                             }
                         }
                         catch (Exception e)
                         {
                             Debug.Log("Entre com um valor!" + e);
+                            textMensagemErro.GetComponent<Text>().text = "Entre com um valor!";
                         }
 
 
@@ -157,6 +162,7 @@ public class Conversor : MonoBehaviour{
                             if ((double.Parse(inputMoney.text)) <= 0)
                             {
                                 Debug.Log("Entre com um valor maior que zero!");
+                                textMensagemErro.GetComponent<Text>().text = "Entre com um valor maior que zero!";
                             }
                             else if ((double.Parse(inputMoney.text)) > 0)
                             {
@@ -165,13 +171,14 @@ public class Conversor : MonoBehaviour{
 
                                 resultado = valor / dolar;
                                 textTotalCofre.GetComponent<Text>().text = string.Format(CultureInfo.GetCultureInfo("fr-FR"), "{0:C}", resultado);
-
+                                textMensagemErro.GetComponent<Text>().text = "";
 
                             }
                         }
                         catch (Exception e)
                         {
                             Debug.Log("Entre com um valor!" +  e);
+                            textMensagemErro.GetComponent<Text>().text = "Entre com um valor!";
                         }
 
 
@@ -224,6 +231,7 @@ public class Conversor : MonoBehaviour{
                             if ((double.Parse(inputMoney.text)) <= 0)
                             {
                                 Debug.Log("Entre com um valor maior que zero!");
+                                textMensagemErro.GetComponent<Text>().text = "Entre com um valor maior que zero!";
                             }
                             else if ((double.Parse(inputMoney.text)) > 0)
                             {
@@ -232,13 +240,14 @@ public class Conversor : MonoBehaviour{
 
                                 resultado = valor / dolar;
                                 textTotalCofre.GetComponent<Text>().text = string.Format(CultureInfo.GetCultureInfo("en-GB"), "{0:C}", resultado);
-
+                                textMensagemErro.GetComponent<Text>().text = "";
 
                             }
                         }
                         catch (Exception e)
                         {
                             Debug.Log("Entre com um valor!" + e);
+                            textMensagemErro.GetComponent<Text>().text = "Entre com um valor!";
                         }
 
 
@@ -291,6 +300,7 @@ public class Conversor : MonoBehaviour{
                             if ((double.Parse(inputMoney.text)) <= 0)
                             {
                                 Debug.Log("Entre com um valor maior que zero!");
+                                textMensagemErro.GetComponent<Text>().text = "Entre com um valor maior que zero!";
                             }
                             else if ((double.Parse(inputMoney.text)) > 0)
                             {
@@ -299,13 +309,14 @@ public class Conversor : MonoBehaviour{
 
                                 resultado = valor / dolar;
                                 textTotalCofre.GetComponent<Text>().text = string.Format(CultureInfo.GetCultureInfo("ja-JP"), "{0:C}", resultado);
-
+                                textMensagemErro.GetComponent<Text>().text = "";
 
                             }
                         }
                         catch (Exception e)
                         {
                             Debug.Log("Entre com um valor!" + e);
+                            textMensagemErro.GetComponent<Text>().text = "Entre com um valor!";
                         }
 
 
@@ -358,6 +369,7 @@ public class Conversor : MonoBehaviour{
                             if ((double.Parse(inputMoney.text)) <= 0)
                             {
                                 Debug.Log("Entre com um valor maior que zero!");
+                                textMensagemErro.GetComponent<Text>().text = "Entre com um valor maior que zero!";
                             }
                             else if ((double.Parse(inputMoney.text)) > 0)
                             {
@@ -366,13 +378,14 @@ public class Conversor : MonoBehaviour{
 
                                 resultado = valor / dolar;
                                 textTotalCofre.GetComponent<Text>().text = string.Format(CultureInfo.GetCultureInfo("es-AR"), "{0:C}", resultado);
-
+                                textMensagemErro.GetComponent<Text>().text = "";
 
                             }
                         }
                         catch (Exception e)
                         {
                             Debug.Log("Entre com um valor!" + e);
+                            textMensagemErro.GetComponent<Text>().text = "Entre com um valor!";
                         }
 
 
