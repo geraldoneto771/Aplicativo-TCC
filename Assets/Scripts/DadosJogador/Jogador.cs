@@ -75,4 +75,13 @@ public class Jogador : ScriptableObject {
         this.saldoCofre = 0;
         return 0;
     }
+
+    public void restaurarDados()
+    {
+        this.saldoCofre = 0;
+        this.orcamento = 25.0f;
+        this.bonus = 3;
+        this.rapidez = 3;
+        this.saude = 5;
+    }
 }

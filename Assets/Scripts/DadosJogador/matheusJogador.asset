@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: matheusJogador
   m_EditorClassIdentifier: 
   nome: Gabriel
-  bonus: 0
-  saude: 3
-  forca: 3
+  bonus: 3
+  saude: 5
+  forca: 4
   agilidade: 7
-  rapidez: 5
-  orcamento: 7
+  rapidez: 3
+  orcamento: 25
   personalidade: Loren Ipsum blaldksmlsdk
   conhecimento: sdfsldkfnsldkfnl
   nivel: 0
