@@ -83,5 +83,7 @@ public class Jogador : ScriptableObject {
         this.bonus = 3;
         this.rapidez = 3;
         this.saude = 5;
+        this.forca = 3;
+        this.agilidade = 2;
     }
 }
