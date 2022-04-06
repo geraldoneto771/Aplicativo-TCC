@@ -14,6 +14,7 @@ public class Cofrinho : MonoBehaviour{
     public GameObject textTotalCofre;
     public GameObject PanelTemCerteza;
     public GameObject PanelTemCertezaCofre;
+    public GameObject textMensagemErro;
 
     private void Start() {
         textTotalCofre.GetComponent<Text>().text = jogador.getSaldoCofre().ToString();
@@ -61,6 +62,8 @@ public class Cofrinho : MonoBehaviour{
             if ((double.Parse(inputMoney.text)) <= 0)
             {
                 Debug.Log("Entre com um valor maior que zero!");
+                textMensagemErro.GetComponent<Text>().text = "Entre com um valor maior que zero!";
+                PanelTemCerteza.SetActive(!isActive);
             }
             else if ((double.Parse(inputMoney.text)) > 0)
             {
@@ -68,12 +71,13 @@ public class Cofrinho : MonoBehaviour{
                 // valor += double.Parse(inputMoney.text);
                 
                 textTotalCofre.GetComponent<Text>().text = "R$" + jogador.addDinheiroCofre(double.Parse(inputMoney.text));
+                textMensagemErro.GetComponent<Text>().text = "";
 
-                
                 if (PanelTemCerteza != null)
                 {
                     PanelTemCerteza.SetActive(!isActive);
                     inputMoney.text = "";
+                    textMensagemErro.GetComponent<Text>().text = "";
                 }
                 else
                 {
@@ -86,6 +90,8 @@ public class Cofrinho : MonoBehaviour{
         catch (Exception e)
         {
             Debug.Log("Entre com um valor! "+e);
+            textMensagemErro.GetComponent<Text>().text = "Entre com um valor!";
+            PanelTemCerteza.SetActive(!isActive);
         }
     }
 
