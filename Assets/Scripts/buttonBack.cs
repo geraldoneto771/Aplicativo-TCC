@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 
 public class buttonBack : MonoBehaviour{
+    
+    public GameObject bttBack;
     public int sceneIndex = 0;
         
     /*int sceneIndex;
@@ -17,8 +19,21 @@ public class buttonBack : MonoBehaviour{
     }
     */
 
+    public void backScene(){
+        Debug.Log("Chamado");
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        
+        if (sceneIndex > 3){
+            Debug.Log("If 1");
+            SceneManager.LoadScene(1);
+        }else if(sceneIndex > 0){
+            Debug.Log("If 2");
+            SceneManager.LoadScene(0);
+        }
+    }
     
     // Update is called once per frame
+ 
     void Update(){
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         // print(SceneManager.GetActiveScene().buildIndex is int);
