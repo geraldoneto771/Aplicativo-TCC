@@ -7,4 +7,9 @@ public class buttonControllNavigation : MonoBehaviour{
     public void LoadScene(string name){
         SceneManager.LoadScene(name);      
     }
+
+    public void Sair()
+    {
+        Application.Quit();
+    }
 }
