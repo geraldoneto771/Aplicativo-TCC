@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Gabriel
   bonus: 3
-  saude: 5
-  forca: 3
-  agilidade: 2
+  saude: 3
+  forca: 2
+  agilidade: 3
   rapidez: 3
-  orcamento: 25
+  orcamento: 23
   personalidade: Loren Ipsum blaldksmlsdk
   conhecimento: sdfsldkfnsldkfnl
   nivel: 0

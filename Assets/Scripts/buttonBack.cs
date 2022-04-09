@@ -20,7 +20,7 @@ public class buttonBack : MonoBehaviour{
     */
 
     public void backScene(){
-        Debug.Log("Chamado");
+        print("Chamado");
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         
         if (sceneIndex > 3){

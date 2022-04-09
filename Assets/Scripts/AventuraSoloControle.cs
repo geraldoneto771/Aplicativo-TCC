@@ -12,8 +12,9 @@ public class AventuraSoloControle : MonoBehaviour
     // Dados do personagem
     public Jogador jogador;
     //Vetor de imagens contendo as cenas da aventura
+    public Image cenasDoJogo;
     public Sprite[] sprites;
-    SpriteRenderer spriteRender;
+    //SpriteRenderer spriteRender;
     //Verificador de rota
     int verificadorDeRota;
     int rotas;
@@ -39,20 +40,22 @@ public class AventuraSoloControle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
         atualizarDadosNoMenuDeAtributos();
         
         //Renderizando os sprites no vetor
         sprites = Resources.LoadAll("Cenas Decisão 01 - Inicio", typeof(Sprite)).Cast<Sprite>().ToArray();
-        spriteRender = GetComponent<SpriteRenderer>();
-        spriteRender.sprite = sprites[1];
+        //spriteRender = GetComponent<SpriteRenderer>();
+        //spriteRender.sprite = sprites[1];
+        cenasDoJogo = this.GetComponent<Image>();
+        cenasDoJogo.sprite = sprites[1];
         //Inicializando as variaveis de verifição
         verificadorDeRota = 0;
         index = 1;
         rotas = 0;
         bttIndex = 0;
         //Posicionando o botão de continuar na tela
-        bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+        bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
     }
     //
     void Update()
@@ -83,244 +86,244 @@ public class AventuraSoloControle : MonoBehaviour
         else if (index == 7 && verificadorDeRota == 9)
         {
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Comprar o livro sobre o museu e a casa";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Seguir o Homem";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Comprar o livro sobre o museu e a casa";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Seguir o Homem";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(495, -281), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(-501, -281), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-1274, 935), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-306, 935), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
         else if (index == 8 && verificadorDeRota == 8)
         {
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Se você tem dinheiro, comprar livro";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Se não tem dinheiro, ir para casa mesmo assim";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se você tem dinheiro, comprar livro";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se não tem dinheiro, ir para casa mesmo assim";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(495, -281), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(-501, -281), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-1222, 925), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-515, 925), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
         else if (index == 3 && verificadorDeRota == 11)
         {
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Se a sua agilidade é 3 ou mais";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Se a sua agilidade é 2 ou menos";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se a sua agilidade é 3 ou mais";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se a sua agilidade é 2 ou menos";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(495, -330), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(-501, -330), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-480, 914), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-1236, 914), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
 
         else if (index == 4 && verificadorDeRota == 5)
         {
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Decidir fugir";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Enfrentar! Se a soma da sua Força com sua Agilidade for 6 ou mais";
-            GameObject.Find("BttOption03").GetComponentInChildren<Text>().text = "Enfrentar! Se a soma da sua Força com a sua Agilidade for 5 ou menos";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Decidir fugir";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Enfrentar! Se a soma da sua Força com sua Agilidade for 6 ou mais";
+            GameObject.Find("BttOption03").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Enfrentar! Se a soma da sua Força com a sua Agilidade for 5 ou menos";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(-667, -417), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(0, -296), 0.25f);
-            bttOption03.DOAnchorPos(new Vector2(667, -417), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-1431, 998), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-850, 894), 0.25f);
+            bttOption03.DOAnchorPos(new Vector2(-478, 998), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
         else if (index == 5 && verificadorDeRota == 18)
         {
             //Alterando o texto dos botões
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Se a sua rapidez é 4 ou mais";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Se a sua rapidez é 3 ou menos";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se a sua rapidez é 4 ou mais";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se a sua rapidez é 3 ou menos";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(495, -330), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(-501, -330), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-480, 914), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-1236, 914), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
         else if (index == 4 && verificadorDeRota == 22)
         {
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Se quiser usar o dinheiro para pagar dívidas e aproveitar para comprar uma casa nova bem maior, três carros, móveis novos e TV de plasma";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Se quiser usar o dinheiro para pagar dívidas, reformar a casa, guardando mais da metade para investir";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se quiser usar o dinheiro para pagar dívidas e aproveitar para comprar uma \r\ncasa nova bem maior, três carros, móveis novos e TV de plasma";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se quiser usar o dinheiro para pagar dívidas, reformar a casa, guardando mais da metade para investir";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(0, -334), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(0, -446), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-1035, 1008), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-860, 892), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
         else if (index == 3 && verificadorDeRota == 17)
         {
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Ir para a loja comprar o livro sobre o museu e a casa";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Não perder tempo com isso e correr direto para a casa";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Ir para a loja comprar o livro sobre o museu e a casa";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Não perder tempo com isso e correr direto para a casa";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(-654, -306), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(654, -306), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-814, 1436), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-536, 945), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
 
         else if (index == 7 && verificadorDeRota == 12)
         {
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Comprar o livro sobre o museu e a casa";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Seguir o Homem";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Comprar o livro sobre o museu e a casa";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Seguir o Homem";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(495, -281), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(-501, -281), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-1274, 935), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-306, 935), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
         else if (index == 7 && verificadorDeRota == 4)
         {
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Comprar o livro sobre o museu e a casa";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Seguir o Homem";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Comprar o livro sobre o museu e a casa";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Seguir o Homem";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(495, -281), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(-501, -281), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-1274, 935), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-306, 935), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
         else if (index == 4 && verificadorDeRota == 3)
         {
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Tentar escalar a goiabeira para entrar no pomar";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Seguir para o portãozinho";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Tentar escalar a goiabeira para entrar no pomar";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Seguir para o portãozinho";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(495, -281), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(-501, -281), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-1138, 915), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-411, 915), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
         else if (index == 3 && verificadorDeRota == 13)
         {
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Se a sua agilidade é 3 ou mais";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Se a sua agilidade é 2 ou menos";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se a sua agilidade é 3 ou mais";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se a sua agilidade é 2 ou menos";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(495, -330), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(-501, -330), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-480, 914), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-1236, 914), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
         else if (index == 6 && verificadorDeRota == 6)
         {
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Se a sua força é 3 ou mais";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Se a sua força é 2 ou menos";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se a sua força é 3 ou mais";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se a sua força é 2 ou menos";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(495, -330), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(-501, -330), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-1264, 914), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-463, 914), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
         else if (index == 3 && verificadorDeRota == 20)
         {
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Se a sua força é 3 ou mais";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Se a sua força é 2 ou menos";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se a sua força é 3 ou mais";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se a sua força é 2 ou menos";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(495, -330), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(-501, -330), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-1264, 914), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-463, 914), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
         else if (index == 3 && verificadorDeRota == 23)
         {
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Se a sua agilidade é 3 ou mais";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Se a sua agilidade é 2 ou menos";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se a sua agilidade é 3 ou mais";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se a sua agilidade é 2 ou menos";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(495, -330), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(-501, -330), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-480, 914), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-1236, 914), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
         else if (index == 4 && verificadorDeRota == 2)
         {
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Se tiver comprado a pá";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Se não tiver comprado";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se tiver comprado a pá";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se não tiver comprado";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(495, -330), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(-501, -330), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-1326, 999), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-379, 999), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
         else if (index == 5 && verificadorDeRota == 7)
         {
             //Alterando o texto dos botões
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Se a sua rapidez é 4 ou mais";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Se a sua rapidez é 3 ou menos";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se a sua rapidez é 4 ou mais";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se a sua rapidez é 3 ou menos";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(495, -330), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(-501, -330), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-480, 914), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-1236, 914), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
         else if (index == 4 && verificadorDeRota == 16)
         {
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Decidir fugir";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Enfrentar! Se a soma da sua Força com sua Agilidade for 6 ou mais";
-            GameObject.Find("BttOption03").GetComponentInChildren<Text>().text = "Enfrentar! Se a soma da sua Força com a sua Agilidade for 5 ou menos";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Decidir fugir";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Enfrentar! Se a soma da sua Força com sua Agilidade for 6 ou mais";
+            GameObject.Find("BttOption03").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Enfrentar! Se a soma da sua Força com a sua Agilidade for 5 ou menos";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(-667, -417), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(0, -296), 0.25f);
-            bttOption03.DOAnchorPos(new Vector2(667, -417), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-1431, 998), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-850, 894), 0.25f);
+            bttOption03.DOAnchorPos(new Vector2(-478, 998), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
         else if (index == 5 && verificadorDeRota == 24)
         {
             //Alterando o texto dos botões
-            GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Se quiser usar o dinheiro para pagar dívidas e aproveitar para comprar uma casa nova bem maior, três carros, móveis novos e TV de plasma";
-            GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Se quiser usar o dinheiro para pagar dívidas, reformar a casa, guardando mais da metade para investir";
+            GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se quiser usar o dinheiro para pagar dívidas e aproveitar para comprar uma \r\ncasa nova bem maior, três carros, móveis novos e TV de plasma";
+            GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se quiser usar o dinheiro para pagar dívidas, reformar a casa, guardando mais da metade para investir";
 
             //Setando os botões de escolha na tela
-            bttOption01.DOAnchorPos(new Vector2(0, -334), 0.25f);
-            bttOption02.DOAnchorPos(new Vector2(0, -446), 0.25f);
+            bttOption01.DOAnchorPos(new Vector2(-1035, 1008), 0.25f);
+            bttOption02.DOAnchorPos(new Vector2(-860, 892), 0.25f);
 
             //setando o botão de continuar fora da tela
-            bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+            bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
 
         if (index == 3 && verificadorDeRota == 6)
@@ -345,9 +348,9 @@ public class AventuraSoloControle : MonoBehaviour
         switch (rotas)
         {
             case 1:
-                GameObject.Find("BttOption02").GetComponentInChildren<Text>().text = "Acompanhar os colegas";
-                GameObject.Find("BttOption01").GetComponentInChildren<Text>().text = "Verificar o quiosque";
-                GameObject.Find("BttOption03").GetComponentInChildren<Text>().text = "Comer lanche que seus pais prepararam";
+                GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Acompanhar os colegas";
+                GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Verificar o quiosque";
+                GameObject.Find("BttOption03").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Comer lanche que seus pais prepararam";
                 
                 InicioGame();
                 break;
@@ -356,7 +359,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 02", typeof(Sprite)).Cast<Sprite>().ToArray();
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -372,7 +375,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 03", typeof(Sprite)).Cast<Sprite>().ToArray();
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -388,7 +391,7 @@ public class AventuraSoloControle : MonoBehaviour
                 sprites = Resources.LoadAll("Cenas Decisão 04", typeof(Sprite)).Cast<Sprite>().ToArray();
                 //spriteRender.sprite = sprites[index];
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -402,7 +405,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 05", typeof(Sprite)).Cast<Sprite>().ToArray();
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -416,7 +419,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 06", typeof(Sprite)).Cast<Sprite>().ToArray();
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -431,7 +434,7 @@ public class AventuraSoloControle : MonoBehaviour
                 sprites = Resources.LoadAll("Cenas Decisão 07", typeof(Sprite)).Cast<Sprite>().ToArray();
                 //spriteRender.sprite = sprites[0];
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(530, 2624), 0.25f);
                 verificadorDeRota = 7;
@@ -445,7 +448,7 @@ public class AventuraSoloControle : MonoBehaviour
                 sprites = Resources.LoadAll("Cenas Decisão 08", typeof(Sprite)).Cast<Sprite>().ToArray();
                 //spriteRender.sprite = sprites[0];
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(530, 2624), 0.25f);
                 verificadorDeRota = 8;
@@ -458,8 +461,8 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 09", typeof(Sprite)).Cast<Sprite>().ToArray();
                 //spriteRender.sprite = sprites[index];
-                
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -474,7 +477,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 10", typeof(Sprite)).Cast<Sprite>().ToArray();
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -488,7 +491,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 11", typeof(Sprite)).Cast<Sprite>().ToArray();
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -504,7 +507,7 @@ public class AventuraSoloControle : MonoBehaviour
                 sprites = Resources.LoadAll("Cenas Decisão 12", typeof(Sprite)).Cast<Sprite>().ToArray();
                 //spriteRender.sprite = sprites[index];
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -520,7 +523,7 @@ public class AventuraSoloControle : MonoBehaviour
                 sprites = Resources.LoadAll("Cenas Decisão 13", typeof(Sprite)).Cast<Sprite>().ToArray();
                 //spriteRender.sprite = sprites[index];
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -535,7 +538,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 14", typeof(Sprite)).Cast<Sprite>().ToArray();
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -549,7 +552,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 15", typeof(Sprite)).Cast<Sprite>().ToArray();
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -564,7 +567,7 @@ public class AventuraSoloControle : MonoBehaviour
                 sprites = Resources.LoadAll("Cenas Decisão 16", typeof(Sprite)).Cast<Sprite>().ToArray();
                 //spriteRender.sprite = sprites[0];
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(530, 2624), 0.25f);
                 verificadorDeRota = 16;
@@ -578,7 +581,7 @@ public class AventuraSoloControle : MonoBehaviour
                 sprites = Resources.LoadAll("Cenas Decisão 17", typeof(Sprite)).Cast<Sprite>().ToArray();
                 //spriteRender.sprite = sprites[0];
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(530, 2624), 0.25f);
                 verificadorDeRota = 17;
@@ -591,7 +594,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 18", typeof(Sprite)).Cast<Sprite>().ToArray();
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -605,7 +608,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 19", typeof(Sprite)).Cast<Sprite>().ToArray();
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -620,7 +623,7 @@ public class AventuraSoloControle : MonoBehaviour
                 sprites = Resources.LoadAll("Cenas Decisão 20", typeof(Sprite)).Cast<Sprite>().ToArray();
                 //spriteRender.sprite = sprites[index];
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -634,7 +637,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 21", typeof(Sprite)).Cast<Sprite>().ToArray();
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -647,7 +650,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 22", typeof(Sprite)).Cast<Sprite>().ToArray();
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -661,7 +664,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 23", typeof(Sprite)).Cast<Sprite>().ToArray();
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -675,7 +678,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 24", typeof(Sprite)).Cast<Sprite>().ToArray();
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -690,7 +693,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 25", typeof(Sprite)).Cast<Sprite>().ToArray();
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -703,7 +706,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 sprites = Resources.LoadAll("Cenas Decisão 26", typeof(Sprite)).Cast<Sprite>().ToArray();
 
-                bttNext.DOAnchorPos(new Vector2(-142, 77), 0.25f);
+                bttNext.DOAnchorPos(new Vector2(1724, -922), 0.25f);
                 bttOption01.DOAnchorPos(new Vector2(-703, 2601), 0.25f);
                 bttOption02.DOAnchorPos(new Vector2(-103, 2595), 0.25f);
                 bttOption03.DOAnchorPos(new Vector2(530, 2624), 0.25f);
@@ -713,8 +716,8 @@ public class AventuraSoloControle : MonoBehaviour
                 break;
                 
         }
-        spriteRender.sprite = sprites[index];
-
+        //spriteRenderer.sprite = sprites[index];
+        cenasDoJogo.sprite = sprites[index];
 
     }
 
@@ -772,11 +775,11 @@ public class AventuraSoloControle : MonoBehaviour
 
     public void InicioGame()
     {
-
-        bttOption01.DOAnchorPos(new Vector2(-571, 154), 0.25f);
-        bttOption02.DOAnchorPos(new Vector2(601, 270), 0.25f);
-        bttOption03.DOAnchorPos(new Vector2(379, -299), 0.25f);
-        bttNext.DOAnchorPos(new Vector2(1204, -912), 0.25f);
+        bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
+        bttOption01.DOAnchorPos(new Vector2(-1441, 1337), 0.25f);
+        bttOption02.DOAnchorPos(new Vector2(-233, 1471), 0.25f);
+        bttOption03.DOAnchorPos(new Vector2(-311, 1042), 0.25f);
+        
         verificadorDeRota = 0;
     }
 
