@@ -856,7 +856,7 @@ public class AventuraSoloControle : MonoBehaviour
 
                 if (jogador.rapidez >= 4)
                 {
-                    rotas = 2;
+                    rotas = 22;
                     NextChangeImage();
 
 
@@ -869,7 +869,7 @@ public class AventuraSoloControle : MonoBehaviour
                 }
                 else
                 {
-                    textErro.GetComponent<Text>().text = "Você não tem força ou agilidade suficiente!";
+                    textErro.GetComponent<Text>().text = "Você não tem rapidez suficiente!";
                     OpenPanelErro();
 
                 } 
