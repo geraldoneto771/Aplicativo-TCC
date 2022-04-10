@@ -11,6 +11,7 @@ public class AventuraSoloControle : MonoBehaviour
 {
     // Dados do personagem
     public Jogador jogador;
+    private SceneLoader loader;
     //Vetor de imagens contendo as cenas da aventura
     public Image cenasDoJogo;
     public Sprite[] sprites;
@@ -728,38 +729,39 @@ public class AventuraSoloControle : MonoBehaviour
         
         if (index == 6 && verificadorDeRota == 14)
         {
-            //Carregar cena de acordo com seu nome
-            SceneManager.LoadScene(name);
+            
+            SceneLoader.Instance.LoadSceneAsync(name);
+            
         }
         else if (index == 5 && verificadorDeRota == 10)
         {
             //Carregar cena de acordo com seu nome
-            SceneManager.LoadScene(name);
+            SceneLoader.Instance.LoadSceneAsync(name);
         }
         else if (index == 8 && verificadorDeRota == 15)
         {
             //Carregar cena de acordo com seu nome
-            SceneManager.LoadScene(name);
+            SceneLoader.Instance.LoadSceneAsync(name);
         }
         else if (index == 6 && verificadorDeRota == 19)
         {
             //Carregar cena de acordo com seu nome
-            SceneManager.LoadScene(name);
+            SceneLoader.Instance.LoadSceneAsync(name);
         }
         else if (index == 4 && verificadorDeRota == 25)
         {
             //Carregar cena de acordo com seu nome
-            SceneManager.LoadScene(name);
+            SceneLoader.Instance.LoadSceneAsync(name);
         }
         else if (index == 6 && verificadorDeRota == 26)
         {
             //Carregar cena de acordo com seu nome
-            SceneManager.LoadScene(name);
+            SceneLoader.Instance.LoadSceneAsync(name);
         }
         else if (index == 5 && verificadorDeRota == 21)
         {
             //Carregar cena de acordo com seu nome
-            SceneManager.LoadScene(name);
+            SceneLoader.Instance.LoadSceneAsync(name);
         }
 
 
