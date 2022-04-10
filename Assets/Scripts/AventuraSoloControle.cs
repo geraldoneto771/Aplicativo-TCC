@@ -726,37 +726,37 @@ public class AventuraSoloControle : MonoBehaviour
     public void LoadScene(string name)
     {
         
-        if (index == 5 && verificadorDeRota == 14)
+        if (index == 6 && verificadorDeRota == 14)
         {
             //Carregar cena de acordo com seu nome
             SceneManager.LoadScene(name);
         }
-        else if (index == 4 && verificadorDeRota == 10)
+        else if (index == 5 && verificadorDeRota == 10)
         {
             //Carregar cena de acordo com seu nome
             SceneManager.LoadScene(name);
         }
-        else if (index == 7 && verificadorDeRota == 15)
+        else if (index == 8 && verificadorDeRota == 15)
         {
             //Carregar cena de acordo com seu nome
             SceneManager.LoadScene(name);
         }
-        else if (index == 5 && verificadorDeRota == 19)
+        else if (index == 6 && verificadorDeRota == 19)
         {
             //Carregar cena de acordo com seu nome
             SceneManager.LoadScene(name);
         }
-        else if (index == 3 && verificadorDeRota == 25)
+        else if (index == 4 && verificadorDeRota == 25)
         {
             //Carregar cena de acordo com seu nome
             SceneManager.LoadScene(name);
         }
-        else if (index == 5 && verificadorDeRota == 26)
+        else if (index == 6 && verificadorDeRota == 26)
         {
             //Carregar cena de acordo com seu nome
             SceneManager.LoadScene(name);
         }
-        else if (index == 4 && verificadorDeRota == 21)
+        else if (index == 5 && verificadorDeRota == 21)
         {
             //Carregar cena de acordo com seu nome
             SceneManager.LoadScene(name);
