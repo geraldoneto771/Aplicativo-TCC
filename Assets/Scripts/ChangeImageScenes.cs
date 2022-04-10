@@ -31,7 +31,7 @@ public class ChangeImageScenes : MonoBehaviour
         if (index >= 26)
         {
             //Carregar cena de acordo com seu nome
-            SceneManager.LoadScene(name);
+            SceneLoader.Instance.LoadSceneAsync(name);
         }
 
         

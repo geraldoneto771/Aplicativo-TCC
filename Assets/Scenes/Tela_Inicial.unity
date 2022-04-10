@@ -687,7 +687,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 237259659}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc376413eac35d40bda249389d4a393, type: 3}
+  m_Script: {fileID: 11500000, guid: bc37e9796baf38a4b817dc585a650138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &237259664
@@ -735,7 +735,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 237259663}
-        m_TargetAssemblyTypeName: buttonControllNavigation, Assembly-CSharp
+        m_TargetAssemblyTypeName: NavigationSimple, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -1595,7 +1595,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 525056646}
-        m_TargetAssemblyTypeName: buttonControllNavigation, Assembly-CSharp
+        m_TargetAssemblyTypeName: NavigationSimple, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -1653,7 +1653,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 525056641}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc376413eac35d40bda249389d4a393, type: 3}
+  m_Script: {fileID: 11500000, guid: bc37e9796baf38a4b817dc585a650138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &530200183
@@ -2081,7 +2081,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 827409373}
         m_TargetAssemblyTypeName: Options, Assembly-CSharp
-        m_MethodName: restaurar
+        m_MethodName: Restaurar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2982,7 +2982,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1312857569}
-        m_TargetAssemblyTypeName: buttonControllNavigation, Assembly-CSharp
+        m_TargetAssemblyTypeName: NavigationSimple, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -3040,7 +3040,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1312857564}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc376413eac35d40bda249389d4a393, type: 3}
+  m_Script: {fileID: 11500000, guid: bc37e9796baf38a4b817dc585a650138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1352043114
@@ -4237,6 +4237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd50db14c81ad04fb8f91cd4e8f98a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bttBack: {fileID: 0}
   sceneIndex: 0
 --- !u!4 &1739369211
 Transform:
