@@ -10,8 +10,6 @@ public class buttonBack : MonoBehaviour{
     
     
     public int sceneIndex = 0;
-    public AudioSource audioEffect;
-    public AudioClip[] cofreAudioEffects;
         
     /*int sceneIndex;
     // Start is called before the first frame update
@@ -28,13 +26,9 @@ public class buttonBack : MonoBehaviour{
         
         if (sceneIndex >= 1 && sceneIndex <= 3)
         {
-            audioEffect.clip = cofreAudioEffects[0];
-            audioEffect.Play();
             Debug.Log("If 1");
             SceneManager.LoadScene(0);
         }else if(sceneIndex > 3){
-            audioEffect.clip = cofreAudioEffects[0];
-            audioEffect.Play();
             Debug.Log("If 2");
             SceneManager.LoadScene(1);
         }
