@@ -2615,6 +2615,7 @@ MonoBehaviour:
   musicasDeFundo:
   - {fileID: 8300000, guid: 33f306b6cf9afca45ba9703924b6957e, type: 3}
   - {fileID: 8300000, guid: 8d277edc73365854fb806ba8259a7205, type: 3}
+  - {fileID: 8300000, guid: aee2b3f2748fe194b9e01433f23b5b2c, type: 3}
 --- !u!4 &1094572527
 Transform:
   m_ObjectHideFlags: 0
