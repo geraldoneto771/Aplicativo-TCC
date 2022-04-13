@@ -38,10 +38,16 @@ public class AventuraSoloControle : MonoBehaviour
     //Verificador de grupo de botões
     int bttIndex;
 
+    //musicas
+    public AudioClip lofi;
+    public AudioClip aventurasolo;
+
     // Start is called before the first frame update
     void Start()
     {
         
+        AudioController.instance.PlayMusic(aventurasolo);
+
         atualizarDadosNoMenuDeAtributos();
         
         //Renderizando os sprites no vetor
@@ -729,39 +735,45 @@ public class AventuraSoloControle : MonoBehaviour
         
         if (index == 6 && verificadorDeRota == 14)
         {
-            
             SceneLoader.Instance.LoadSceneAsync(name);
+            AudioController.instance.PlayMusic(lofi);
             
         }
         else if (index == 5 && verificadorDeRota == 10)
         {
             //Carregar cena de acordo com seu nome
             SceneLoader.Instance.LoadSceneAsync(name);
+            AudioController.instance.PlayMusic(lofi);
         }
         else if (index == 8 && verificadorDeRota == 15)
         {
             //Carregar cena de acordo com seu nome
             SceneLoader.Instance.LoadSceneAsync(name);
+            AudioController.instance.PlayMusic(lofi);
         }
         else if (index == 6 && verificadorDeRota == 19)
         {
             //Carregar cena de acordo com seu nome
             SceneLoader.Instance.LoadSceneAsync(name);
+            AudioController.instance.PlayMusic(lofi);
         }
         else if (index == 4 && verificadorDeRota == 25)
         {
             //Carregar cena de acordo com seu nome
             SceneLoader.Instance.LoadSceneAsync(name);
+            AudioController.instance.PlayMusic(lofi);
         }
         else if (index == 6 && verificadorDeRota == 26)
         {
             //Carregar cena de acordo com seu nome
             SceneLoader.Instance.LoadSceneAsync(name);
+            AudioController.instance.PlayMusic(lofi);
         }
         else if (index == 5 && verificadorDeRota == 21)
         {
             //Carregar cena de acordo com seu nome
             SceneLoader.Instance.LoadSceneAsync(name);
+            AudioController.instance.PlayMusic(lofi);
         }
 
 

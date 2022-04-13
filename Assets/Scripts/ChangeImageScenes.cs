@@ -8,12 +8,15 @@ public class ChangeImageScenes : MonoBehaviour
 
     public Sprite[] sprites;
     SpriteRenderer spriteRender;
+    public AudioClip lofi;
+    public AudioClip introducao;
    
 
     int index;
 
     void Start()
     {
+        AudioController.instance.PlayMusic(introducao);
         index = 0;
         spriteRender = GetComponent<SpriteRenderer>();
         spriteRender.sprite = sprites[0];
@@ -32,6 +35,7 @@ public class ChangeImageScenes : MonoBehaviour
         {
             //Carregar cena de acordo com seu nome
             SceneLoader.Instance.LoadSceneAsync(name);
+            AudioController.instance.PlayMusic(lofi);
         }
 
         
