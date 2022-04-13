@@ -533,6 +533,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 0
+  audioEffect: {fileID: 1679422553}
+  cofreAudioEffects:
+  - {fileID: 8300000, guid: 93cf3b7e855efbd45aaafbc354734f94, type: 3}
 --- !u!1 &212173202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2756,6 +2759,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 0
+  audioEffect: {fileID: 0}
+  cofreAudioEffects: []
 --- !u!4 &1362213180
 Transform:
   m_ObjectHideFlags: 0
