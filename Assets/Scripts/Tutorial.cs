@@ -17,7 +17,7 @@ public class Tutorial : MonoBehaviour
     int index;
     public RectTransform ImageTutorial, bttNext;
    public CanvasGroup loadingOverlay2;
-
+    
     public static Tutorial Instance { get; private set; }
     private void Awake()
     {
@@ -34,6 +34,7 @@ public class Tutorial : MonoBehaviour
         
     }
     
+
     public void LoadTutorialAsync()
     {
         StartCoroutine(FadeIn());
@@ -41,6 +42,7 @@ public class Tutorial : MonoBehaviour
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
+        ImageTutorial.DOAnchorPos(new Vector2(73, -18), 0.25f);
     }
 
     private IEnumerator FadeIn()
@@ -84,14 +86,36 @@ public class Tutorial : MonoBehaviour
     {
         print(verificadorIndexTutorial);
         verificadorIndexTutorial++;
-        
 
-        ImageTutorial.DOAnchorPos(new Vector2(468, -18), 0.25f);
+
+        switch (verificadorIndexTutorial)
+        {
+            case 0:
+                ImageTutorial.DOAnchorPos(new Vector2(73, -18), 0.25f);
+                break;
+
+            case 1:
+                ImageTutorial.DOAnchorPos(new Vector2(488, -18), 0.25f);
+                break;
+            case 2:
+                ImageTutorial.DOAnchorPos(new Vector2(436, -259), 0.25f);
+                break;
+            case 3:
+                ImageTutorial.DOAnchorPos(new Vector2(544, -212), 0.25f);
+                break;
+            case 4:
+                ImageTutorial.DOAnchorPos(new Vector2(94, -45), 0.25f);
+                break;
+            case 5:
+                ImageTutorial.DOAnchorPos(new Vector2(514, -85), 0.25f);
+                break;
+            
+        }
 
         spritesTutorial.sprite = sprites[verificadorIndexTutorial];
 
         //fade out
-        if (verificadorIndexTutorial >= 10)
+        if (verificadorIndexTutorial > 5)
         {
             StartCoroutine(FadeOut());
         }
