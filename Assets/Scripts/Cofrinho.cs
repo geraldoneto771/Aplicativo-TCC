@@ -15,6 +15,8 @@ public class Cofrinho : MonoBehaviour{
     public GameObject PanelTemCerteza;
     public GameObject PanelTemCertezaCofre;
     public GameObject textMensagemErro;
+    public AudioSource audioEffect;
+    public AudioClip[] cofreAudioEffects;
 
     private void Start() {
         textTotalCofre.GetComponent<Text>().text = jogador.getSaldoCofre().ToString();
@@ -72,6 +74,8 @@ public class Cofrinho : MonoBehaviour{
                 
                 textTotalCofre.GetComponent<Text>().text = "R$" + jogador.addDinheiroCofre(double.Parse(inputMoney.text));
                 textMensagemErro.GetComponent<Text>().text = "";
+                audioEffect.clip = cofreAudioEffects[0];
+                audioEffect.Play();
 
                 if (PanelTemCerteza != null)
                 {
@@ -105,6 +109,10 @@ public class Cofrinho : MonoBehaviour{
             jogador.quebraCofre();
             PanelTemCertezaCofre.SetActive(!isActive);
             inputMoney.text = "";
+
+             audioEffect.clip = cofreAudioEffects[1];
+             audioEffect.Play();
+             
         }
         else
         {
