@@ -47,6 +47,14 @@ public class Tutorial : MonoBehaviour
         {
             LoadLoadTutorialFasesAsync();
         }
+        else if(sceneIndex == 2)
+        {
+            LoadLoadTutorialCofreAsync();
+        }
+        else if(sceneIndex == 3)
+        {
+            LoadLoadTutorialConversorAsync();
+        }
         
     }
 
@@ -68,8 +76,30 @@ public class Tutorial : MonoBehaviour
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
-        ImageTutorial.DOAnchorPos(new Vector2(-715, -47), 0.25f);
+        ImageTutorial.DOAnchorPos(new Vector2(11, -142), 0.25f);
         bttNext.DOAnchorPos(new Vector2(0, 70), 0.25f);
+    }
+
+    public void LoadLoadTutorialCofreAsync()
+    {
+        StartCoroutine(FadeIn());
+        sprites = Resources.LoadAll("TelaCofre", typeof(Sprite)).Cast<Sprite>().ToArray();
+        spritesTutorial = this.GetComponent<Image>();
+        spritesTutorial.sprite = sprites[0];
+        verificadorIndexTutorial = 0;
+        ImageTutorial.DOAnchorPos(new Vector2(112, -159), 0.25f);
+        bttNext.DOAnchorPos(new Vector2(0, 30), 0.25f);
+    }
+
+    public void LoadLoadTutorialConversorAsync()
+    {
+        StartCoroutine(FadeIn());
+        sprites = Resources.LoadAll("TelaConversor", typeof(Sprite)).Cast<Sprite>().ToArray();
+        spritesTutorial = this.GetComponent<Image>();
+        spritesTutorial.sprite = sprites[0];
+        verificadorIndexTutorial = 0;
+        ImageTutorial.DOAnchorPos(new Vector2(102, -34), 0.25f);
+        bttNext.DOAnchorPos(new Vector2(0, -29), 0.25f);
     }
 
     private IEnumerator FadeIn()
@@ -157,11 +187,14 @@ public class Tutorial : MonoBehaviour
         switch (verificadorIndexTutorial)
         {
             case 0:
-                ImageTutorial.DOAnchorPos(new Vector2(-715, -47), 0.25f);
+                ImageTutorial.DOAnchorPos(new Vector2(11, -142), 0.25f);
                 break;
 
             case 1:
-                ImageTutorial.DOAnchorPos(new Vector2(-350, -47), 0.25f);
+                ImageTutorial.DOAnchorPos(new Vector2(143, -142), 0.25f);
+                break;
+            case 2:
+                ImageTutorial.DOAnchorPos(new Vector2(23, -215), 0.25f);
                 break;
 
         }
@@ -169,7 +202,82 @@ public class Tutorial : MonoBehaviour
         spritesTutorial.sprite = sprites[verificadorIndexTutorial];
 
         //fade out
-        if (verificadorIndexTutorial > 1)
+        if (verificadorIndexTutorial > 2)
+        {
+            StartCoroutine(FadeOut());
+        }
+    }
+
+    public void NextTutorialCofre()
+    {
+        print(verificadorIndexTutorial);
+        verificadorIndexTutorial++;
+
+
+        switch (verificadorIndexTutorial)
+        {
+            case 0:
+                ImageTutorial.DOAnchorPos(new Vector2(112, -159), 0.25f);
+                break;
+
+            case 1:
+                ImageTutorial.DOAnchorPos(new Vector2(316, -174), 0.25f);
+                break;
+            case 2:
+                ImageTutorial.DOAnchorPos(new Vector2(401, -37), 0.25f);
+                break;
+            case 3:
+                ImageTutorial.DOAnchorPos(new Vector2(446, -96), 0.25f);
+                break;
+            case 4:
+                ImageTutorial.DOAnchorPos(new Vector2(23, -215), 0.25f);
+                break;
+
+        }
+
+        spritesTutorial.sprite = sprites[verificadorIndexTutorial];
+
+        //fade out
+        if (verificadorIndexTutorial > 4)
+        {
+            StartCoroutine(FadeOut());
+        }
+    }
+
+    public void NextTutorialConversor()
+    {
+        print(verificadorIndexTutorial);
+        verificadorIndexTutorial++;
+
+
+        switch (verificadorIndexTutorial)
+        {
+            case 0:
+                ImageTutorial.DOAnchorPos(new Vector2(112, -159), 0.25f);
+                break;
+
+            case 1:
+                ImageTutorial.DOAnchorPos(new Vector2(402, -96), 0.25f);
+                break;
+            case 2:
+                ImageTutorial.DOAnchorPos(new Vector2(384, -233), 0.25f);
+                break;
+            case 3:
+                ImageTutorial.DOAnchorPos(new Vector2(353, -180), 0.25f);
+                break;
+            case 4:
+                ImageTutorial.DOAnchorPos(new Vector2(115, -101), 0.25f);
+                break;
+            case 5:
+                ImageTutorial.DOAnchorPos(new Vector2(23, -215), 0.25f);
+                break;
+
+        }
+
+        spritesTutorial.sprite = sprites[verificadorIndexTutorial];
+
+        //fade out
+        if (verificadorIndexTutorial > 5)
         {
             StartCoroutine(FadeOut());
         }
