@@ -6,7 +6,7 @@ using System;
 using System.Linq;
 using DG.Tweening;
 
-public class Tutorial : MonoBehaviour
+public class TutorialAutomatico : MonoBehaviour
 {
     [SerializeField] private CanvasGroup loadingOverlay;
     [SerializeField]
@@ -16,9 +16,9 @@ public class Tutorial : MonoBehaviour
     public Sprite[] sprites;
     int index;
     public RectTransform ImageTutorial, bttNext;
-   public CanvasGroup loadingOverlay2;
-    
-    public static Tutorial Instance { get; private set; }
+    public CanvasGroup loadingOverlay2;
+
+    public static TutorialAutomatico Instance { get; private set; }
     private void Awake()
     {
         if (Instance == null)
@@ -31,8 +31,9 @@ public class Tutorial : MonoBehaviour
             Destroy(gameObject);
         }
 
-        
+
     }
+
     void Start()
     {
         LoadTutorialAsync();
@@ -113,7 +114,7 @@ public class Tutorial : MonoBehaviour
             case 5:
                 ImageTutorial.DOAnchorPos(new Vector2(529, -70), 0.25f);
                 break;
-            
+
         }
 
         spritesTutorial.sprite = sprites[verificadorIndexTutorial];
