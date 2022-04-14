@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System;
 using System.Linq;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour
 {
@@ -17,7 +18,8 @@ public class Tutorial : MonoBehaviour
     int index;
     public RectTransform ImageTutorial, bttNext;
    public CanvasGroup loadingOverlay2;
-    
+    public int sceneIndex = 0;
+
     public static Tutorial Instance { get; private set; }
     private void Awake()
     {
@@ -35,7 +37,17 @@ public class Tutorial : MonoBehaviour
     }
     void Start()
     {
-        LoadTutorialAsync();
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if(sceneIndex == 0)
+        {
+            LoadTutorialAsync();
+        }
+        else if(sceneIndex == 1)
+        {
+            LoadLoadTutorialFasesAsync();
+        }
+        
     }
 
 
@@ -47,6 +59,17 @@ public class Tutorial : MonoBehaviour
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
         ImageTutorial.DOAnchorPos(new Vector2(42, -52), 0.25f);
+    }
+
+    public void LoadLoadTutorialFasesAsync()
+    {
+        StartCoroutine(FadeIn());
+        sprites = Resources.LoadAll("TelaFases", typeof(Sprite)).Cast<Sprite>().ToArray();
+        spritesTutorial = this.GetComponent<Image>();
+        spritesTutorial.sprite = sprites[0];
+        verificadorIndexTutorial = 0;
+        ImageTutorial.DOAnchorPos(new Vector2(-715, -47), 0.25f);
+        bttNext.DOAnchorPos(new Vector2(0, 70), 0.25f);
     }
 
     private IEnumerator FadeIn()
@@ -120,6 +143,33 @@ public class Tutorial : MonoBehaviour
 
         //fade out
         if (verificadorIndexTutorial > 5)
+        {
+            StartCoroutine(FadeOut());
+        }
+    }
+
+    public void NextTutorialFases()
+    {
+        print(verificadorIndexTutorial);
+        verificadorIndexTutorial++;
+
+
+        switch (verificadorIndexTutorial)
+        {
+            case 0:
+                ImageTutorial.DOAnchorPos(new Vector2(-715, -47), 0.25f);
+                break;
+
+            case 1:
+                ImageTutorial.DOAnchorPos(new Vector2(-350, -47), 0.25f);
+                break;
+
+        }
+
+        spritesTutorial.sprite = sprites[verificadorIndexTutorial];
+
+        //fade out
+        if (verificadorIndexTutorial > 1)
         {
             StartCoroutine(FadeOut());
         }
