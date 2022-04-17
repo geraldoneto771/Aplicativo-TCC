@@ -45,20 +45,24 @@ public class AventuraSoloControle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        //Renderizando os sprites no vetor
+        sprites = Resources.LoadAll("Cenas Decisão 01 - Inicio", typeof(Sprite)).Cast<Sprite>().ToArray();
+        index = 1;
+        cenasDoJogo = this.GetComponent<Image>();
+        cenasDoJogo.sprite = sprites[index];
+
         AudioController.instance.PlayMusic(aventurasolo);
 
         atualizarDadosNoMenuDeAtributos();
         
-        //Renderizando os sprites no vetor
-        sprites = Resources.LoadAll("Cenas Decisão 01 - Inicio", typeof(Sprite)).Cast<Sprite>().ToArray();
+        
         //spriteRender = GetComponent<SpriteRenderer>();
         //spriteRender.sprite = sprites[1];
-        cenasDoJogo = this.GetComponent<Image>();
-        cenasDoJogo.sprite = sprites[1];
+        
         //Inicializando as variaveis de verifição
         verificadorDeRota = 0;
-        index = 1;
+        
         rotas = 0;
         bttIndex = 0;
         //Posicionando o botão de continuar na tela
@@ -865,10 +869,10 @@ public class AventuraSoloControle : MonoBehaviour
             }
             else if ((bttIndex == 5 && verificadorDeRota == 18 && jogador.rapidez >= 4) || (bttIndex == 7 && verificadorDeRota == 7 && jogador.rapidez >= 4))
             {
-                rotas = 22;
-                NextChangeImage();
+               // rotas = 22;
+               // NextChangeImage();
 
-                if (jogador.rapidez >= 4)
+                if (jogador.rapidez >= 4 && verificadorDeRota == 18 || jogador.rapidez >= 4 && verificadorDeRota == 7)
                 {
                     rotas = 22;
                     NextChangeImage();
@@ -914,6 +918,7 @@ public class AventuraSoloControle : MonoBehaviour
                 NextChangeImage();
             }
 
+            // POSSIVEL ERRO AQUI
             else if ((bttIndex == 4 && verificadorDeRota == 20) || (bttIndex == 5 && verificadorDeRota == 23) || (bttIndex == 5 && verificadorDeRota == 6))
             {
                 
@@ -933,19 +938,11 @@ public class AventuraSoloControle : MonoBehaviour
             }
             else if (bttIndex == 6 && verificadorDeRota == 2)
             {
-                
-
-                if (jogador.usarOrcamento(15))
-                {
+               
                     rotas = 7;
                     atualizarDadosNoMenuDeAtributos();
                     NextChangeImage();
-                }
-                else
-                {
-                    textErro.GetComponent<Text>().text = "Você não tem dinheiro o suficiente!";
-                    OpenPanelErro();
-                }
+                
             }
 
         }
