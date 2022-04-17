@@ -14,6 +14,7 @@ public class Jogador : ScriptableObject {
     public string conhecimento;
     public int nivel; 
     private double saldoCofre = 0;
+    public double tutorialTelaInicial = 0, tutorialTelaFases = 0, tutorialTelaCofrinho = 0, tutorialTelaConversor = 0, tutorialTelaIntroducao = 0, tutorialTelaAventura = 0; // 0 - Não apareceu, 1 - Já apareceu;
 
     public bool usarOrcamento(float valor){
         bool liberaValor = valor <= this.orcamento;
@@ -85,5 +86,11 @@ public class Jogador : ScriptableObject {
         this.saude = 5;
         this.forca = 3;
         this.agilidade = 2;
+        this.tutorialTelaAventura = 0;
+        this.tutorialTelaCofrinho = 0;
+        this.tutorialTelaConversor = 0;
+        this.tutorialTelaFases = 0;
+        this.tutorialTelaInicial = 0;
+        this.tutorialTelaIntroducao = 0;
     }
 }

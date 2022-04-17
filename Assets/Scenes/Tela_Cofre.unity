@@ -5337,6 +5337,7 @@ MonoBehaviour:
   bttNext: {fileID: 1317752146}
   loadingOverlay2: {fileID: 1086577328}
   sceneIndex: 0
+  jogador: {fileID: 11400000, guid: 052f4139d060edb41a222cd8ef77d451, type: 2}
 --- !u!224 &2100638377
 RectTransform:
   m_ObjectHideFlags: 0

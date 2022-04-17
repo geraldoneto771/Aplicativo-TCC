@@ -22,7 +22,7 @@ public class buttonBack : MonoBehaviour{
     public void BackScene(){
         
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
-        print(sceneIndex);
+        print("Cena: "+ sceneIndex);
         
         if (sceneIndex >= 1 && sceneIndex <= 3)
         {

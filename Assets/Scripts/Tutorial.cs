@@ -17,9 +17,9 @@ public class Tutorial : MonoBehaviour
     public Sprite[] sprites;
     int index;
     public RectTransform ImageTutorial, bttNext;
-   public CanvasGroup loadingOverlay2;
+    public CanvasGroup loadingOverlay2;
     public int sceneIndex = 0;
-
+    public Jogador jogador;
     public static Tutorial Instance { get; private set; }
     private void Awake()
     {
@@ -39,21 +39,26 @@ public class Tutorial : MonoBehaviour
     {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        if(sceneIndex == 0)
+        if(sceneIndex == 0 && jogador.tutorialTelaInicial == 0)
         {
             LoadTutorialAsync();
+            jogador.tutorialTelaInicial = 1;
         }
-        else if(sceneIndex == 1)
+        else if(sceneIndex == 1 && jogador.tutorialTelaFases == 0)
         {
             LoadLoadTutorialFasesAsync();
+            jogador.tutorialTelaFases = 1;
         }
-        else if(sceneIndex == 2)
+        else if(sceneIndex == 2 && jogador.tutorialTelaCofrinho == 0)
         {
             LoadLoadTutorialCofreAsync();
+            jogador.tutorialTelaCofrinho = 1;
         }
-        else if(sceneIndex == 3)
+        else if(sceneIndex == 3 && jogador.tutorialTelaConversor == 0)
         {
             LoadLoadTutorialConversorAsync();
+            
+            jogador.tutorialTelaConversor = 1;
         }
         
     }
