@@ -126,8 +126,8 @@ public class Tutorial : MonoBehaviour
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
-        ImageTutorial.DOAnchorPos(new Vector2(468, -201), 0.25f);
-        bttNext.DOAnchorPos(new Vector2(0, 30), 0.25f);
+        ImageTutorial.DOAnchorPos(new Vector2(613, -245), 0.25f);
+        bttNext.DOAnchorPos(new Vector2(0, 51), 0.25f);
     }
     public void LoadLoadTutorialAventuraAsync()
     {
@@ -136,8 +136,8 @@ public class Tutorial : MonoBehaviour
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
-        ImageTutorial.DOAnchorPos(new Vector2(452, -210), 0.25f);
-        bttNext.DOAnchorPos(new Vector2(0, 30), 0.25f);
+        ImageTutorial.DOAnchorPos(new Vector2(638, -253), 0.25f);
+        bttNext.DOAnchorPos(new Vector2(0, 51), 0.25f);
     }
 
     private IEnumerator FadeIn()
@@ -330,11 +330,11 @@ public class Tutorial : MonoBehaviour
         switch (verificadorIndexTutorial)
         {
             case 0:
-                ImageTutorial.DOAnchorPos(new Vector2(468, -201), 0.25f);
+                ImageTutorial.DOAnchorPos(new Vector2(613, -245), 0.25f);
                 break;
 
             case 1:
-                ImageTutorial.DOAnchorPos(new Vector2(468, -201), 0.25f);
+                ImageTutorial.DOAnchorPos(new Vector2(613, -245), 0.25f);
                 break;
             
 
@@ -358,16 +358,16 @@ public class Tutorial : MonoBehaviour
         switch (verificadorIndexTutorial)
         {
             case 0:
-                ImageTutorial.DOAnchorPos(new Vector2(452, -210), 0.25f);
+                ImageTutorial.DOAnchorPos(new Vector2(638, -253), 0.25f);
                 break;
             case 1:
-                ImageTutorial.DOAnchorPos(new Vector2(472, -59), 0.25f);
+                ImageTutorial.DOAnchorPos(new Vector2(670, 257), 0.25f);
                 break;
             case 2:
-                ImageTutorial.DOAnchorPos(new Vector2(263, -134), 0.25f);
+                ImageTutorial.DOAnchorPos(new Vector2(0, 0), 0.25f);
                 break;
             case 3:
-                ImageTutorial.DOAnchorPos(new Vector2(263, -134), 0.25f);
+                ImageTutorial.DOAnchorPos(new Vector2(0, 0), 0.25f);
                 break;
 
 
