@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nome: Gabriel
   bonus: 3
-  saude: 5
-  forca: 2
+  saude: 4
+  forca: 3
   agilidade: 3
-  rapidez: 3
-  orcamento: 23
+  rapidez: 4
+  orcamento: 13
   personalidade: Loren Ipsum blaldksmlsdk
   conhecimento: sdfsldkfnsldkfnl
   nivel: 0
-  tutorialTelaInicial: 0
-  tutorialTelaFases: 0
+  tutorialTelaInicial: 1
+  tutorialTelaFases: 1
   tutorialTelaCofrinho: 0
   tutorialTelaConversor: 0
   tutorialTelaIntroducao: 0

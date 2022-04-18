@@ -867,12 +867,12 @@ public class AventuraSoloControle : MonoBehaviour
                 rotas = 10;
                 NextChangeImage();
             }
-            else if ((bttIndex == 5 && verificadorDeRota == 18 && jogador.rapidez >= 4) || (bttIndex == 7 && verificadorDeRota == 7 && jogador.rapidez >= 4))
+            else if ((bttIndex == 5 && verificadorDeRota == 18 && jogador.rapidez >= 4) || (bttIndex == 7 && verificadorDeRota == 7 && jogador.rapidez >= 4) || (bttIndex == 7 && verificadorDeRota == 16))
             {
                // rotas = 22;
                // NextChangeImage();
 
-                if (jogador.rapidez >= 4 && verificadorDeRota == 18 || jogador.rapidez >= 4 && verificadorDeRota == 7)
+                if ((jogador.rapidez >= 4 && verificadorDeRota == 18) || (jogador.rapidez >= 4 && verificadorDeRota == 7))
                 {
                     rotas = 22;
                     NextChangeImage();
@@ -919,16 +919,21 @@ public class AventuraSoloControle : MonoBehaviour
             }
 
             // POSSIVEL ERRO AQUI
-            else if ((bttIndex == 4 && verificadorDeRota == 20) || (bttIndex == 5 && verificadorDeRota == 23) || (bttIndex == 5 && verificadorDeRota == 6))
+            else if ((bttIndex == 4 && verificadorDeRota == 20) || (bttIndex == 5 && verificadorDeRota == 23) || (bttIndex == 5 && verificadorDeRota == 6) || (bttIndex == 4 && verificadorDeRota == 13))
             {
                 
 
-               if (jogador.forca >= 3 || jogador.agilidade >=3){
-                        rotas = 2;
-                        NextChangeImage();
-                  
-                    
+               if ((bttIndex == 4 && verificadorDeRota == 20 && jogador.forca >= 3) || (bttIndex == 5 && verificadorDeRota == 6 && jogador.forca >= 3))
+                {
+                    rotas = 2;
+                    NextChangeImage();
                 }
+               
+                else if ((bttIndex == 5 && verificadorDeRota == 23 && jogador.agilidade >= 3) || (bttIndex == 4 && verificadorDeRota == 13 && jogador.agilidade >= 3)) {
+                    rotas = 2;
+                    NextChangeImage();
+                }
+              
                 else
                 {
                     textErro.GetComponent<Text>().text = "Você não tem força ou agilidade suficiente!";
@@ -936,13 +941,23 @@ public class AventuraSoloControle : MonoBehaviour
                 
                 }
             }
-            else if (bttIndex == 6 && verificadorDeRota == 2)
+            else if (bttIndex == 6 && verificadorDeRota == 2 )
             {
-               
+                if (jogador.usarOrcamento(15))
+                {
                     rotas = 7;
                     atualizarDadosNoMenuDeAtributos();
                     NextChangeImage();
-                
+                }
+                else
+                {
+                    textErro.GetComponent<Text>().text = "Você não tinha dinheiro suficiente para a Pá!";
+                    OpenPanelErro();
+
+                }
+
+
+
             }
 
         }
