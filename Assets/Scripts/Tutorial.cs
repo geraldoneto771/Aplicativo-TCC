@@ -60,6 +60,19 @@ public class Tutorial : MonoBehaviour
             
             jogador.tutorialTelaConversor = 1;
         }
+        else if (sceneIndex == 5 && jogador.tutorialTelaIntroducao == 0)
+        {
+            LoadLoadTutorialIntroducaoAsync();
+
+            jogador.tutorialTelaIntroducao = 1;
+        }
+        else if (sceneIndex == 4 && jogador.tutorialTelaAventura == 0)
+        {
+            LoadLoadTutorialAventuraAsync();
+
+            jogador.tutorialTelaAventura = 1;
+        }
+
         
     }
 
@@ -105,6 +118,26 @@ public class Tutorial : MonoBehaviour
         verificadorIndexTutorial = 0;
         ImageTutorial.DOAnchorPos(new Vector2(102, -34), 0.25f);
         bttNext.DOAnchorPos(new Vector2(0, -29), 0.25f);
+    }
+    public void LoadLoadTutorialIntroducaoAsync()
+    {
+        StartCoroutine(FadeIn());
+        sprites = Resources.LoadAll("TelaIntroducao", typeof(Sprite)).Cast<Sprite>().ToArray();
+        spritesTutorial = this.GetComponent<Image>();
+        spritesTutorial.sprite = sprites[0];
+        verificadorIndexTutorial = 0;
+        ImageTutorial.DOAnchorPos(new Vector2(468, -201), 0.25f);
+        bttNext.DOAnchorPos(new Vector2(0, 30), 0.25f);
+    }
+    public void LoadLoadTutorialAventuraAsync()
+    {
+        StartCoroutine(FadeIn());
+        sprites = Resources.LoadAll("TelaAventura", typeof(Sprite)).Cast<Sprite>().ToArray();
+        spritesTutorial = this.GetComponent<Image>();
+        spritesTutorial.sprite = sprites[0];
+        verificadorIndexTutorial = 0;
+        ImageTutorial.DOAnchorPos(new Vector2(452, -210), 0.25f);
+        bttNext.DOAnchorPos(new Vector2(0, 30), 0.25f);
     }
 
     private IEnumerator FadeIn()
@@ -283,6 +316,67 @@ public class Tutorial : MonoBehaviour
 
         //fade out
         if (verificadorIndexTutorial > 5)
+        {
+            StartCoroutine(FadeOut());
+        }
+    }
+
+    public void NextTutorialIntroducao()
+    {
+        print(verificadorIndexTutorial);
+        verificadorIndexTutorial++;
+
+
+        switch (verificadorIndexTutorial)
+        {
+            case 0:
+                ImageTutorial.DOAnchorPos(new Vector2(468, -201), 0.25f);
+                break;
+
+            case 1:
+                ImageTutorial.DOAnchorPos(new Vector2(468, -201), 0.25f);
+                break;
+            
+
+        }
+
+        spritesTutorial.sprite = sprites[verificadorIndexTutorial];
+
+        //fade out
+        if (verificadorIndexTutorial > 0)
+        {
+            StartCoroutine(FadeOut());
+        }
+    }
+
+    public void NextTutorialAventura()
+    {
+        print(verificadorIndexTutorial);
+        verificadorIndexTutorial++;
+
+
+        switch (verificadorIndexTutorial)
+        {
+            case 0:
+                ImageTutorial.DOAnchorPos(new Vector2(452, -210), 0.25f);
+                break;
+            case 1:
+                ImageTutorial.DOAnchorPos(new Vector2(472, -59), 0.25f);
+                break;
+            case 2:
+                ImageTutorial.DOAnchorPos(new Vector2(263, -134), 0.25f);
+                break;
+            case 3:
+                ImageTutorial.DOAnchorPos(new Vector2(263, -134), 0.25f);
+                break;
+
+
+        }
+
+        spritesTutorial.sprite = sprites[verificadorIndexTutorial];
+
+        //fade out
+        if (verificadorIndexTutorial > 2)
         {
             StartCoroutine(FadeOut());
         }
