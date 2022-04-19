@@ -145,7 +145,8 @@ public class Tutorial : MonoBehaviour
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
-        ImageTutorial.DOAnchorPos(new Vector2(613, -245), 0.25f);
+        //ImageTutorial.DOAnchorPos(new Vector2(613, -245), 0.25f);
+        destino = GameObject.Find("ButtonContinuar");
         bttNext.DOAnchorPos(new Vector2(0, 51), 0.25f);
     }
     public void LoadLoadTutorialAventuraAsync()
@@ -156,7 +157,8 @@ public class Tutorial : MonoBehaviour
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
-        ImageTutorial.DOAnchorPos(new Vector2(638, -253), 0.25f);
+        //ImageTutorial.DOAnchorPos(new Vector2(638, -253), 0.25f);
+        destino = GameObject.Find("BttContinuar");
         bttNext.DOAnchorPos(new Vector2(0, 51), 0.25f);
     }
 
@@ -360,11 +362,13 @@ public class Tutorial : MonoBehaviour
         switch (verificadorIndexTutorial)
         {
             case 0:
-                ImageTutorial.DOAnchorPos(new Vector2(613, -245), 0.25f);
+                destino = GameObject.Find("ButtonContinuar");
+                //ImageTutorial.DOAnchorPos(new Vector2(613, -245), 0.25f);
                 break;
 
             case 1:
-                ImageTutorial.DOAnchorPos(new Vector2(613, -245), 0.25f);
+                destino = GameObject.Find("ButtonContinuar");
+                //ImageTutorial.DOAnchorPos(new Vector2(613, -245), 0.25f);
                 break;
             
 
@@ -389,16 +393,20 @@ public class Tutorial : MonoBehaviour
         switch (verificadorIndexTutorial)
         {
             case 0:
-                ImageTutorial.DOAnchorPos(new Vector2(638, -253), 0.25f);
+                destino = GameObject.Find("BttContinuar");
+                //ImageTutorial.DOAnchorPos(new Vector2(638, -253), 0.25f);
                 break;
             case 1:
-                ImageTutorial.DOAnchorPos(new Vector2(670, 257), 0.25f);
+                destino = GameObject.Find("Btt_Perfil");
+                //ImageTutorial.DOAnchorPos(new Vector2(670, 257), 0.25f);
                 break;
             case 2:
-                ImageTutorial.DOAnchorPos(new Vector2(0, 0), 0.25f);
+                destino = GameObject.Find("ImageCenas");
+                //ImageTutorial.DOAnchorPos(new Vector2(0, 0), 0.25f);
                 break;
             case 3:
-                ImageTutorial.DOAnchorPos(new Vector2(0, 0), 0.25f);
+                destino = GameObject.Find("ImageCenas");
+                //ImageTutorial.DOAnchorPos(new Vector2(0, 0), 0.25f);
                 break;
 
 
