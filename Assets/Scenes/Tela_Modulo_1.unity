@@ -3677,6 +3677,8 @@ MonoBehaviour:
   sceneIndex: 0
   PanelTutorial: {fileID: 0}
   jogador: {fileID: 11400000, guid: 052f4139d060edb41a222cd8ef77d451, type: 2}
+  movendo: 1
+  velocidade: 1000
 --- !u!224 &1530678817
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3691,11 +3693,11 @@ RectTransform:
   m_Father: {fileID: 2127567031}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 88, y: -269}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -119, y: 164.5}
   m_SizeDelta: {x: 324, y: 251}
-  m_Pivot: {x: 0, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1530678818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3769,9 +3771,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -480.79886, y: 321.16553}
+  m_AnchoredPosition: {x: -205.79886, y: 376.16553}
   m_SizeDelta: {x: 110, y: 110}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 3, y: 1}
 --- !u!114 &1573121524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5108,9 +5110,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 209, y: 30}
+  m_AnchoredPosition: {x: 434.00006, y: 105.00006}
   m_SizeDelta: {x: 150, y: 150}
-  m_Pivot: {x: 0, y: 0}
+  m_Pivot: {x: -1.5, y: 0.5}
 --- !u!114 &2032155991
 MonoBehaviour:
   m_ObjectHideFlags: 0

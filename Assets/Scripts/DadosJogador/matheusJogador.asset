@@ -23,8 +23,8 @@ MonoBehaviour:
   conhecimento: sdfsldkfnsldkfnl
   nivel: 0
   tutorialTelaInicial: 0
-  tutorialTelaFases: 1
+  tutorialTelaFases: 0
   tutorialTelaCofrinho: 0
   tutorialTelaConversor: 0
-  tutorialTelaIntroducao: 1
-  tutorialTelaAventura: 1
+  tutorialTelaIntroducao: 0
+  tutorialTelaAventura: 0

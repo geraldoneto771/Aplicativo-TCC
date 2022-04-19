@@ -21,6 +21,15 @@ public class Tutorial : MonoBehaviour
     public int sceneIndex = 0;
     public GameObject PanelTutorial;
     public Jogador jogador;
+
+    //Movimentação do tutorial
+    private GameObject destino;
+    public bool movendo = false;
+
+    public float velocidade = 1f;
+
+    private float distancia = 0f;
+    private float distanciaMinima = 2f;
    
     public static Tutorial Instance { get; private set; }
     private void Awake()
@@ -100,8 +109,9 @@ public class Tutorial : MonoBehaviour
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
-        ImageTutorial.DOAnchorPos(new Vector2(88, -16), 0.25f);
+       // ImageTutorial.DOAnchorPos(new Vector2(88, -16), 0.25f);
         bttNext.DOAnchorPos(new Vector2(0, 70), 0.25f);
+        destino = GameObject.Find("btt_introducao_aventura_1");
     }
 
     public void LoadLoadTutorialCofreAsync()
@@ -244,10 +254,12 @@ public class Tutorial : MonoBehaviour
                 break;
 
             case 1:
-                ImageTutorial.DOAnchorPos(new Vector2(438, -16), 0.25f);
+                destino = GameObject.Find("btt_aventurasolo_1");
+                //ImageTutorial.DOAnchorPos(new Vector2(438, -16), 0.25f);
                 break;
             case 2:
-                ImageTutorial.DOAnchorPos(new Vector2(88, -269), 0.25f);
+                destino = GameObject.Find("ButtonBack");
+                //ImageTutorial.DOAnchorPos(new Vector2(88, -269), 0.25f);
                 break;
 
         }
@@ -403,5 +415,17 @@ public class Tutorial : MonoBehaviour
     }
 
     
+   void Update()
+    {
+        if(movendo == true)
+        {
+            distancia = Vector3.Distance(transform.position, destino.transform.position);
+
+            if(distanciaMinima <= distancia)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, destino.transform.position, velocidade * Time.deltaTime);
+            }
+        }
+    }
 
 }
