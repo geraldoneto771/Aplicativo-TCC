@@ -123,7 +123,8 @@ public class Tutorial : MonoBehaviour
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
-        ImageTutorial.DOAnchorPos(new Vector2(112, -159), 0.25f);
+        //ImageTutorial.DOAnchorPos(new Vector2(112, -159), 0.25f);
+        destino = GameObject.Find("InputFieldAddCofre");
         bttNext.DOAnchorPos(new Vector2(0, 30), 0.25f);
     }
 
@@ -135,7 +136,8 @@ public class Tutorial : MonoBehaviour
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
-        ImageTutorial.DOAnchorPos(new Vector2(102, -34), 0.25f);
+        //ImageTutorial.DOAnchorPos(new Vector2(102, -34), 0.25f);
+        destino = GameObject.Find("InputFieldMoeda");
         bttNext.DOAnchorPos(new Vector2(0, -29), 0.25f);
     }
     public void LoadLoadTutorialIntroducaoAsync()
@@ -292,20 +294,25 @@ public class Tutorial : MonoBehaviour
         switch (verificadorIndexTutorial)
         {
             case 0:
-                ImageTutorial.DOAnchorPos(new Vector2(112, -159), 0.25f);
+                destino = GameObject.Find("InputFieldAddCofre");
+                //ImageTutorial.DOAnchorPos(new Vector2(112, -159), 0.25f);
                 break;
 
             case 1:
-                ImageTutorial.DOAnchorPos(new Vector2(316, -174), 0.25f);
+                destino = GameObject.Find("btt_add_money");
+                //ImageTutorial.DOAnchorPos(new Vector2(316, -174), 0.25f);
                 break;
             case 2:
-                ImageTutorial.DOAnchorPos(new Vector2(401, -37), 0.25f);
+                destino = GameObject.Find("TextTotalCofrinho");
+                //ImageTutorial.DOAnchorPos(new Vector2(401, -37), 0.25f);
                 break;
             case 3:
-                ImageTutorial.DOAnchorPos(new Vector2(446, -96), 0.25f);
+                destino = GameObject.Find("btt_quebrar_cofre");
+                //ImageTutorial.DOAnchorPos(new Vector2(446, -96), 0.25f);
                 break;
             case 4:
-                ImageTutorial.DOAnchorPos(new Vector2(23, -215), 0.25f);
+                destino = GameObject.Find("ButtonBack");
+                //ImageTutorial.DOAnchorPos(new Vector2(23, -215), 0.25f);
                 break;
 
         }
@@ -329,23 +336,29 @@ public class Tutorial : MonoBehaviour
         switch (verificadorIndexTutorial)
         {
             case 0:
-                ImageTutorial.DOAnchorPos(new Vector2(112, -159), 0.25f);
+                destino = GameObject.Find("InputFieldMoeda");
+                //ImageTutorial.DOAnchorPos(new Vector2(112, -159), 0.25f);
                 break;
 
             case 1:
-                ImageTutorial.DOAnchorPos(new Vector2(402, -96), 0.25f);
+                destino = GameObject.Find("DropdownMoeda");
+                //ImageTutorial.DOAnchorPos(new Vector2(402, -96), 0.25f);
                 break;
             case 2:
-                ImageTutorial.DOAnchorPos(new Vector2(384, -233), 0.25f);
+                destino = GameObject.Find("TextInternet");
+                //ImageTutorial.DOAnchorPos(new Vector2(384, -233), 0.25f);
                 break;
             case 3:
-                ImageTutorial.DOAnchorPos(new Vector2(353, -180), 0.25f);
+                destino = GameObject.Find("btt_converter_currency");
+                //ImageTutorial.DOAnchorPos(new Vector2(353, -180), 0.25f);
                 break;
             case 4:
-                ImageTutorial.DOAnchorPos(new Vector2(115, -101), 0.25f);
+                destino = GameObject.Find("fundo_text_resultado");
+                //ImageTutorial.DOAnchorPos(new Vector2(115, -101), 0.25f);
                 break;
             case 5:
-                ImageTutorial.DOAnchorPos(new Vector2(23, -215), 0.25f);
+                destino = GameObject.Find("ButtonBack");
+                //ImageTutorial.DOAnchorPos(new Vector2(23, -215), 0.25f);
                 break;
 
         }
