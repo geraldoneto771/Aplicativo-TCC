@@ -314,16 +314,23 @@ public class Tutorial : MonoBehaviour
                 destino = GameObject.Find("ButtonBack");
                 //ImageTutorial.DOAnchorPos(new Vector2(23, -215), 0.25f);
                 break;
+            case 5:
+                destino = GameObject.Find("Background");
+                ImageTutorial.transform.localScale = new Vector3(2.85f, 2f, 0f);
+                //ImageTutorial.DOAnchorPos(new Vector2(23, -215), 0.25f);
+                break;
 
         }
 
         spritesTutorial.sprite = sprites[verificadorIndexTutorial];
 
         //fade out
-        if (verificadorIndexTutorial > 4)
+        if (verificadorIndexTutorial > 5)
         {
+            
             StartCoroutine(FadeOut());
-           
+            ImageTutorial.transform.localScale = new Vector3(1f, 1f, 1f);
+
         }
     }
 
