@@ -98,7 +98,8 @@ public class Tutorial : MonoBehaviour
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
-        ImageTutorial.DOAnchorPos(new Vector2(42, -52), 0.25f);
+        //ImageTutorial.DOAnchorPos(new Vector2(42, -52), 0.25f);
+        destino = GameObject.Find("btt_menu");
     }
 
     public void LoadLoadTutorialFasesAsync()
@@ -212,23 +213,29 @@ public class Tutorial : MonoBehaviour
         switch (verificadorIndexTutorial)
         {
             case 0:
-                ImageTutorial.DOAnchorPos(new Vector2(42, -52), 0.25f);
+                destino = GameObject.Find("btt_menu");
+                //ImageTutorial.DOAnchorPos(new Vector2(42, -52), 0.25f);
                 break;
 
             case 1:
-                ImageTutorial.DOAnchorPos(new Vector2(562, -52), 0.25f);
+                destino = GameObject.Find("btt_tutorial");
+                //ImageTutorial.DOAnchorPos(new Vector2(562, -52), 0.25f);
                 break;
             case 2:
-                ImageTutorial.DOAnchorPos(new Vector2(509, -211), 0.25f);
+                destino = GameObject.Find("btt_conversor");
+                //ImageTutorial.DOAnchorPos(new Vector2(509, -211), 0.25f);
                 break;
             case 3:
-                ImageTutorial.DOAnchorPos(new Vector2(566, -211), 0.25f);
+                destino = GameObject.Find("btt_cofre");
+                //ImageTutorial.DOAnchorPos(new Vector2(566, -211), 0.25f);
                 break;
             case 4:
-                ImageTutorial.DOAnchorPos(new Vector2(217, -74), 0.25f);
+                destino = GameObject.Find("btt_modulo_1");
+                //ImageTutorial.DOAnchorPos(new Vector2(217, -74), 0.25f);
                 break;
             case 5:
-                ImageTutorial.DOAnchorPos(new Vector2(529, -70), 0.25f);
+                destino = GameObject.Find("btt_next");
+                //ImageTutorial.DOAnchorPos(new Vector2(529, -70), 0.25f);
                 break;
             
         }

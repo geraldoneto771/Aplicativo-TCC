@@ -637,9 +637,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -465, y: -11.315}
+  m_AnchoredPosition: {x: -538.14465, y: 452.0263}
   m_SizeDelta: {x: 532, y: 337}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.4, y: 1.5}
 --- !u!114 &237259661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1527,7 +1527,7 @@ GameObject:
   - component: {fileID: 525056643}
   - component: {fileID: 525056646}
   m_Layer: 5
-  m_Name: btt_ferramenta_2
+  m_Name: btt_conversor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1549,9 +1549,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -282.27136, y: 104.96631}
+  m_AnchoredPosition: {x: -634.2714, y: 467.96637}
   m_SizeDelta: {x: 110, y: 110}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: -2.7, y: 3.8}
 --- !u!114 &525056643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1844,9 +1844,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1030, y: -25}
+  m_AnchoredPosition: {x: 590.30664, y: 414.6933}
   m_SizeDelta: {x: 250, y: 250}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: -1.5, y: 2.5}
 --- !u!114 &607458638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2800,9 +2800,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -122, y: -113}
+  m_AnchoredPosition: {x: -473.75018, y: -165.5}
   m_SizeDelta: {x: 105, y: 105}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: -2.85, y: 0}
 --- !u!114 &1046681602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3358,7 +3358,7 @@ GameObject:
   - component: {fileID: 1312857566}
   - component: {fileID: 1312857569}
   m_Layer: 5
-  m_Name: btt_ferramenta_3
+  m_Name: btt_cofre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3380,9 +3380,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -106.70093, y: 104.96631}
+  m_AnchoredPosition: {x: -458.70093, y: 467.96637}
   m_SizeDelta: {x: 110, y: 110}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: -2.7, y: 3.8}
 --- !u!114 &1312857566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4232,9 +4232,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 122, y: -113}
+  m_AnchoredPosition: {x: 69.5, y: -165.5}
   m_SizeDelta: {x: 105, y: 105}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1602668541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5013,7 +5013,10 @@ MonoBehaviour:
   bttNext: {fileID: 2137112408}
   loadingOverlay2: {fileID: 705737967}
   sceneIndex: 0
+  PanelTutorial: {fileID: 0}
   jogador: {fileID: 11400000, guid: 052f4139d060edb41a222cd8ef77d451, type: 2}
+  movendo: 1
+  velocidade: 1000
 --- !u!1 &2053904919
 GameObject:
   m_ObjectHideFlags: 0
