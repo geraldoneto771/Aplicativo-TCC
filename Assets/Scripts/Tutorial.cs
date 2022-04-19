@@ -19,7 +19,9 @@ public class Tutorial : MonoBehaviour
     public RectTransform ImageTutorial, bttNext;
     public CanvasGroup loadingOverlay2;
     public int sceneIndex = 0;
+    public GameObject PanelTutorial;
     public Jogador jogador;
+   
     public static Tutorial Instance { get; private set; }
     private void Awake()
     {
@@ -38,15 +40,17 @@ public class Tutorial : MonoBehaviour
     void Start()
     {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-        if(sceneIndex == 0 && jogador.tutorialTelaInicial == 0)
+        
+        if (sceneIndex == 0 && jogador.tutorialTelaInicial == 0)
         {
             LoadTutorialAsync();
             jogador.tutorialTelaInicial = 1;
         }
         else if(sceneIndex == 1 && jogador.tutorialTelaFases == 0)
         {
+           
             LoadLoadTutorialFasesAsync();
+            
             jogador.tutorialTelaFases = 1;
         }
         else if(sceneIndex == 2 && jogador.tutorialTelaCofrinho == 0)
@@ -80,6 +84,7 @@ public class Tutorial : MonoBehaviour
     public void LoadTutorialAsync()
     {
         StartCoroutine(FadeIn());
+        
         sprites = Resources.LoadAll("TutorialTelaInicial", typeof(Sprite)).Cast<Sprite>().ToArray();
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
@@ -90,17 +95,19 @@ public class Tutorial : MonoBehaviour
     public void LoadLoadTutorialFasesAsync()
     {
         StartCoroutine(FadeIn());
+        
         sprites = Resources.LoadAll("TelaFases", typeof(Sprite)).Cast<Sprite>().ToArray();
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
-        ImageTutorial.DOAnchorPos(new Vector2(11, -142), 0.25f);
+        ImageTutorial.DOAnchorPos(new Vector2(-706, 132), 0.25f);
         bttNext.DOAnchorPos(new Vector2(0, 70), 0.25f);
     }
 
     public void LoadLoadTutorialCofreAsync()
     {
         StartCoroutine(FadeIn());
+        
         sprites = Resources.LoadAll("TelaCofre", typeof(Sprite)).Cast<Sprite>().ToArray();
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
@@ -112,6 +119,7 @@ public class Tutorial : MonoBehaviour
     public void LoadLoadTutorialConversorAsync()
     {
         StartCoroutine(FadeIn());
+        
         sprites = Resources.LoadAll("TelaConversor", typeof(Sprite)).Cast<Sprite>().ToArray();
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
@@ -122,6 +130,7 @@ public class Tutorial : MonoBehaviour
     public void LoadLoadTutorialIntroducaoAsync()
     {
         StartCoroutine(FadeIn());
+        
         sprites = Resources.LoadAll("TelaIntroducao", typeof(Sprite)).Cast<Sprite>().ToArray();
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
@@ -132,6 +141,7 @@ public class Tutorial : MonoBehaviour
     public void LoadLoadTutorialAventuraAsync()
     {
         StartCoroutine(FadeIn());
+        
         sprites = Resources.LoadAll("TelaAventura", typeof(Sprite)).Cast<Sprite>().ToArray();
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
@@ -142,13 +152,14 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator FadeIn()
     {
+        
         float start = 0;
         float end = 1;
         float speed = (end - start) / fadeTime;
 
         loadingOverlay.alpha = start;
         loadingOverlay2.alpha = start;
-
+        
         while (loadingOverlay.alpha < end)
         {
             loadingOverlay.alpha += speed * Time.deltaTime;
@@ -157,6 +168,7 @@ public class Tutorial : MonoBehaviour
 
         loadingOverlay.alpha = end;
         loadingOverlay2.alpha = end;
+        
     }
     private IEnumerator FadeOut()
     {
@@ -166,6 +178,7 @@ public class Tutorial : MonoBehaviour
 
         loadingOverlay.alpha = start;
         loadingOverlay2.alpha = start;
+        
 
         while (loadingOverlay.alpha > end)
         {
@@ -175,6 +188,7 @@ public class Tutorial : MonoBehaviour
 
         loadingOverlay.alpha = end;
         loadingOverlay2.alpha = end;
+       
     }
 
     public void NextTutorial()
@@ -213,6 +227,7 @@ public class Tutorial : MonoBehaviour
         if (verificadorIndexTutorial > 5)
         {
             StartCoroutine(FadeOut());
+            
         }
     }
 
@@ -225,14 +240,14 @@ public class Tutorial : MonoBehaviour
         switch (verificadorIndexTutorial)
         {
             case 0:
-                ImageTutorial.DOAnchorPos(new Vector2(11, -142), 0.25f);
+                ImageTutorial.DOAnchorPos(new Vector2(-706, 132), 0.25f);
                 break;
 
             case 1:
-                ImageTutorial.DOAnchorPos(new Vector2(143, -142), 0.25f);
+                ImageTutorial.DOAnchorPos(new Vector2(-336, 132), 0.25f);
                 break;
             case 2:
-                ImageTutorial.DOAnchorPos(new Vector2(23, -215), 0.25f);
+                ImageTutorial.DOAnchorPos(new Vector2(-683, -111), 0.25f);
                 break;
 
         }
@@ -243,6 +258,7 @@ public class Tutorial : MonoBehaviour
         if (verificadorIndexTutorial > 2)
         {
             StartCoroutine(FadeOut());
+            
         }
     }
 
@@ -279,6 +295,7 @@ public class Tutorial : MonoBehaviour
         if (verificadorIndexTutorial > 4)
         {
             StartCoroutine(FadeOut());
+           
         }
     }
 
@@ -318,6 +335,7 @@ public class Tutorial : MonoBehaviour
         if (verificadorIndexTutorial > 5)
         {
             StartCoroutine(FadeOut());
+            
         }
     }
 
@@ -346,6 +364,7 @@ public class Tutorial : MonoBehaviour
         if (verificadorIndexTutorial > 0)
         {
             StartCoroutine(FadeOut());
+            
         }
     }
 
@@ -379,6 +398,10 @@ public class Tutorial : MonoBehaviour
         if (verificadorIndexTutorial > 2)
         {
             StartCoroutine(FadeOut());
+            
         }
     }
+
+    
+
 }
