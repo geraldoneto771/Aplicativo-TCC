@@ -2463,7 +2463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4172,6 +4172,7 @@ MonoBehaviour:
   bttNext: {fileID: 1156443050}
   loadingOverlay2: {fileID: 424525507}
   sceneIndex: 0
+  PanelTutorial: {fileID: 0}
   jogador: {fileID: 11400000, guid: 052f4139d060edb41a222cd8ef77d451, type: 2}
 --- !u!224 &1780596819
 RectTransform:

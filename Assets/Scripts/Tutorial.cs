@@ -100,7 +100,7 @@ public class Tutorial : MonoBehaviour
         spritesTutorial = this.GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
-        ImageTutorial.DOAnchorPos(new Vector2(-706, 132), 0.25f);
+        ImageTutorial.DOAnchorPos(new Vector2(88, -16), 0.25f);
         bttNext.DOAnchorPos(new Vector2(0, 70), 0.25f);
     }
 
@@ -240,14 +240,14 @@ public class Tutorial : MonoBehaviour
         switch (verificadorIndexTutorial)
         {
             case 0:
-                ImageTutorial.DOAnchorPos(new Vector2(-706, 132), 0.25f);
+                ImageTutorial.DOAnchorPos(new Vector2(88, -16), 0.25f);
                 break;
 
             case 1:
-                ImageTutorial.DOAnchorPos(new Vector2(-336, 132), 0.25f);
+                ImageTutorial.DOAnchorPos(new Vector2(438, -16), 0.25f);
                 break;
             case 2:
-                ImageTutorial.DOAnchorPos(new Vector2(-683, -111), 0.25f);
+                ImageTutorial.DOAnchorPos(new Vector2(88, -269), 0.25f);
                 break;
 
         }
