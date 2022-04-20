@@ -288,7 +288,7 @@ MonoBehaviour:
     m_Top: 29
     m_Bottom: 0
   m_ChildAlignment: 5
-  m_Spacing: 782.45
+  m_Spacing: 750
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -489,10 +489,10 @@ RectTransform:
   m_Father: {fileID: 410688717}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 70.695, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 70.695, y: -32.895}
+  m_SizeDelta: {x: 81.39, y: 25.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &390942758
 MonoBehaviour:
@@ -926,10 +926,10 @@ RectTransform:
   m_Father: {fileID: 706436420}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 70.695, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 70.695, y: -32.895}
+  m_SizeDelta: {x: 81.39, y: 25.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &469780507
 MonoBehaviour:
@@ -1599,7 +1599,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 230.2472, y: 61.128906}
-  m_Pivot: {x: 0, y: 3}
+  m_Pivot: {x: 0, y: 2.78}
 --- !u!114 &812008232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3675,10 +3675,10 @@ RectTransform:
   m_Father: {fileID: 2105316988}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 70.695, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 70.695, y: -32.895}
+  m_SizeDelta: {x: 81.39, y: 25.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1612519281
 MonoBehaviour:
@@ -4166,13 +4166,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingOverlay: {fileID: 2041361033}
   fadeTime: 0.5
-  spritesTutorial: {fileID: 0}
   sprites: []
   ImageTutorial: {fileID: 1780596819}
   bttNext: {fileID: 1156443050}
   loadingOverlay2: {fileID: 424525507}
   sceneIndex: 0
-  PanelTutorial: {fileID: 0}
   jogador: {fileID: 11400000, guid: 052f4139d060edb41a222cd8ef77d451, type: 2}
   movendo: 1
   velocidade: 1000

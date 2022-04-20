@@ -13,13 +13,13 @@ public class Tutorial : MonoBehaviour
     [SerializeField]
     private float fadeTime = 0.5f;
     private int verificadorIndexTutorial = 0;
-    public Image spritesTutorial;
+    private Image spritesTutorial;
     public Sprite[] sprites;
     int index;
     public RectTransform ImageTutorial, bttNext;
     public CanvasGroup loadingOverlay2;
     public int sceneIndex = 0;
-    public GameObject PanelTutorial;
+    //public GameObject PanelTutorial;
     public Jogador jogador;
 
     //Movimentação do tutorial
@@ -95,7 +95,7 @@ public class Tutorial : MonoBehaviour
         StartCoroutine(FadeIn());
         
         sprites = Resources.LoadAll("TutorialTelaInicial", typeof(Sprite)).Cast<Sprite>().ToArray();
-        spritesTutorial = this.GetComponent<Image>();
+        spritesTutorial = GameObject.Find("ImageTutorial").GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
         //ImageTutorial.DOAnchorPos(new Vector2(42, -52), 0.25f);
@@ -107,7 +107,7 @@ public class Tutorial : MonoBehaviour
         StartCoroutine(FadeIn());
         
         sprites = Resources.LoadAll("TelaFases", typeof(Sprite)).Cast<Sprite>().ToArray();
-        spritesTutorial = this.GetComponent<Image>();
+        spritesTutorial = GameObject.Find("ImageTutorial").GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
        // ImageTutorial.DOAnchorPos(new Vector2(88, -16), 0.25f);
@@ -120,7 +120,7 @@ public class Tutorial : MonoBehaviour
         StartCoroutine(FadeIn());
         
         sprites = Resources.LoadAll("TelaCofre", typeof(Sprite)).Cast<Sprite>().ToArray();
-        spritesTutorial = this.GetComponent<Image>();
+        spritesTutorial = GameObject.Find("ImageTutorial").GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
         //ImageTutorial.DOAnchorPos(new Vector2(112, -159), 0.25f);
@@ -133,7 +133,7 @@ public class Tutorial : MonoBehaviour
         StartCoroutine(FadeIn());
         
         sprites = Resources.LoadAll("TelaConversor", typeof(Sprite)).Cast<Sprite>().ToArray();
-        spritesTutorial = this.GetComponent<Image>();
+        spritesTutorial = GameObject.Find("ImageTutorial").GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
         //ImageTutorial.DOAnchorPos(new Vector2(102, -34), 0.25f);
@@ -145,7 +145,7 @@ public class Tutorial : MonoBehaviour
         StartCoroutine(FadeIn());
         
         sprites = Resources.LoadAll("TelaIntroducao", typeof(Sprite)).Cast<Sprite>().ToArray();
-        spritesTutorial = this.GetComponent<Image>();
+        spritesTutorial = GameObject.Find("ImageTutorial").GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
         //ImageTutorial.DOAnchorPos(new Vector2(613, -245), 0.25f);
@@ -157,7 +157,7 @@ public class Tutorial : MonoBehaviour
         StartCoroutine(FadeIn());
         
         sprites = Resources.LoadAll("TelaAventura", typeof(Sprite)).Cast<Sprite>().ToArray();
-        spritesTutorial = this.GetComponent<Image>();
+        spritesTutorial = GameObject.Find("ImageTutorial").GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
         //ImageTutorial.DOAnchorPos(new Vector2(638, -253), 0.25f);

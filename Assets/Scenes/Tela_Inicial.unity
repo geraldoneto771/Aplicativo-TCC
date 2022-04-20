@@ -5007,7 +5007,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingOverlay: {fileID: 872591993}
   fadeTime: 0.5
-  spritesTutorial: {fileID: 0}
   sprites: []
   ImageTutorial: {fileID: 2048996270}
   bttNext: {fileID: 2137112408}
