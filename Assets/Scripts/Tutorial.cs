@@ -151,7 +151,7 @@ public class Tutorial : MonoBehaviour
         verificadorIndexTutorial = 0;
         //ImageTutorial.DOAnchorPos(new Vector2(613, -245), 0.25f);
         destino = GameObject.Find("ButtonContinuar");
-        bttNext.DOAnchorPos(new Vector2(0, 51), 0.25f);
+        
     }
     public void LoadLoadTutorialAventuraAsync()
     {
