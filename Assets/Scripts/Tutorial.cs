@@ -99,6 +99,7 @@ public class Tutorial : MonoBehaviour
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
         //ImageTutorial.DOAnchorPos(new Vector2(42, -52), 0.25f);
+        bttNext.DOAnchorPos(new Vector2(0, 70), 0.25f);
         destino = GameObject.Find("btt_menu");
     }
 
@@ -261,7 +262,7 @@ public class Tutorial : MonoBehaviour
         switch (verificadorIndexTutorial)
         {
             case 0:
-                ImageTutorial.DOAnchorPos(new Vector2(88, -16), 0.25f);
+                destino = GameObject.Find("btt_introducao_aventura_1");
                 break;
 
             case 1:
