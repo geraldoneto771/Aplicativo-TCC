@@ -29,6 +29,7 @@ public class AventuraSoloControle : MonoBehaviour
     public GameObject PanelErro;
     public GameObject textErro;
     public GameObject bttOk;
+    public Tutorial tutorial;
     //Pontuação
     //int forca = 3, agilidade = 2, rapidez = 3, saude = 5, pontoBonus = 3;
 
@@ -96,6 +97,16 @@ public class AventuraSoloControle : MonoBehaviour
         
         else if (index == 7 && verificadorDeRota == 9)
         {
+            if(jogador.tutorialEscolhaRotas == 0)
+            {
+                print("verificado");
+                //Chamando o tutorial de escolha de rota
+                tutorial.LoadLoadTutorialEscolhaRotaAsync();
+                jogador.tutorialEscolhaRotas = 1;
+
+            }
+            
+
             //Alterando o texto dos botões
             GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Comprar o livro sobre o museu e a casa";
             GameObject.Find("BttOption02").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Seguir o Homem";

@@ -324,6 +324,7 @@ MonoBehaviour:
   PanelErro: {fileID: 1728426142}
   textErro: {fileID: 1041042536}
   bttOk: {fileID: 1043603085}
+  tutorial: {fileID: 1780596818}
   lofi: {fileID: 8300000, guid: 33f306b6cf9afca45ba9703924b6957e, type: 3}
   aventurasolo: {fileID: 8300000, guid: 8d277edc73365854fb806ba8259a7205, type: 3}
 --- !u!212 &211172884

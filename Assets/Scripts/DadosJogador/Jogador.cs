@@ -14,7 +14,7 @@ public class Jogador : ScriptableObject {
     public string conhecimento;
     public int nivel; 
     private double saldoCofre = 0;
-    public double tutorialTelaInicial = 0, tutorialTelaFases = 0, tutorialTelaCofrinho = 0, tutorialTelaConversor = 0, tutorialTelaIntroducao = 0, tutorialTelaAventura = 0; // 0 - Não apareceu, 1 - Já apareceu;
+    public double tutorialTelaInicial = 0, tutorialEscolhaRotas = 0 , tutorialTelaFases = 0, tutorialTelaCofrinho = 0, tutorialTelaConversor = 0, tutorialTelaIntroducao = 0, tutorialTelaAventura = 0; // 0 - Não apareceu, 1 - Já apareceu;
 
     public bool usarOrcamento(float valor){
         bool liberaValor = valor <= this.orcamento;

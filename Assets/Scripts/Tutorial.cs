@@ -85,8 +85,9 @@ public class Tutorial : MonoBehaviour
 
             jogador.tutorialTelaAventura = 1;
         }
-
         
+
+
     }
 
 
@@ -163,6 +164,19 @@ public class Tutorial : MonoBehaviour
         verificadorIndexTutorial = 0;
         //ImageTutorial.DOAnchorPos(new Vector2(638, -253), 0.25f);
         destino = GameObject.Find("BttContinuar");
+        bttNext.DOAnchorPos(new Vector2(0, 51), 0.25f);
+    }
+
+    public void LoadLoadTutorialEscolhaRotaAsync()
+    {
+        StartCoroutine(FadeIn());
+
+        sprites = Resources.LoadAll("EscolhasRotas", typeof(Sprite)).Cast<Sprite>().ToArray();
+        spritesTutorial = GameObject.Find("ImageTutorial").GetComponent<Image>();
+        spritesTutorial.sprite = sprites[0];
+        verificadorIndexTutorial = 0;
+        //ImageTutorial.DOAnchorPos(new Vector2(638, -253), 0.25f);
+        destino = GameObject.Find("ImageCenas");
         bttNext.DOAnchorPos(new Vector2(0, 51), 0.25f);
     }
 
@@ -429,6 +443,11 @@ public class Tutorial : MonoBehaviour
                 //ImageTutorial.DOAnchorPos(new Vector2(670, 257), 0.25f);
                 break;
             case 2:
+                destino = GameObject.Find("Btt_Perfil");
+                //ImageTutorial.DOAnchorPos(new Vector2(670, 257), 0.25f);
+                break;
+            /*
+            case 2:
                 destino = GameObject.Find("ImageCenas");
                 //ImageTutorial.DOAnchorPos(new Vector2(0, 0), 0.25f);
                 break;
@@ -436,22 +455,22 @@ public class Tutorial : MonoBehaviour
                 destino = GameObject.Find("ImageCenas");
                 //ImageTutorial.DOAnchorPos(new Vector2(0, 0), 0.25f);
                 break;
-
+            */
 
         }
 
         spritesTutorial.sprite = sprites[verificadorIndexTutorial];
 
         //fade out
-        if (verificadorIndexTutorial > 2)
+        if (verificadorIndexTutorial > 1)
         {
             StartCoroutine(FadeOut());
             
         }
     }
 
-    
-   void Update()
+
+    void Update()
     {
         if(movendo == true)
         {
