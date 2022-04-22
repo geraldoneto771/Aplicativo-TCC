@@ -101,7 +101,7 @@ public class Tutorial : MonoBehaviour
         verificadorIndexTutorial = 0;
         //ImageTutorial.DOAnchorPos(new Vector2(42, -52), 0.25f);
         bttNext.DOAnchorPos(new Vector2(0, 70), 0.25f);
-        destino = GameObject.Find("btt_menu");
+        destino = GameObject.Find("TitleGame");
     }
 
     public void LoadLoadTutorialFasesAsync()
@@ -230,27 +230,32 @@ public class Tutorial : MonoBehaviour
         switch (verificadorIndexTutorial)
         {
             case 0:
-                destino = GameObject.Find("btt_menu");
+                destino = GameObject.Find("TitleGame");
                 //ImageTutorial.DOAnchorPos(new Vector2(42, -52), 0.25f);
                 break;
 
             case 1:
+                destino = GameObject.Find("btt_menu");
+                //ImageTutorial.DOAnchorPos(new Vector2(42, -52), 0.25f);
+                break;
+
+            case 2:
                 destino = GameObject.Find("btt_tutorial");
                 //ImageTutorial.DOAnchorPos(new Vector2(562, -52), 0.25f);
                 break;
-            case 2:
+            case 3:
                 destino = GameObject.Find("btt_conversor");
                 //ImageTutorial.DOAnchorPos(new Vector2(509, -211), 0.25f);
                 break;
-            case 3:
+            case 4:
                 destino = GameObject.Find("btt_cofre");
                 //ImageTutorial.DOAnchorPos(new Vector2(566, -211), 0.25f);
                 break;
-            case 4:
+            case 5:
                 destino = GameObject.Find("btt_modulo_1");
                 //ImageTutorial.DOAnchorPos(new Vector2(217, -74), 0.25f);
                 break;
-            case 5:
+            case 6:
                 destino = GameObject.Find("btt_next");
                 //ImageTutorial.DOAnchorPos(new Vector2(529, -70), 0.25f);
                 break;
@@ -260,7 +265,7 @@ public class Tutorial : MonoBehaviour
         spritesTutorial.sprite = sprites[verificadorIndexTutorial];
 
         //fade out
-        if (verificadorIndexTutorial > 5)
+        if (verificadorIndexTutorial > 6)
         {
             StartCoroutine(FadeOut());
             

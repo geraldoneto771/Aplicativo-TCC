@@ -672,7 +672,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continuar
+  m_text: Prosseguir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -867,8 +867,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.5, y: 54}
-  m_SizeDelta: {x: 250, y: 75}
+  m_AnchoredPosition: {x: 0, y: 51}
+  m_SizeDelta: {x: 259, y: 58}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1157570850
 MonoBehaviour:
@@ -946,7 +946,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4a70b6ecd0435d24ca3bf68ea19aa02f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a37e14b85630138468578bdcf9210924, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   sceneIndex: 0
   jogador: {fileID: 11400000, guid: 052f4139d060edb41a222cd8ef77d451, type: 2}
   movendo: 1
-  velocidade: 1000
+  velocidade: 1500
 --- !u!224 &1172019914
 RectTransform:
   m_ObjectHideFlags: 0
