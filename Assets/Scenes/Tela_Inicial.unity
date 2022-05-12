@@ -1305,7 +1305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelMenu: {fileID: 1191996055}
   PanelMenuSobre: {fileID: 171840924}
-  PanelMenuOpcoes: {fileID: 0}
+  PanelMenuOpcoes: {fileID: 1904381642}
 --- !u!1 &483197684
 GameObject:
   m_ObjectHideFlags: 0
@@ -4598,7 +4598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelMenu: {fileID: 1191996055}
   PanelMenuSobre: {fileID: 171840924}
-  PanelMenuOpcoes: {fileID: 0}
+  PanelMenuOpcoes: {fileID: 1904381642}
 --- !u!1 &1632484324
 GameObject:
   m_ObjectHideFlags: 0
@@ -5451,7 +5451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelMenu: {fileID: 1191996055}
   PanelMenuSobre: {fileID: 171840924}
-  PanelMenuOpcoes: {fileID: 0}
+  PanelMenuOpcoes: {fileID: 1904381642}
 --- !u!114 &2078437771
 MonoBehaviour:
   m_ObjectHideFlags: 0
