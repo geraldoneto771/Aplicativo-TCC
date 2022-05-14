@@ -869,7 +869,7 @@ public class AventuraSoloControle : MonoBehaviour
                 }
                 else
                 {
-                    textErro.GetComponent<Text>().text = "Você não tem agilidade suficiente!";
+                    textErro.GetComponent<Text>().text = "Você não tem agilidade suficiente!\nAcesse o perfil para olhar se você pode adicionar mais";
                     OpenPanelErro();
 
                 }
@@ -899,7 +899,7 @@ public class AventuraSoloControle : MonoBehaviour
                 }
                 else
                 {
-                    textErro.GetComponent<Text>().text = "Você não tem rapidez suficiente!";
+                    textErro.GetComponent<Text>().text = "Você não tem rapidez suficiente!\nAcesse o perfil para olhar se você pode adicionar mais";
                     OpenPanelErro();
 
                 } 
@@ -948,7 +948,7 @@ public class AventuraSoloControle : MonoBehaviour
               
                 else
                 {
-                    textErro.GetComponent<Text>().text = "Você não tem força ou agilidade suficiente!";
+                    textErro.GetComponent<Text>().text = "Você não tem força ou agilidade suficiente!\nAcesse o perfil para olhar se você pode adicionar mais";
                     OpenPanelErro();
                 
                 }
@@ -1041,7 +1041,7 @@ public class AventuraSoloControle : MonoBehaviour
                 }
                 else
                 {
-                    textErro.GetComponent<Text>().text = "A soma da força + agilidade não é o suficiente!";
+                    textErro.GetComponent<Text>().text = "A soma da força + agilidade não é o suficiente!\nAcesse o perfil para olhar se você pode adicionar mais";
                     OpenPanelErro();
 
                 }
@@ -1099,7 +1099,7 @@ public class AventuraSoloControle : MonoBehaviour
                 }
                 else
                 {
-                    textErro.GetComponent<Text>().text = "A soma da força + agilidade não é o suficiente!";
+                    textErro.GetComponent<Text>().text = "A soma da força + agilidade não é o suficiente!\nAcesse o perfil para olhar se você pode adicionar mais";
                     OpenPanelErro();
 
                 }
