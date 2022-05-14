@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using System;
 using System.Linq;
+using TMPro;
 
 public class AventuraSoloControle : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class AventuraSoloControle : MonoBehaviour
     public RectTransform bttNext, bttOption01, bttOption02, bttOption03;
     //textos
     public GameObject textOrcamento, textSaude, textForca, textAgilidade, textRapidez, textBonus;
-
+    public TMP_Text textOrcamentoUI;
     public GameObject PanelErro;
     public GameObject textErro;
     public GameObject bttOk;
@@ -98,14 +99,7 @@ public class AventuraSoloControle : MonoBehaviour
         
         else if (index == 7 && verificadorDeRota == 9)
         {
-            if(jogador.tutorialEscolhaRotas == 0)
-            {
-                print("verificado");
-                //Chamando o tutorial de escolha de rota
-                tutorial.LoadLoadTutorialEscolhaRotaAsync();
-                jogador.tutorialEscolhaRotas = 1;
-
-            }
+            
             
 
             //Alterando o texto dos botões
@@ -1194,7 +1188,8 @@ public class AventuraSoloControle : MonoBehaviour
 
     public void atualizarDadosNoMenuDeAtributos(){
         // Joga o dado do usuário dentro dos textos.
-        textOrcamento.GetComponent<Text>().text = "R$" + jogador.orcamento.ToString();
+        textOrcamento.GetComponent<Text>().text = "R$" + jogador.orcamento.ToString("N2");
+        textOrcamentoUI.GetComponent<TMP_Text>().text = "R$" + jogador.orcamento.ToString("N2");
         textSaude.GetComponent<Text>().text = jogador.saude.ToString();
         textForca.GetComponent<Text>().text = jogador.forca.ToString();
         textAgilidade.GetComponent<Text>().text = jogador.agilidade.ToString();
