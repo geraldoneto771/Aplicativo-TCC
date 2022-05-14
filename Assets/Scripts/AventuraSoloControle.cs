@@ -68,6 +68,7 @@ public class AventuraSoloControle : MonoBehaviour
         bttIndex = 0;
         //Posicionando o botão de continuar na tela
         bttNext.DOAnchorPos(new Vector2(1494, -765), 0.25f);
+        
     }
     //
     void Update()
