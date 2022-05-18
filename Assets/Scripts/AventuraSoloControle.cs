@@ -113,7 +113,7 @@ public class AventuraSoloControle : MonoBehaviour
             //setando o botão de continuar fora da tela
             bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
-        else if (index == 8 && verificadorDeRota == 8)
+        else if (index == 9 && verificadorDeRota == 8)
         {
             //Alterando o texto dos botões
             GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se você tem dinheiro, comprar livro";
