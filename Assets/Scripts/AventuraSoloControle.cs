@@ -155,7 +155,7 @@ public class AventuraSoloControle : MonoBehaviour
             //setando o botão de continuar fora da tela
             bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
-        else if (index == 5 && verificadorDeRota == 18)
+        else if (index == 6 && verificadorDeRota == 18)
         {
             //Alterando o texto dos botões
             //Alterando o texto dos botões
@@ -261,7 +261,7 @@ public class AventuraSoloControle : MonoBehaviour
             //setando o botão de continuar fora da tela
             bttNext.DOAnchorPos(new Vector2(1724, -1488), 0.25f);
         }
-        else if (index == 3 && verificadorDeRota == 20)
+        else if (index == 4 && verificadorDeRota == 20)
         {
             //Alterando o texto dos botões
             GameObject.Find("BttOption01").GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Se a sua força é 3 ou mais";
