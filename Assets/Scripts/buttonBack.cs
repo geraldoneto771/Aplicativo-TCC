@@ -10,7 +10,7 @@ public class buttonBack : MonoBehaviour{
     
     
     public int sceneIndex = 0;
-        
+    private string nameScene;
     /*int sceneIndex;
     // Start is called before the first frame update
     void Start()
@@ -27,10 +27,14 @@ public class buttonBack : MonoBehaviour{
         if (sceneIndex >= 1 && sceneIndex <= 3)
         {
             Debug.Log("If 1");
-            SceneManager.LoadScene(0);
+            nameScene = "Tela_Inicial";
+            SceneLoader.Instance.LoadSceneAsync(nameScene);
+            //SceneManager.LoadScene(0);
         }else if(sceneIndex > 3){
             Debug.Log("If 2");
-            SceneManager.LoadScene(1);
+            nameScene = "Tela_Modulo_1";
+            SceneLoader.Instance.LoadSceneAsync(nameScene);
+            //SceneManager.LoadScene(1);
         }
         
     }

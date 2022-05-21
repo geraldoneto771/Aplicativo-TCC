@@ -819,6 +819,7 @@ public class AventuraSoloControle : MonoBehaviour
                 
                 if (jogador.usarOrcamento(10))
                 {
+                    atualizarDadosNoMenuDeAtributos();
                     rotas = 4;
                     NextChangeImage();
                 }
@@ -840,6 +841,7 @@ public class AventuraSoloControle : MonoBehaviour
             {
                 if (jogador.usarOrcamento(10))
                 {
+                    atualizarDadosNoMenuDeAtributos();
                     rotas = 3;
                     NextChangeImage();
                 }
@@ -908,6 +910,7 @@ public class AventuraSoloControle : MonoBehaviour
             {
                 if (jogador.usarOrcamento(10))
                 {
+                    atualizarDadosNoMenuDeAtributos();
                     rotas = 3;
                     NextChangeImage();
                 }

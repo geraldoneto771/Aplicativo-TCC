@@ -18,15 +18,15 @@ MonoBehaviour:
   forca: 2
   agilidade: 3
   rapidez: 3
-  orcamento: 7
+  orcamento: 25
   personalidade: Loren Ipsum blaldksmlsdk
   conhecimento: sdfsldkfnsldkfnl
   nivel: 0
   saldoCofre: 0
-  tutorialTelaInicial: 0
+  tutorialTelaInicial: 1
   tutorialEscolhaRotas: 0
-  tutorialTelaFases: 0
-  tutorialTelaCofrinho: 0
-  tutorialTelaConversor: 0
-  tutorialTelaIntroducao: 0
+  tutorialTelaFases: 1
+  tutorialTelaCofrinho: 1
+  tutorialTelaConversor: 1
+  tutorialTelaIntroducao: 1
   tutorialTelaAventura: 1
