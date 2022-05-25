@@ -50,7 +50,7 @@ public class AventuraSoloControle : MonoBehaviour
 
         //Renderizando os sprites no vetor
         sprites = Resources.LoadAll("Cenas Decisão 01 - Inicio", typeof(Sprite)).Cast<Sprite>().ToArray();
-        index = 1;
+        index = 0;
         cenasDoJogo = this.GetComponent<Image>();
         cenasDoJogo.sprite = sprites[index];
 
@@ -92,7 +92,7 @@ public class AventuraSoloControle : MonoBehaviour
         index++;
         //Quando a imagem na tela for a numero 7, chamar o primeiro grupo de botões
         //para selecionar uma decisão;
-        if (index == 8 && verificadorDeRota == 0)
+        if (index == 7 && verificadorDeRota == 0)
         {
             rotas = 1;
         }

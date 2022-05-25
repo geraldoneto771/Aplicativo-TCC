@@ -473,7 +473,10 @@ public class Tutorial : MonoBehaviour
             
         }
     }
-
+    public void FecharTutorial()
+    {
+        StartCoroutine(FadeOut());
+    }
 
     void Update()
     {
