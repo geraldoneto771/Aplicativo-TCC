@@ -28,11 +28,13 @@ public class buttonBack : MonoBehaviour{
         {
             Debug.Log("If 1");
             nameScene = "Tela_Inicial";
+            SceneLoader.Instance.ApagarTexto();
             SceneLoader.Instance.LoadSceneAsync(nameScene);
             //SceneManager.LoadScene(0);
         }else if(sceneIndex > 3){
             Debug.Log("If 2");
             nameScene = "Tela_Modulo_1";
+            SceneLoader.Instance.ApagarTexto();
             SceneLoader.Instance.LoadSceneAsync(nameScene);
             //SceneManager.LoadScene(1);
         }

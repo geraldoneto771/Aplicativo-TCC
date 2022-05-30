@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private CanvasGroup loadingOverlay;
     [SerializeField]
     private float fadeTime = 0.5f;
-
+    public GameObject textoCarregando;
     public static SceneLoader Instance { get; private set; }
 
     // função Awake é 
@@ -30,6 +30,16 @@ public class SceneLoader : MonoBehaviour
     public void LoadSceneAsync(string sceneName)
     {
         StartCoroutine(PerformLoadSceneAsync(sceneName));
+    }
+
+    public void ApagarTexto()
+    {
+        textoCarregando.GetComponent<TMP_Text>().text = "";
+    }
+    public void AdicionarTexto()
+    {
+        textoCarregando.GetComponent<TMP_Text>().text = "Carregando...";
+
     }
     private IEnumerator PerformLoadSceneAsync(string sceneName)
     {
@@ -79,4 +89,6 @@ public class SceneLoader : MonoBehaviour
 
         loadingOverlay.alpha = end;
     }
+
+
 }

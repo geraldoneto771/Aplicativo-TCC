@@ -13,7 +13,8 @@ public class NavigationSimple : MonoBehaviour
     public void LoadScene(string name)
     {
         //Carregar cena de acordo com seu nome
-       SceneLoader.Instance.LoadSceneAsync(name);
-       SceneManager.LoadScene(name);
+        SceneLoader.Instance.ApagarTexto();
+        SceneLoader.Instance.LoadSceneAsync(name);
+       //SceneManager.LoadScene(name);
     }
 }

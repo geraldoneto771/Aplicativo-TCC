@@ -669,6 +669,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 0
+  textoCarregando: {fileID: 0}
 --- !u!1 &212173202
 GameObject:
   m_ObjectHideFlags: 0
@@ -3381,6 +3382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneIndex: 0
+  textoCarregando: {fileID: 0}
 --- !u!4 &1362213180
 Transform:
   m_ObjectHideFlags: 0
