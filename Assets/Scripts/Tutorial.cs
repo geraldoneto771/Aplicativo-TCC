@@ -23,7 +23,7 @@ public class Tutorial : MonoBehaviour
     public Jogador jogador;
 
     // Find Objetos
-    Transform pf, pf2; 
+    Transform pf, pf2, pf3; 
     Transform bMenu;
     Transform bTuto;
     Transform bConv; 
@@ -33,6 +33,9 @@ public class Tutorial : MonoBehaviour
     Transform bIntro;
     Transform bAve;
     Transform bBack;
+    Transform bPros;
+    //Transform bVoltar;
+
 
     //Movimentação do tutorial
     private GameObject destino, destino2;
@@ -174,7 +177,14 @@ public class Tutorial : MonoBehaviour
         verificadorIndexTutorial = 0;
         //ImageTutorial.DOAnchorPos(new Vector2(613, -245), 0.25f);
         destino = GameObject.Find("ButtonContinuar");
-        
+        pf3 = GameObject.Find("ImageIntro").transform;
+        bPros = pf3.Find("ButtonContinuar");
+        bPros.SetSiblingIndex(3);
+        //bVoltar = pf3.Find("ButtonVoltar");
+        //bVoltar.SetSiblingIndex(1);
+
+
+
     }
     public void LoadLoadTutorialAventuraAsync()
     {
@@ -484,9 +494,10 @@ public class Tutorial : MonoBehaviour
 
             case 1:
                 destino = GameObject.Find("ButtonContinuar");
-                //ImageTutorial.DOAnchorPos(new Vector2(613, -245), 0.25f);
+               
                 break;
-            
+           
+
 
         }
 
@@ -496,7 +507,8 @@ public class Tutorial : MonoBehaviour
         if (verificadorIndexTutorial > 0)
         {
             StartCoroutine(FadeOut());
-            
+           // bVoltar.SetSiblingIndex(1);
+
         }
     }
 
