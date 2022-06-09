@@ -30,6 +30,9 @@ public class Tutorial : MonoBehaviour
     Transform bCof;
     Transform bMod;
     Transform bNext;
+    Transform bIntro;
+    Transform bAve;
+    Transform bBack;
 
     //Movimentação do tutorial
     private GameObject destino, destino2;
@@ -123,8 +126,11 @@ public class Tutorial : MonoBehaviour
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
        // ImageTutorial.DOAnchorPos(new Vector2(88, -16), 0.25f);
-        bttNext.DOAnchorPos(new Vector2(0, 70), 0.25f);
+        //bttNext.DOAnchorPos(new Vector2(0, 70), 0.25f);
         destino = GameObject.Find("btt_introducao_aventura_1");
+        pf = GameObject.Find("CanvasFase1").transform;
+        bIntro = pf.Find("btt_introducao_aventura_1");
+        bIntro.SetSiblingIndex(16);
     }
 
     public void LoadLoadTutorialCofreAsync()
@@ -322,13 +328,26 @@ public class Tutorial : MonoBehaviour
         {
             case 0:
                 destino = GameObject.Find("btt_introducao_aventura_1");
+                //pf = GameObject.Find("Canvas").transform;
+                // bIntro = pf.Find("btt_introducao_aventura_1");
+                // bIntro.SetSiblingIndex(16);
+
                 break;
 
             case 1:
+                pf = GameObject.Find("CanvasFase1").transform;
+                bAve = pf.Find("btt_aventurasolo_1");
+                bIntro.SetSiblingIndex(6);
+                bAve.SetSiblingIndex(16);
                 destino = GameObject.Find("btt_aventurasolo_1");
                 //ImageTutorial.DOAnchorPos(new Vector2(438, -16), 0.25f);
                 break;
             case 2:
+                
+                pf = GameObject.Find("CanvasFase1").transform;
+                bBack = pf.Find("ButtonBack");
+                bAve.SetSiblingIndex(7);
+                bBack.SetSiblingIndex(16);
                 destino = GameObject.Find("ButtonBack");
                 //ImageTutorial.DOAnchorPos(new Vector2(88, -269), 0.25f);
                 break;
@@ -341,7 +360,8 @@ public class Tutorial : MonoBehaviour
         if (verificadorIndexTutorial > 2)
         {
             StartCoroutine(FadeOut());
-            
+            bBack.SetSiblingIndex(15);
+
         }
     }
 
