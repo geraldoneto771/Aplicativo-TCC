@@ -759,7 +759,7 @@ GameObject:
   - component: {fileID: 286605016}
   - component: {fileID: 286605015}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CanvasTelaIncial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

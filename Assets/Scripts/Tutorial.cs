@@ -23,7 +23,7 @@ public class Tutorial : MonoBehaviour
     public Jogador jogador;
 
     // Find Objetos
-    Transform pf; 
+    Transform pf, pf2; 
     Transform bMenu;
     Transform bTuto;
     Transform bConv; 
@@ -113,6 +113,7 @@ public class Tutorial : MonoBehaviour
         verificadorIndexTutorial = 0;
         //ImageTutorial.DOAnchorPos(new Vector2(42, -52), 0.25f);
         //bttNext.DOAnchorPos(new Vector2(0, 70), 0.25f);
+        ImageTutorial.sizeDelta = new Vector2(158, 197);
         destino = GameObject.Find("TitleGame");
         destino2 = GameObject.Find("btt_next_tutorial");
     }
@@ -128,9 +129,14 @@ public class Tutorial : MonoBehaviour
        // ImageTutorial.DOAnchorPos(new Vector2(88, -16), 0.25f);
         //bttNext.DOAnchorPos(new Vector2(0, 70), 0.25f);
         destino = GameObject.Find("btt_introducao_aventura_1");
-        pf = GameObject.Find("CanvasFase1").transform;
-        bIntro = pf.Find("btt_introducao_aventura_1");
+        pf2 = GameObject.Find("CanvasFase1").transform;
+        bIntro = pf2.Find("btt_introducao_aventura_1");
         bIntro.SetSiblingIndex(16);
+
+        bAve = pf2.Find("btt_aventurasolo_1");
+        bAve.SetSiblingIndex(7);
+        bBack = pf2.Find("ButtonBack");
+        bBack.SetSiblingIndex(14);
     }
 
     public void LoadLoadTutorialCofreAsync()
@@ -249,12 +255,13 @@ public class Tutorial : MonoBehaviour
         {
             case 0:
                 destino = GameObject.Find("TitleGame");
+                ImageTutorial.sizeDelta = new Vector2(158, 197);
                 //ImageTutorial.DOAnchorPos(new Vector2(42, -52), 0.25f);
                 break;
 
             case 1:
                 ImageTutorial.transform.localScale = new Vector3(0.94f, 0.96f, 0f);
-                pf = GameObject.Find("Canvas").transform;
+                pf = GameObject.Find("CanvasTelaIncial").transform;
                 bMenu = pf.Find("btt_menu");
                 bMenu.SetSiblingIndex(12);
                 destino = GameObject.Find("btt_menu");
@@ -263,7 +270,7 @@ public class Tutorial : MonoBehaviour
 
             case 2:
                 destino = GameObject.Find("btt_tutorial");
-                pf = GameObject.Find("Canvas").transform;
+                pf = GameObject.Find("CanvasTelaIncial").transform;
                 bTuto = pf.Find("btt_tutorial");
                 bMenu.SetSiblingIndex(2);
                 bTuto.SetSiblingIndex(12);
@@ -272,7 +279,7 @@ public class Tutorial : MonoBehaviour
             case 3:
                 ImageTutorial.sizeDelta = new Vector2(190, 197);
                 destino = GameObject.Find("btt_conversor");
-                pf = GameObject.Find("Canvas").transform;
+                pf = GameObject.Find("CanvasTelaIncial").transform;
                 bConv = pf.Find("btt_conversor");
                 bTuto.SetSiblingIndex(3);
                 bConv.SetSiblingIndex(12);
@@ -280,7 +287,7 @@ public class Tutorial : MonoBehaviour
                 break;
             case 4:
                 destino = GameObject.Find("btt_cofre");
-                pf = GameObject.Find("Canvas").transform;
+                pf = GameObject.Find("CanvasTelaIncial").transform;
                 bCof = pf.Find("btt_cofre");
                 bConv.SetSiblingIndex(5);
                 bCof.SetSiblingIndex(12);
@@ -289,7 +296,7 @@ public class Tutorial : MonoBehaviour
             case 5:
                 ImageTutorial.sizeDelta = new Vector2(156, 197);
                 destino = GameObject.Find("btt_modulo_1");
-                pf = GameObject.Find("Canvas").transform;
+                pf = GameObject.Find("CanvasTelaIncial").transform;
                 bMod = pf.Find("Modulos_1_2");
                 bCof.SetSiblingIndex(6);
                 
@@ -301,7 +308,8 @@ public class Tutorial : MonoBehaviour
                 destino = GameObject.Find("btt_next_modulos");
                 //ImageTutorial.DOAnchorPos(new Vector2(529, -70), 0.25f);
                 break;
-            
+                
+
         }
 
         spritesTutorial.sprite = sprites[verificadorIndexTutorial];
@@ -335,8 +343,8 @@ public class Tutorial : MonoBehaviour
                 break;
 
             case 1:
-                pf = GameObject.Find("CanvasFase1").transform;
-                bAve = pf.Find("btt_aventurasolo_1");
+                pf2 = GameObject.Find("CanvasFase1").transform;
+                bAve = pf2.Find("btt_aventurasolo_1");
                 bIntro.SetSiblingIndex(6);
                 bAve.SetSiblingIndex(16);
                 destino = GameObject.Find("btt_aventurasolo_1");
@@ -344,8 +352,8 @@ public class Tutorial : MonoBehaviour
                 break;
             case 2:
                 
-                pf = GameObject.Find("CanvasFase1").transform;
-                bBack = pf.Find("ButtonBack");
+                pf2 = GameObject.Find("CanvasFase1").transform;
+                bBack = pf2.Find("ButtonBack");
                 bAve.SetSiblingIndex(7);
                 bBack.SetSiblingIndex(16);
                 destino = GameObject.Find("ButtonBack");
@@ -360,7 +368,8 @@ public class Tutorial : MonoBehaviour
         if (verificadorIndexTutorial > 2)
         {
             StartCoroutine(FadeOut());
-            bBack.SetSiblingIndex(15);
+           
+            bBack.SetSiblingIndex(14);
 
         }
     }
@@ -542,7 +551,14 @@ public class Tutorial : MonoBehaviour
     public void FecharTutorial()
     {
         StartCoroutine(FadeOut());
+        bMenu.SetSiblingIndex(2);
+        bTuto.SetSiblingIndex(3);
+        bConv.SetSiblingIndex(5);
+        bCof.SetSiblingIndex(6);
+
+        ImageTutorial.transform.localScale = new Vector3(1f, 1f, 1f);
         
+
     }
 
     public void Update()
