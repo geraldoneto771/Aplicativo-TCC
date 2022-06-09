@@ -23,7 +23,7 @@ public class Tutorial : MonoBehaviour
     public Jogador jogador;
 
     // Find Objetos
-    Transform pf, pf2, pf3; 
+    Transform pf, pf2, pf3, pf4; 
     Transform bMenu;
     Transform bTuto;
     Transform bConv; 
@@ -34,6 +34,10 @@ public class Tutorial : MonoBehaviour
     Transform bAve;
     Transform bBack;
     Transform bPros;
+    Transform bInfo;
+    Transform bCont;
+    Transform bVolt;
+    Transform bPerfil;
     //Transform bVoltar;
 
 
@@ -152,7 +156,7 @@ public class Tutorial : MonoBehaviour
         verificadorIndexTutorial = 0;
         //ImageTutorial.DOAnchorPos(new Vector2(112, -159), 0.25f);
         destino = GameObject.Find("InputFieldAddCofre");
-        bttNext.DOAnchorPos(new Vector2(0, 30), 0.25f);
+        //bttNext.DOAnchorPos(new Vector2(0, 30), 0.25f);
     }
 
     public void LoadLoadTutorialConversorAsync()
@@ -197,6 +201,11 @@ public class Tutorial : MonoBehaviour
         //ImageTutorial.DOAnchorPos(new Vector2(638, -253), 0.25f);
         destino = GameObject.Find("BttContinuar");
         bttNext.DOAnchorPos(new Vector2(0, 51), 0.25f);
+
+        pf4 = GameObject.Find("ImageCenas").transform;
+        
+        
+
     }
 
     public void LoadLoadTutorialEscolhaRotaAsync()
@@ -424,7 +433,7 @@ public class Tutorial : MonoBehaviour
         spritesTutorial.sprite = sprites[verificadorIndexTutorial];
 
         //fade out
-        if (verificadorIndexTutorial > 5)
+        if (verificadorIndexTutorial > 4)
         {
             
             StartCoroutine(FadeOut());
@@ -521,8 +530,9 @@ public class Tutorial : MonoBehaviour
         switch (verificadorIndexTutorial)
         {
             case 0:
-                destino = GameObject.Find("PanelPerfil");
-                ImageTutorial.transform.localScale = new Vector3(2.85f, 2f, 0f);
+                destino = GameObject.Find("PanelAventura");
+                //ImageTutorial.transform.localScale = new Vector3(2.85f, 2f, 0f);
+                ImageTutorial.sizeDelta = new Vector2(381, 198);
 
                 //ImageTutorial.DOAnchorPos(new Vector2(638, -253), 0.25f);
                 break;
