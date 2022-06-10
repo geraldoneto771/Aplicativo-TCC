@@ -157,6 +157,9 @@ public class Tutorial : MonoBehaviour
         //ImageTutorial.DOAnchorPos(new Vector2(112, -159), 0.25f);
         destino = GameObject.Find("InputFieldAddCofre");
         //bttNext.DOAnchorPos(new Vector2(0, 30), 0.25f);
+        ImageTutorial.sizeDelta = new Vector2(183, 191);
+        ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = -17;
+        ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.right = 20;
     }
 
     public void LoadLoadTutorialConversorAsync()
@@ -412,19 +415,26 @@ public class Tutorial : MonoBehaviour
                 break;
             case 2:
                 destino = GameObject.Find("TextTotalCofrinho");
+                ImageTutorial.sizeDelta = new Vector2(145, 187);
                 //ImageTutorial.DOAnchorPos(new Vector2(401, -37), 0.25f);
                 break;
             case 3:
                 destino = GameObject.Find("btt_quebrar_cofre");
+
                 //ImageTutorial.DOAnchorPos(new Vector2(446, -96), 0.25f);
                 break;
             case 4:
                 destino = GameObject.Find("ButtonBack");
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = 29;
+                ImageTutorial.sizeDelta = new Vector2(190, 187);
                 //ImageTutorial.DOAnchorPos(new Vector2(23, -215), 0.25f);
                 break;
             case 5:
-                destino = GameObject.Find("Background");
-                ImageTutorial.transform.localScale = new Vector3(2.85f, 2f, 0f);
+                destino = GameObject.Find("TitleCofrinho");
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = 45;
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.right = 45;
+                ImageTutorial.sizeDelta = new Vector2(387, 242);
+                
                 //ImageTutorial.DOAnchorPos(new Vector2(23, -215), 0.25f);
                 break;
 
@@ -433,7 +443,7 @@ public class Tutorial : MonoBehaviour
         spritesTutorial.sprite = sprites[verificadorIndexTutorial];
 
         //fade out
-        if (verificadorIndexTutorial > 4)
+        if (verificadorIndexTutorial > 5)
         {
             
             StartCoroutine(FadeOut());
