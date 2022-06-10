@@ -23,7 +23,7 @@ public class Tutorial : MonoBehaviour
     public Jogador jogador;
 
     // Find Objetos
-    Transform pf, pf2, pf3, pf4; 
+    Transform pf, pf2, pf3, pf4, pf5; 
     Transform bMenu;
     Transform bTuto;
     Transform bConv; 
@@ -38,7 +38,9 @@ public class Tutorial : MonoBehaviour
     Transform bCont;
     Transform bVolt;
     Transform bPerfil;
-    //Transform bVoltar;
+    Transform bInput, bAddCof, bTotal, bQuebrar, bReturn;
+
+    Transform bVoltar;
 
 
     //Movimentação do tutorial
@@ -160,6 +162,21 @@ public class Tutorial : MonoBehaviour
         ImageTutorial.sizeDelta = new Vector2(183, 191);
         ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = -17;
         ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.right = 20;
+        pf5 = GameObject.Find("CanvasCofre").transform;
+        bInput = pf5.Find("InputFieldAddCofre");
+        bInput.SetSiblingIndex(18);
+
+        bAddCof = pf5.Find("btt_add_money");
+        bAddCof.SetSiblingIndex(6);
+
+        bTotal = pf5.Find("TextTotalCofrinho");
+        bTotal.SetSiblingIndex(10);
+
+        bQuebrar = pf5.Find("btt_quebrar_cofre");
+        bQuebrar.SetSiblingIndex(7);
+
+        bReturn = pf5.Find("ButtonBack");
+        bReturn.SetSiblingIndex(16);
     }
 
     public void LoadLoadTutorialConversorAsync()
@@ -187,6 +204,9 @@ public class Tutorial : MonoBehaviour
         pf3 = GameObject.Find("ImageIntro").transform;
         bPros = pf3.Find("ButtonContinuar");
         bPros.SetSiblingIndex(3);
+
+        bVoltar = pf3.Find("ButtonVoltar");
+        bVoltar.SetSiblingIndex(0);
         //bVoltar = pf3.Find("ButtonVoltar");
         //bVoltar.SetSiblingIndex(1);
 
@@ -412,21 +432,32 @@ public class Tutorial : MonoBehaviour
             case 1:
                 destino = GameObject.Find("btt_add_money");
                 //ImageTutorial.DOAnchorPos(new Vector2(316, -174), 0.25f);
+                bAddCof = pf5.Find("btt_add_money");
+                bInput.SetSiblingIndex(11);
+                bAddCof.SetSiblingIndex(18);
                 break;
             case 2:
                 destino = GameObject.Find("TextTotalCofrinho");
                 ImageTutorial.sizeDelta = new Vector2(145, 187);
+                bTotal = pf5.Find("TextTotalCofrinho");
+                bAddCof.SetSiblingIndex(6);
+                bTotal.SetSiblingIndex(18);
                 //ImageTutorial.DOAnchorPos(new Vector2(401, -37), 0.25f);
                 break;
             case 3:
                 destino = GameObject.Find("btt_quebrar_cofre");
-
+                bQuebrar = pf5.Find("btt_quebrar_cofre");
+                bTotal.SetSiblingIndex(10);
+                bQuebrar.SetSiblingIndex(18);
                 //ImageTutorial.DOAnchorPos(new Vector2(446, -96), 0.25f);
                 break;
             case 4:
                 destino = GameObject.Find("ButtonBack");
                 ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = 29;
                 ImageTutorial.sizeDelta = new Vector2(190, 187);
+                bReturn = pf5.Find("ButtonBack");
+                bQuebrar.SetSiblingIndex(7);
+                bReturn.SetSiblingIndex(18);
                 //ImageTutorial.DOAnchorPos(new Vector2(23, -215), 0.25f);
                 break;
             case 5:
@@ -434,7 +465,7 @@ public class Tutorial : MonoBehaviour
                 ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = 45;
                 ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.right = 45;
                 ImageTutorial.sizeDelta = new Vector2(387, 242);
-                
+                bReturn.SetSiblingIndex(17);
                 //ImageTutorial.DOAnchorPos(new Vector2(23, -215), 0.25f);
                 break;
 
@@ -512,10 +543,17 @@ public class Tutorial : MonoBehaviour
                 break;
 
             case 1:
-                destino = GameObject.Find("ButtonContinuar");
-               
+                destino = GameObject.Find("ButtonVoltar");
+                bVoltar = pf3.Find("ButtonVoltar");
+                bPros.SetSiblingIndex(0);
+                bVoltar.SetSiblingIndex(3);
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = 17;
                 break;
-           
+            case 2:
+                destino = GameObject.Find("ButtonVoltar");
+
+                break;
+
 
 
         }
@@ -523,7 +561,7 @@ public class Tutorial : MonoBehaviour
         spritesTutorial.sprite = sprites[verificadorIndexTutorial];
 
         //fade out
-        if (verificadorIndexTutorial > 0)
+        if (verificadorIndexTutorial > 1)
         {
             StartCoroutine(FadeOut());
            // bVoltar.SetSiblingIndex(1);
