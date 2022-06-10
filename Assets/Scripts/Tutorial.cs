@@ -23,7 +23,7 @@ public class Tutorial : MonoBehaviour
     public Jogador jogador;
 
     // Find Objetos
-    Transform pf, pf2, pf3, pf4, pf5; 
+    Transform pf, pf2, pf3, pf4, pf5, pf6, pf7; 
     Transform bMenu;
     Transform bTuto;
     Transform bConv; 
@@ -39,6 +39,7 @@ public class Tutorial : MonoBehaviour
     Transform bVolt;
     Transform bPerfil;
     Transform bInput, bAddCof, bTotal, bQuebrar, bReturn;
+    Transform bInputMoeda, bDrop, bConvert, bInternet, bResult, bBackButton;
 
     Transform bVoltar;
 
@@ -190,6 +191,24 @@ public class Tutorial : MonoBehaviour
         //ImageTutorial.DOAnchorPos(new Vector2(102, -34), 0.25f);
         destino = GameObject.Find("InputFieldMoeda");
         //bttNext.DOAnchorPos(new Vector2(0, -29), 0.25f);
+
+        pf6 = GameObject.Find("CanvasConversor").transform;
+        bInputMoeda = pf6.Find("InputFieldMoeda");
+        bInputMoeda.SetSiblingIndex(20);
+        ImageTutorial.sizeDelta = new Vector2(165, 201);
+        ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = -4;
+        ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.bottom = -10;
+        bDrop = pf6.Find("DropdownMoeda");
+        bDrop.SetSiblingIndex(12);
+        bInternet = pf6.Find("TextInternet");
+        bInternet.SetSiblingIndex(2);
+        bConvert = pf6.Find("btt_converter_currency");
+        bConvert.SetSiblingIndex(5);
+        bResult = pf6.Find("fundo_text_resultado");
+        bResult.SetSiblingIndex(6);
+        bBackButton = pf6.Find("ButtonBack");
+        bBackButton.SetSiblingIndex(18);
+
     }
     public void LoadLoadTutorialIntroducaoAsync()
     {
@@ -501,23 +520,43 @@ public class Tutorial : MonoBehaviour
                 ImageTutorial.sizeDelta = new Vector2(205, 201);
                 ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = -12;
                 ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.bottom = -14;
+
+                bDrop = pf6.Find("DropdownMoeda");
+                bInputMoeda.SetSiblingIndex(10);
+                bDrop.SetSiblingIndex(20);
                 //ImageTutorial.DOAnchorPos(new Vector2(402, -96), 0.25f);
                 break;
             case 2:
                 destino = GameObject.Find("TextInternet");
                 ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = 38;
+
+                bInternet = pf6.Find("TextInternet");
+                bDrop.SetSiblingIndex(12);
+                bInternet.SetSiblingIndex(20);
                 //ImageTutorial.DOAnchorPos(new Vector2(384, -233), 0.25f);
                 break;
             case 3:
                 destino = GameObject.Find("btt_converter_currency");
+
+                bConvert = pf6.Find("btt_converter_currency");
+                bInternet.SetSiblingIndex(2);
+                bConvert.SetSiblingIndex(20);
                 //ImageTutorial.DOAnchorPos(new Vector2(353, -180), 0.25f);
                 break;
             case 4:
                 destino = GameObject.Find("fundo_text_resultado");
+
+                bResult = pf6.Find("fundo_text_resultado");
+                bConvert.SetSiblingIndex(5);
+                bResult.SetSiblingIndex(20);
                 //ImageTutorial.DOAnchorPos(new Vector2(115, -101), 0.25f);
                 break;
             case 5:
                 destino = GameObject.Find("ButtonBack");
+
+                bBackButton = pf6.Find("ButtonBack");
+                bResult.SetSiblingIndex(6);
+                bBackButton.SetSiblingIndex(20);
                 //ImageTutorial.DOAnchorPos(new Vector2(23, -215), 0.25f);
                 break;
 
