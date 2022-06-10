@@ -23,10 +23,10 @@ public class Tutorial : MonoBehaviour
     public Jogador jogador;
 
     // Find Objetos
-    Transform pf, pf2, pf3, pf4, pf5, pf6, pf7; 
+    Transform pf, pf2, pf3, pf4, pf5, pf6, pf7;
     Transform bMenu;
     Transform bTuto;
-    Transform bConv; 
+    Transform bConv;
     Transform bCof;
     Transform bMod;
     Transform bNext;
@@ -66,33 +66,33 @@ public class Tutorial : MonoBehaviour
             Destroy(gameObject);
         }
 
-        
+
     }
     void Start()
     {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
-        
+
         if (sceneIndex == 0 && jogador.tutorialTelaInicial == 0)
         {
             LoadTutorialAsync();
             jogador.tutorialTelaInicial = 1;
         }
-        else if(sceneIndex == 1 && jogador.tutorialTelaFases == 0)
+        else if (sceneIndex == 1 && jogador.tutorialTelaFases == 0)
         {
-           
+
             LoadLoadTutorialFasesAsync();
-            
+
             jogador.tutorialTelaFases = 1;
         }
-        else if(sceneIndex == 2 && jogador.tutorialTelaCofrinho == 0)
+        else if (sceneIndex == 2 && jogador.tutorialTelaCofrinho == 0)
         {
             LoadLoadTutorialCofreAsync();
             jogador.tutorialTelaCofrinho = 1;
         }
-        else if(sceneIndex == 3 && jogador.tutorialTelaConversor == 0)
+        else if (sceneIndex == 3 && jogador.tutorialTelaConversor == 0)
         {
             LoadLoadTutorialConversorAsync();
-            
+
             jogador.tutorialTelaConversor = 1;
         }
         else if (sceneIndex == 5 && jogador.tutorialTelaIntroducao == 0)
@@ -116,7 +116,7 @@ public class Tutorial : MonoBehaviour
     public void LoadTutorialAsync()
     {
         StartCoroutine(FadeIn());
-        
+
         sprites = Resources.LoadAll("TutorialTelaInicial", typeof(Sprite)).Cast<Sprite>().ToArray();
         spritesTutorial = GameObject.Find("ImageTutorial").GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
@@ -131,12 +131,12 @@ public class Tutorial : MonoBehaviour
     public void LoadLoadTutorialFasesAsync()
     {
         StartCoroutine(FadeIn());
-        
+
         sprites = Resources.LoadAll("TelaFases", typeof(Sprite)).Cast<Sprite>().ToArray();
         spritesTutorial = GameObject.Find("ImageTutorial").GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
-       // ImageTutorial.DOAnchorPos(new Vector2(88, -16), 0.25f);
+        // ImageTutorial.DOAnchorPos(new Vector2(88, -16), 0.25f);
         //bttNext.DOAnchorPos(new Vector2(0, 70), 0.25f);
         destino = GameObject.Find("btt_introducao_aventura_1");
         pf2 = GameObject.Find("CanvasFase1").transform;
@@ -152,7 +152,7 @@ public class Tutorial : MonoBehaviour
     public void LoadLoadTutorialCofreAsync()
     {
         StartCoroutine(FadeIn());
-        
+
         sprites = Resources.LoadAll("TelaCofre", typeof(Sprite)).Cast<Sprite>().ToArray();
         spritesTutorial = GameObject.Find("ImageTutorial").GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
@@ -183,7 +183,7 @@ public class Tutorial : MonoBehaviour
     public void LoadLoadTutorialConversorAsync()
     {
         StartCoroutine(FadeIn());
-        
+
         sprites = Resources.LoadAll("TelaConversor", typeof(Sprite)).Cast<Sprite>().ToArray();
         spritesTutorial = GameObject.Find("ImageTutorial").GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
@@ -213,7 +213,7 @@ public class Tutorial : MonoBehaviour
     public void LoadLoadTutorialIntroducaoAsync()
     {
         StartCoroutine(FadeIn());
-        
+
         sprites = Resources.LoadAll("TelaIntroducao", typeof(Sprite)).Cast<Sprite>().ToArray();
         spritesTutorial = GameObject.Find("ImageTutorial").GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
@@ -235,19 +235,33 @@ public class Tutorial : MonoBehaviour
     public void LoadLoadTutorialAventuraAsync()
     {
         StartCoroutine(FadeIn());
-        
+
         sprites = Resources.LoadAll("TelaAventura", typeof(Sprite)).Cast<Sprite>().ToArray();
         spritesTutorial = GameObject.Find("ImageTutorial").GetComponent<Image>();
         spritesTutorial.sprite = sprites[0];
         verificadorIndexTutorial = 0;
         //ImageTutorial.DOAnchorPos(new Vector2(638, -253), 0.25f);
-        destino = GameObject.Find("BttContinuar");
-        bttNext.DOAnchorPos(new Vector2(0, 51), 0.25f);
+        destino = GameObject.Find("BttContinuarAv");
+        //bttNext.DOAnchorPos(new Vector2(0, 51), 0.25f);
+        ImageTutorial.sizeDelta = new Vector2(73, 69);
+        ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = -7;
+        ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.bottom = -3;
 
-        pf4 = GameObject.Find("ImageCenas").transform;
-        
-        
+        ImageTutorial.sizeDelta = new Vector2(73, 69);
+        ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = -7;
+        ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.bottom = -3;
+        ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.right = 20;
 
+
+        //pf4 = GameObject.Find("ImageCenas").transform;
+        //bCont = pf4.Find("BttContinuarAv");
+        //bCont.SetSiblingIndex(4);
+
+
+        //bVolt = pf4.Find("PanelMenuUI");
+        //bVolt.SetSiblingIndex(2);
+        //bPerfil = pf4.Find("Btt_Perfil");
+        //bPerfil.SetSiblingIndex(0);
     }
 
     public void LoadLoadTutorialEscolhaRotaAsync()
@@ -265,14 +279,14 @@ public class Tutorial : MonoBehaviour
 
     private IEnumerator FadeIn()
     {
-        
+
         float start = 0;
         float end = 1;
         float speed = (end - start) / fadeTime;
 
         loadingOverlay.alpha = start;
         //loadingOverlay2.alpha = start;
-        
+
         while (loadingOverlay.alpha < end)
         {
             loadingOverlay.alpha += speed * Time.deltaTime;
@@ -291,8 +305,8 @@ public class Tutorial : MonoBehaviour
         float speed = (end - start) / fadeTime;
 
         loadingOverlay.alpha = start;
-       // loadingOverlay2.alpha = start;
-        
+        // loadingOverlay2.alpha = start;
+
 
         while (loadingOverlay.alpha > end)
         {
@@ -360,16 +374,16 @@ public class Tutorial : MonoBehaviour
                 pf = GameObject.Find("CanvasTelaIncial").transform;
                 bMod = pf.Find("Modulos_1_2");
                 bCof.SetSiblingIndex(6);
-                
+
                 //ImageTutorial.DOAnchorPos(new Vector2(217, -74), 0.25f);
                 break;
-            case 6:           
-                
+            case 6:
+
                 ImageTutorial.sizeDelta = new Vector2(190, 197);
                 destino = GameObject.Find("btt_next_modulos");
                 //ImageTutorial.DOAnchorPos(new Vector2(529, -70), 0.25f);
                 break;
-                
+
 
         }
 
@@ -382,7 +396,7 @@ public class Tutorial : MonoBehaviour
             ImageTutorial.transform.localScale = new Vector3(1f, 1f, 1f);
             ImageTutorial.sizeDelta = new Vector2(156, 197);
 
-            
+
 
         }
     }
@@ -412,7 +426,7 @@ public class Tutorial : MonoBehaviour
                 //ImageTutorial.DOAnchorPos(new Vector2(438, -16), 0.25f);
                 break;
             case 2:
-                
+
                 pf2 = GameObject.Find("CanvasFase1").transform;
                 bBack = pf2.Find("ButtonBack");
                 bAve.SetSiblingIndex(7);
@@ -429,7 +443,7 @@ public class Tutorial : MonoBehaviour
         if (verificadorIndexTutorial > 2)
         {
             StartCoroutine(FadeOut());
-           
+
             bBack.SetSiblingIndex(14);
 
         }
@@ -495,7 +509,7 @@ public class Tutorial : MonoBehaviour
         //fade out
         if (verificadorIndexTutorial > 5)
         {
-            
+
             StartCoroutine(FadeOut());
             ImageTutorial.transform.localScale = new Vector3(1f, 1f, 1f);
 
@@ -568,7 +582,7 @@ public class Tutorial : MonoBehaviour
         if (verificadorIndexTutorial > 5)
         {
             StartCoroutine(FadeOut());
-            
+
         }
     }
 
@@ -607,7 +621,7 @@ public class Tutorial : MonoBehaviour
         if (verificadorIndexTutorial > 1)
         {
             StartCoroutine(FadeOut());
-           // bVoltar.SetSiblingIndex(1);
+            // bVoltar.SetSiblingIndex(1);
 
         }
     }
@@ -621,22 +635,44 @@ public class Tutorial : MonoBehaviour
         switch (verificadorIndexTutorial)
         {
             case 0:
-                destino = GameObject.Find("PanelAventura");
+                destino = GameObject.Find("BttContinuarAv");
+
                 //ImageTutorial.transform.localScale = new Vector3(2.85f, 2f, 0f);
-                ImageTutorial.sizeDelta = new Vector2(381, 198);
+                //ImageTutorial.sizeDelta = new Vector2(381, 198);
 
                 //ImageTutorial.DOAnchorPos(new Vector2(638, -253), 0.25f);
                 break;
             case 1:
-                destino = GameObject.Find("BttContinuar");
+                destino = GameObject.Find("ButtonVoltarAv");
+                ImageTutorial.sizeDelta = new Vector2(73, 69);
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = 11;
+                //bVolt = pf4.Find("PanelMenuUI");
+                //bCont.SetSiblingIndex(1);
+                //bVolt.SetSiblingIndex(4);
+                //ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.right = 45;
                 //ImageTutorial.DOAnchorPos(new Vector2(638, -253), 0.25f);
                 break;
             case 2:
                 destino = GameObject.Find("Btt_Perfil");
-                //ImageTutorial.DOAnchorPos(new Vector2(670, 257), 0.25f);
+                ImageTutorial.sizeDelta = new Vector2(65, 69);
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = -7;
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.bottom = -6;
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.right = 20;
+               // bPerfil = pf4.Find("Btt_Perfil");
+               // bVolt.SetSiblingIndex(2);
+              //  bPerfil.SetSiblingIndex(4);
                 break;
             case 3:
-                destino = GameObject.Find("Btt_Perfil");
+                destino = GameObject.Find("ImageCenas");
+                ImageTutorial.sizeDelta = new Vector2(152, 85);
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = 18;
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.bottom = -4;
+               // bPerfil.SetSiblingIndex(0);
+
+                //ImageTutorial.DOAnchorPos(new Vector2(670, 257), 0.25f);
+                break;
+            case 4:
+                destino = GameObject.Find("ImageCenas");
                 //ImageTutorial.DOAnchorPos(new Vector2(670, 257), 0.25f);
                 break;
                 /*
@@ -655,10 +691,10 @@ public class Tutorial : MonoBehaviour
         spritesTutorial.sprite = sprites[verificadorIndexTutorial];
 
         //fade out
-        if (verificadorIndexTutorial > 2)
+        if (verificadorIndexTutorial > 3)
         {
             StartCoroutine(FadeOut());
-            
+
         }
     }
     public void FecharTutorial()
@@ -670,23 +706,23 @@ public class Tutorial : MonoBehaviour
         bCof.SetSiblingIndex(6);
 
         ImageTutorial.transform.localScale = new Vector3(1f, 1f, 1f);
-        
+
 
     }
 
     public void Update()
     {
-        if(movendo == true)
+        if (movendo == true)
         {
             distancia = Vector3.Distance(transform.position, destino.transform.position);
-            
+
             if (distanciaMinima <= distancia)
             {
                 transform.position = Vector3.MoveTowards(transform.position, destino.transform.position, velocidade * Time.deltaTime);
                 //bttNext.DOAnchorPos(new Vector2(destino.transform.position.x, destino.transform.position.y), 0.25f);
                 //bttExit.DOAnchorPos(new Vector2(destino.transform.position.x + 77, destino.transform.position.y + 75), 0.25f);
-                
-                
+
+
             }
         }
     }
