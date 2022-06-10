@@ -189,7 +189,7 @@ public class Tutorial : MonoBehaviour
         verificadorIndexTutorial = 0;
         //ImageTutorial.DOAnchorPos(new Vector2(102, -34), 0.25f);
         destino = GameObject.Find("InputFieldMoeda");
-        bttNext.DOAnchorPos(new Vector2(0, -29), 0.25f);
+        //bttNext.DOAnchorPos(new Vector2(0, -29), 0.25f);
     }
     public void LoadLoadTutorialIntroducaoAsync()
     {
@@ -498,10 +498,14 @@ public class Tutorial : MonoBehaviour
 
             case 1:
                 destino = GameObject.Find("DropdownMoeda");
+                ImageTutorial.sizeDelta = new Vector2(205, 201);
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = -12;
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.bottom = -14;
                 //ImageTutorial.DOAnchorPos(new Vector2(402, -96), 0.25f);
                 break;
             case 2:
                 destino = GameObject.Find("TextInternet");
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.left = 38;
                 //ImageTutorial.DOAnchorPos(new Vector2(384, -233), 0.25f);
                 break;
             case 3:
