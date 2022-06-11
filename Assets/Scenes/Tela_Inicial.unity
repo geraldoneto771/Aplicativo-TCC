@@ -561,7 +561,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 791ce9213b1996b489fc0f6166b7bc08, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd529ee69e332cc40ae5a82dae46ae05, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4177,6 +4177,8 @@ MonoBehaviour:
   loadingOverlay: {fileID: 1664791361}
   fadeTime: 0.5
   textoCarregando: {fileID: 746323763}
+  imageTransicao: {fileID: 0}
+  sprites: []
 --- !u!4 &1347076744
 Transform:
   m_ObjectHideFlags: 0
