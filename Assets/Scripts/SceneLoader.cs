@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-
+using UnityEngine.UI;
+using System;
+using DG.Tweening;
+using System.Linq;
 public class SceneLoader : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -11,6 +14,9 @@ public class SceneLoader : MonoBehaviour
     [SerializeField]
     private float fadeTime = 0.5f;
     public GameObject textoCarregando;
+    public Image imageTransicao;
+    public Sprite[] sprites;
+    int index;
     public static SceneLoader Instance { get; private set; }
 
     // função Awake é 
@@ -35,10 +41,15 @@ public class SceneLoader : MonoBehaviour
     public void ApagarTexto()
     {
         textoCarregando.GetComponent<TMP_Text>().text = "";
+      
     }
     public void AdicionarTexto()
     {
         textoCarregando.GetComponent<TMP_Text>().text = "Carregando...";
+        
+        
+       
+
 
     }
     private IEnumerator PerformLoadSceneAsync(string sceneName)

@@ -3812,7 +3812,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingOverlay: {fileID: 1015778938}
   fadeTime: 0.5
-  textoCarregando: {fileID: 0}
+  textoCarregando: {fileID: 1130935566}
+  imageTransicao: {fileID: 375381046}
+  sprites: []
 --- !u!4 &1438385399
 Transform:
   m_ObjectHideFlags: 0

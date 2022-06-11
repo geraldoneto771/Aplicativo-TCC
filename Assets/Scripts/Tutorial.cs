@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -126,6 +126,7 @@ public class Tutorial : MonoBehaviour
         ImageTutorial.sizeDelta = new Vector2(158, 197);
         destino = GameObject.Find("TitleGame");
         destino2 = GameObject.Find("btt_next_tutorial");
+        ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.bottom = -10;
     }
 
     public void LoadLoadTutorialFasesAsync()
@@ -142,7 +143,7 @@ public class Tutorial : MonoBehaviour
         pf2 = GameObject.Find("CanvasFase1").transform;
         bIntro = pf2.Find("btt_introducao_aventura_1");
         bIntro.SetSiblingIndex(16);
-
+        ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.bottom = -10;
         bAve = pf2.Find("btt_aventurasolo_1");
         bAve.SetSiblingIndex(7);
         bBack = pf2.Find("ButtonBack");
@@ -345,6 +346,8 @@ public class Tutorial : MonoBehaviour
 
             case 2:
                 destino = GameObject.Find("btt_tutorial");
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.bottom = -15;
+                
                 pf = GameObject.Find("CanvasTelaIncial").transform;
                 bTuto = pf.Find("btt_tutorial");
                 bMenu.SetSiblingIndex(2);
@@ -353,6 +356,7 @@ public class Tutorial : MonoBehaviour
                 break;
             case 3:
                 ImageTutorial.sizeDelta = new Vector2(190, 197);
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.bottom = -10;
                 destino = GameObject.Find("btt_conversor");
                 pf = GameObject.Find("CanvasTelaIncial").transform;
                 bConv = pf.Find("btt_conversor");
@@ -363,6 +367,7 @@ public class Tutorial : MonoBehaviour
             case 4:
                 destino = GameObject.Find("btt_cofre");
                 pf = GameObject.Find("CanvasTelaIncial").transform;
+                
                 bCof = pf.Find("btt_cofre");
                 bConv.SetSiblingIndex(5);
                 bCof.SetSiblingIndex(12);
@@ -372,6 +377,7 @@ public class Tutorial : MonoBehaviour
                 ImageTutorial.sizeDelta = new Vector2(156, 197);
                 destino = GameObject.Find("btt_modulo_1");
                 pf = GameObject.Find("CanvasTelaIncial").transform;
+                
                 bMod = pf.Find("Modulos_1_2");
                 bCof.SetSiblingIndex(6);
 
@@ -380,6 +386,7 @@ public class Tutorial : MonoBehaviour
             case 6:
 
                 ImageTutorial.sizeDelta = new Vector2(190, 197);
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.bottom = -15;
                 destino = GameObject.Find("btt_next_modulos");
                 //ImageTutorial.DOAnchorPos(new Vector2(529, -70), 0.25f);
                 break;
@@ -428,6 +435,7 @@ public class Tutorial : MonoBehaviour
             case 2:
 
                 pf2 = GameObject.Find("CanvasFase1").transform;
+                ImageTutorial.GetComponent<HorizontalLayoutGroup>().padding.bottom = -12;
                 bBack = pf2.Find("ButtonBack");
                 bAve.SetSiblingIndex(7);
                 bBack.SetSiblingIndex(16);
